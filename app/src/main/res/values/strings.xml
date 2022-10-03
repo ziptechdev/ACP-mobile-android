@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ACPMobile</string>
+    <string name="splash_welcome">Welcome to ACP Mobile</string>
+    <string name="splash_first_text">This is your first time exploring ACP Mobile app.\nPress ‘Get Started’ button to explore the benfits.</string>
+    <string name="splash_button">Get Started </string>
+
 </resources>
