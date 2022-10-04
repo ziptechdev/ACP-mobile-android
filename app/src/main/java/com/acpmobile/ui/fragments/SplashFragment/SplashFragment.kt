@@ -1,13 +1,14 @@
 package com.acpmobile.ui.fragments.SplashFragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.acpmobile.R
 import com.acpmobile.databinding.FragmentSplashBinding
 import com.acpmobile.ui.activity.MainActivity
+
 
 class SplashFragment : Fragment() {
 

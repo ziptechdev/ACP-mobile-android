@@ -3,5 +3,8 @@
     <string name="splash_welcome">Welcome to ACP Mobile</string>
     <string name="splash_first_text">This is your first time exploring ACP Mobile app.\nPress ‘Get Started’ button to explore the benfits.</string>
     <string name="splash_button">Get Started </string>
+    <string name="welcome_first_title">Affordable Conectivity Program</string>
+    <string name="welcome_first_text">The Affordable Connectivity Program is an FCC benefit program that helps ensure that households can afford the broadband they need for work, school, healthcare and more.\n\nThe benefit provides a discount of up to $30 per month toward internet service for eligible households and up to $75 per month for households on qualifying Tribal lands. Eligible households can also receive a one-time discount of up to $100 to purchase a laptop, desktop computer, or tablet from participating providers if they contribute more than $10 and less than $50 toward the purchase price.\n\nThe Affordable Connectivity Program is limited to one monthly service discount and one device discount per household.\n\nBefore continuing you are required to review our Terms of Use and Privacy Policy.</string>
+    <string name="welcome_first_button">Continue</string>
 
 </resources>
