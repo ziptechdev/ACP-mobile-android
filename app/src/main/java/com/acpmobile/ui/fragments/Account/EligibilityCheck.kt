@@ -1,4 +1,4 @@
-package com.acpmobile.ui.fragments.account
+package com.acpmobile.ui.fragments.Account
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
