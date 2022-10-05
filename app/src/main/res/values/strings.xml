@@ -11,4 +11,17 @@
     <string name="welcome_second_title_second"> Privacy Policy</string>
     <string name="welcome_second_text_second"> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</string>
     <string name="welcome_second_button">Accept</string>
+    <string name="label_read_our">Read our</string>
+    <string name="label_terms_of_use">\u0020Terms of Use</string>
+    <string name="label_and">\u0020and</string>
+    <string name="label_privacy_and_policy">\u0020Privacy and Policy.</string>
+    <string name="title_check_eligibility_or_create_new_account">Check eligibility or create new account</string>
+    <string name="label_acp_requires_proof">ACP requires proof of your identity to check if you are eligible for any of the <font color="#007AFF">assistance programs</font> approved by FCC. If you are already receiving government benefits, check your eligiblity status by clicking the button below. Otherwise create a new account and follow the required steps in order to verify your identitiy.*</string>
+    <string name="btn_check_eligibility">Check Eligibility</string>
+    <string name="btn_new_account">New Account</string>
+    <string name="label_check_eligbility_or_new_account_description">*All of your personal and identity information goes through National Verifier (NV), a body of FCC. No information is stored by us or third-party services.</string>
+    <string name="label_start_by_entering_your_zip_code">Start by entering your ZIP code</string>
+    <string name="label_after_entering_zip_code_you_will_be_required_to_enter">After entering ZIP code you will be required to enter your personal information in order to verify identitiy.</string>
+    <string name="label_your_zip_code">Your ZIP Code</string>
+    <string name="label_zip_code">ZIP Code</string>
 </resources>
