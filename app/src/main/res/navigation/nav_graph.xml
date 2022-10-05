@@ -32,4 +32,9 @@
         android:id="@+id/checkEligibilityOrCreateAccount"
         android:name="com.acpmobile.ui.fragments.account.CheckEligibilityOrCreateAccount"
         tools:layout="@layout/fragment_check_eligibility_or_create_account"/>
+
+    <fragment
+        android:id="@+id/eligibilityCheck"
+        android:name="com.acpmobile.ui.fragments.account.EligibilityCheck"
+        tools:layout="@layout/fragment_eligibility_check"/>
 </navigation>

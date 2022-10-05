@@ -12,5 +12,9 @@
     <string name="btn_check_eligibility">Check Eligibility</string>
     <string name="btn_new_account">New Account</string>
     <string name="label_check_eligbility_or_new_account_description">*All of your personal and identity information goes through National Verifier (NV), a body of FCC. No information is stored by us or third-party services.</string>
+    <string name="label_start_by_entering_your_zip_code">Start by entering your ZIP code</string>
+    <string name="label_after_entering_zip_code_you_will_be_required_to_enter">After entering ZIP code you will be required to enter your personal information in order to verify identitiy.</string>
+    <string name="label_your_zip_code">Your ZIP Code</string>
+    <string name="label_zip_code">ZIP Code</string>
 
 </resources>
