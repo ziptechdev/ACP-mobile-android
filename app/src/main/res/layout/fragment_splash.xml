@@ -58,6 +58,7 @@
         android:layout_marginBottom="80dp"
         android:text="@string/splash_button"
         app:icon="@drawable/ic_arrow_right"
+        app:iconTint="@color/white"
         app:iconGravity="textEnd"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
