@@ -63,6 +63,7 @@
         android:textStyle="bold"
         app:cornerRadius="10dp"
         app:icon="@drawable/ic_arrow_right"
+        app:iconTint="@color/white"
         app:iconGravity="textEnd"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
