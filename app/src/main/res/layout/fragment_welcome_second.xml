@@ -69,7 +69,6 @@
 
             <TextView
                 android:id="@+id/tvWelcomeSecondText"
-                style="@style/TextGray"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="25dp"
@@ -84,7 +83,6 @@
 
             <TextView
                 android:id="@+id/tvWelcomeSecondText2"
-                style="@style/TextGray"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="25dp"
