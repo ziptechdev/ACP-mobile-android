@@ -3,5 +3,14 @@
     <string name="splash_welcome">Welcome to ACP Mobile</string>
     <string name="splash_first_text">This is your first time exploring ACP Mobile app.\nPress ‘Get Started’ button to explore the benfits.</string>
     <string name="splash_button">Get Started </string>
+    <string name="label_read_our">Read our</string>
+    <string name="label_terms_of_use">\u0020Terms of Use</string>
+    <string name="label_and">\u0020and</string>
+    <string name="label_privacy_and_policy">\u0020Privacy and Policy.</string>
+    <string name="title_check_eligibility_or_create_new_account">Check eligibility or create new account</string>
+    <string name="label_acp_requires_proof">ACP requires proof of your identity to check if you are eligible for any of the <font color="#007AFF">assistance programs</font> approved by FCC. If you are already receiving government benefits, check your eligiblity status by clicking the button below. Otherwise create a new account and follow the required steps in order to verify your identitiy.*</string>
+    <string name="btn_check_eligibility">Check Eligibility</string>
+    <string name="btn_new_account">New Account</string>
+    <string name="label_check_eligbility_or_new_account_description">*All of your personal and identity information goes through National Verifier (NV), a body of FCC. No information is stored by us or third-party services.</string>
 
 </resources>
