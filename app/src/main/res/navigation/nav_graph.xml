@@ -28,4 +28,13 @@
         android:name="com.acpmobile.ui.fragments.WelcomeFragments.WelcomeFragmentSecond"
         tools:layout="@layout/fragment_welcome_second"/>
 
+    <fragment
+        android:id="@+id/checkEligibilityOrCreateAccount"
+        android:name="com.acpmobile.ui.fragments.Account.CheckEligibilityOrCreateAccount"
+        tools:layout="@layout/fragment_check_eligibility_or_create_account"/>
+
+    <fragment
+        android:id="@+id/eligibilityCheck"
+        android:name="com.acpmobile.ui.fragments.Account.EligibilityCheck"
+        tools:layout="@layout/fragment_eligibility_check"/>
 </navigation>
