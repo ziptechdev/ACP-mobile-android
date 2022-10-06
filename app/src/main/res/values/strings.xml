@@ -24,4 +24,15 @@
     <string name="label_after_entering_zip_code_you_will_be_required_to_enter">After entering ZIP code you will be required to enter your personal information in order to verify identitiy.</string>
     <string name="label_your_zip_code">Your ZIP Code</string>
     <string name="label_zip_code">ZIP Code</string>
+    <string name="label_your_full_legal_name">Your full legal name</string>
+    <string name="label_the_name_you_use_on_official_document">The name you use on official documents, like your Social Security Card or State ID. Not a nickname.</string>
+    <string name="label_first_name">First Name*</string>
+    <string name="label_middle_name">Middle Name (Optional)</string>
+    <string name="label_last_name">Last Name*</string>
+    <string name="label_Cannot_be_left_blank">*Cannot be left blank</string>
+    <string name="btn_next">Next</string>
+    <string name="label_name">Name</string>
+    <string name="label_date_birth">Date of Birth</string>
+    <string name="label_address">Address</string>
+
 </resources>
