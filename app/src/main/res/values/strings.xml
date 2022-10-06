@@ -24,4 +24,6 @@
     <string name="label_after_entering_zip_code_you_will_be_required_to_enter">After entering ZIP code you will be required to enter your personal information in order to verify identitiy.</string>
     <string name="label_your_zip_code">Your ZIP Code</string>
     <string name="label_zip_code">ZIP Code</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:id="@+id/tbMain"
     android:layout_height="?android:actionBarSize"
+    android:id="@+id/tbMain"
     android:background="@color/colorPrimary"
     app:contentInsetStart="0dp">
 
