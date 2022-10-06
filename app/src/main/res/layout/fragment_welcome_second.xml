@@ -25,7 +25,7 @@
             android:layout_width="0dp"
             android:layout_height="6dp"
             android:layout_weight="45"
-            android:background="@drawable/round_element"
+            android:background="@drawable/round_element_20"
             android:backgroundTint="@color/grayLight" />
 
         <Space
@@ -37,7 +37,7 @@
             android:layout_width="0dp"
             android:layout_height="6dp"
             android:layout_weight="45"
-            android:background="@drawable/round_element"
+            android:background="@drawable/round_element_20"
             android:backgroundTint="@color/colorPrimary" />
 
     </LinearLayout>
