@@ -6,6 +6,69 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.WelcomeFragments.WelcomeFragmentFirst">
 
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clEditTextContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_margin"
+        android:background="@drawable/edittext_shape"
+        app:layout_constraintEnd_toEndOf="@+id/tvSubtitle"
+        app:layout_constraintStart_toStartOf="@+id/tvSubtitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvYourZipCode"
+        >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/etGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.55" />
+
+        <EditText
+            android:id="@+id/etZipCodeFirst"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:inputType="number"
+            android:letterSpacing="1"
+            android:gravity="center"
+            android:maxLength="5"
+            android:padding="@dimen/normal_padding"
+            android:textCursorDrawable="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/etGuideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etZipCodeSecond"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center"
+            android:inputType="number"
+            android:letterSpacing="1"
+            android:maxLength="4"
+            android:padding="@dimen/normal_padding"
+            android:textCursorDrawable="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/etGuideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/horizontalView"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/grayBtn"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginBottom="@dimen/small_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/etGuideline"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <TextView
         android:id="@+id/tvTitle"
         style="@style/TitleTextBlue"
@@ -38,27 +101,6 @@
         android:text="@string/label_your_zip_code"
         app:layout_constraintStart_toStartOf="@+id/tvTitle"
         app:layout_constraintTop_toBottomOf="@+id/tvSubtitle" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etZipCode"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/label_zip_code"
-        app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
-        app:boxCornerRadiusBottomStart="@dimen/corner_radius"
-        app:boxCornerRadiusTopEnd="@dimen/corner_radius"
-        app:boxCornerRadiusTopStart="@dimen/corner_radius"
-        android:layout_marginTop="@dimen/small_margin"
-        app:layout_constraintEnd_toEndOf="@+id/tvSubtitle"
-        app:layout_constraintStart_toStartOf="@+id/tvSubtitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvYourZipCode">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnNext"
