@@ -1,4 +1,4 @@
-package com.acpmobile.ui.fragments.WelcomeFragments
+package com.acpmobile.ui.fragments.Account
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,15 +8,14 @@ import android.view.ViewGroup
 import com.acpmobile.R
 
 
-class WelcomeFragmentSecond : Fragment() {
-
+class EligibilityCheck : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_welcome_second, container, false)
+        return inflater.inflate(R.layout.fragment_eligibility_check, container, false)
     }
 
 }
