@@ -5,7 +5,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    tools:context=".ui.fragments.WelcomeFragments.WelcomeFragmentSecond">
+    tools:context=".ui.fragments.welcomeFragments.WelcomeFragmentSecond">
 
 
     <TextView

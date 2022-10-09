@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.acpmobile.ui.fragments.SplashFragment.SplashFragment"
+        android:name="com.acpmobile.ui.fragments.splashFragment.SplashFragment"
         tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_welcomeFirstFragment"
@@ -16,7 +16,7 @@
 
     <fragment
         android:id="@+id/welcomeFirstFragment"
-        android:name="com.acpmobile.ui.fragments.WelcomeFragments.WelcomeFragmentFirst"
+        android:name="com.acpmobile.ui.fragments.welcomeFragments.WelcomeFragmentFirst"
         tools:layout="@layout/fragment_welcome_first">
         <action
             android:id="@+id/action_welcomeFirstFragment_to_welcomeSecondFragment"
@@ -25,16 +25,33 @@
 
     <fragment
         android:id="@+id/welcomeSecondFragment"
-        android:name="com.acpmobile.ui.fragments.WelcomeFragments.WelcomeFragmentSecond"
-        tools:layout="@layout/fragment_welcome_second"/>
+        android:name="com.acpmobile.ui.fragments.welcomeFragments.WelcomeFragmentSecond"
+        tools:layout="@layout/fragment_welcome_second">
+        <action
+            android:id="@+id/action_welcomeSecondFragment_to_checkEligibilityOrCreateAccount"
+            app:destination="@id/checkEligibilityOrCreateAccount" />
+    </fragment>
 
     <fragment
         android:id="@+id/checkEligibilityOrCreateAccount"
-        android:name="com.acpmobile.ui.fragments.Account.CheckEligibilityOrCreateAccount"
-        tools:layout="@layout/fragment_check_eligibility_or_create_account"/>
+        android:name="com.acpmobile.ui.fragments.account.CheckEligibilityOrCreateAccount"
+        tools:layout="@layout/fragment_check_eligibility_or_create_account">
+        <action
+            android:id="@+id/action_checkEligibilityOrCreateAccount_to_eligibilityCheck"
+            app:destination="@id/eligibilityCheck" />
+    </fragment>
 
     <fragment
         android:id="@+id/eligibilityCheck"
-        android:name="com.acpmobile.ui.fragments.Account.EligibilityCheck"
-        tools:layout="@layout/fragment_eligibility_check"/>
+        android:name="com.acpmobile.ui.fragments.account.EligibilityCheck"
+        tools:layout="@layout/fragment_eligibility_check">
+        <action
+            android:id="@+id/action_eligibilityCheck_to_eligibilityName"
+            app:destination="@id/eligibilityName" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/eligibilityName"
+        android:name="com.acpmobile.ui.fragments.account.EligibilityNameFragment"
+        tools:layout="@layout/fragment_eligibility_name"/>
 </navigation>
