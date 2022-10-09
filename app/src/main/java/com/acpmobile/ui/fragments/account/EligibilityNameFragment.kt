@@ -30,6 +30,9 @@ class EligibilityNameFragment : Fragment() {
         val view = binding.root
         navigation.activity = activity as MainActivity
 
+        binding.btnNext.setOnClickListener{
+            navigation.openCheckEligibilityDate()
+        }
         return view
     }
 
