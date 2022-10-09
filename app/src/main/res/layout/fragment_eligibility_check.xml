@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.WelcomeFragments.WelcomeFragmentFirst">
+    tools:context=".ui.fragments.welcomeFragments.WelcomeFragmentFirst">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -107,7 +107,7 @@
         style="@style/ButtonGray"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/btn_check_eligibility"
+        android:text="@string/btn_next"
         android:textColor="@color/white"
         app:icon="@drawable/ic_arrow_right"
         app:iconGravity="textEnd"
