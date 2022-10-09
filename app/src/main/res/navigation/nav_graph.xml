@@ -53,5 +53,14 @@
     <fragment
         android:id="@+id/eligibilityName"
         android:name="com.acpmobile.ui.fragments.account.EligibilityNameFragment"
-        tools:layout="@layout/fragment_eligibility_name"/>
+        tools:layout="@layout/fragment_eligibility_name">
+        <action
+            android:id="@+id/action_eligibilityName_to_eligibilityDateFragment"
+            app:destination="@id/eligibilityDateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eligibilityDateFragment"
+        android:name="com.acpmobile.ui.fragments.Account.EligibilityDateFragment"
+        android:label="fragment_eligibility_address"
+        tools:layout="@layout/fragment_eligibility_address" />
 </navigation>

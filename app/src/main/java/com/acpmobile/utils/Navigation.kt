@@ -27,5 +27,8 @@ class Navigation @Inject constructor(){
     fun openCheckEligibilityName(){
         activity?.navController?.navigate(R.id.action_eligibilityCheck_to_eligibilityName)
     }
+    fun openCheckEligibilityDate(){
+        activity?.navController?.navigate(R.id.action_eligibilityName_to_eligibilityDateFragment)
+    }
 
 }
