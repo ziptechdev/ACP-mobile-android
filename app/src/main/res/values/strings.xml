@@ -40,8 +40,6 @@
     <string name="label_day">Day*</string>
     <string name="label_year">Year*</string>
     <string name="label_SSN_last_4_digits">SSN (Last 4 digits of your Social Security Number)*</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="btn_try_again">Try Again</string>
     <string name="title_identity_verification_failed">We could not verify your identity.</string>
     <string name="subtitle_identity_verification_failed">You either entered wrong information or there is no such data in National Veifier system.</string>
@@ -51,5 +49,14 @@
     <string name="identity_verified_description">Success! Your identity has been verified and you are eligible for ACP. You can continue by registering new ACP Mobile account.</string>
     <string name="btn_register">Register</string>
     <string name="welcome_john">Welcome, %1$s</string>
+    <string name="label_your_home_address">Your home address</string>
+    <string name="label_the_address_where_you_will">The address where you will get service.\nDo not use a P.O. Box.</string>
+    <string name="label_street_number_and_name">Street Number and Name*</string>
+    <string name="label_city">City*</string>
+    <string name="label_state">State*</string>
+    <string name="btn_verify">Verify</string>
+
+
+
 
 </resources>
