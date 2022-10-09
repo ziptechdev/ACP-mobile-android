@@ -34,6 +34,12 @@
     <string name="label_name">Name</string>
     <string name="label_date_birth">Date of Birth</string>
     <string name="label_address">Address</string>
+    <string name="label_your_date_of_birth">Your date of birth</string>
+    <string name="label_this_information_is_required_by_national">This information is required by National Verifier to verify your identity.</string>
+    <string name="label_month">Month*</string>
+    <string name="label_day">Day*</string>
+    <string name="label_year">Year*</string>
+    <string name="label_SSN_last_4_digits">SSN (Last 4 digits of your Social Security Number)*</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="btn_try_again">Try Again</string>
