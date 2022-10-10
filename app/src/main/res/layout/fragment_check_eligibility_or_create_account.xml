@@ -11,10 +11,10 @@
         style="@style/TitleTextBlue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/title_check_eligibility_or_create_new_account"
         android:layout_marginStart="@dimen/normal_margin"
-        android:layout_marginEnd="@dimen/normal_margin"
         android:layout_marginTop="@dimen/x_x_large_text_size"
+        android:layout_marginEnd="@dimen/normal_margin"
+        android:text="@string/title_check_eligibility_or_create_new_account"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,8 +23,8 @@
         android:id="@+id/tvSubtitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/label_acp_requires_proof"
         android:layout_marginTop="@dimen/x_x_large_text_size"
+        android:text="@string/label_acp_requires_proof"
         app:layout_constraintEnd_toEndOf="@+id/tvTitle"
         app:layout_constraintStart_toStartOf="@+id/tvTitle"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
@@ -42,9 +42,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnNewAccount"
+        style="@style/ButtonBlueStroke"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        style="@style/ButtonBlueStroke"
         android:layout_marginTop="@dimen/normal_margin"
         android:text="@string/btn_new_account"
         app:layout_constraintEnd_toEndOf="@+id/tvSubtitle"

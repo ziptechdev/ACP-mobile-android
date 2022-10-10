@@ -1,47 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/round_element_10"
     android:backgroundTint="@color/grayLight"
     android:orientation="horizontal"
-    android:padding="6dp"
-   >
+    android:padding="6dp">
+
     <TextView
         android:id="@+id/tvName"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="@string/label_name"
-        android:textColor="@color/grayBtn"
-        android:textAlignment="center"
+        android:paddingTop="@dimen/small_padding"
         android:paddingBottom="@dimen/small_padding"
-        android:paddingTop="@dimen/small_padding"/>
-
+        android:text="@string/label_name"
+        android:textAlignment="center"
+        android:textColor="@color/grayBtn" />
 
     <TextView
         android:id="@+id/tvDateBirth"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="@string/label_date_birth"
-        android:textColor="@color/grayBtn"
-        android:textAlignment="center"
+        android:paddingTop="@dimen/small_padding"
         android:paddingBottom="@dimen/small_padding"
-        android:paddingTop="@dimen/small_padding"/>
-
+        android:text="@string/label_date_birth"
+        android:textAlignment="center"
+        android:textColor="@color/grayBtn" />
 
     <TextView
         android:id="@+id/tvAddress"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:paddingTop="@dimen/small_padding"
+        android:paddingBottom="@dimen/small_padding"
         android:text="@string/label_address"
         android:textAlignment="center"
-        android:textColor="@color/grayBtn"
-        android:paddingBottom="@dimen/small_padding"
-        android:paddingTop="@dimen/small_padding"
-        />
+        android:textColor="@color/grayBtn" />
 
 </LinearLayout>
