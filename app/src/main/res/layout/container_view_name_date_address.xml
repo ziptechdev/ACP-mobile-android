@@ -14,12 +14,10 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="@string/label_name"
+        android:textColor="@color/grayBtn"
         android:textAlignment="center"
-        android:textColor="@color/black"
         android:paddingBottom="@dimen/small_padding"
-        android:paddingTop="@dimen/small_padding"
-        android:background="@drawable/round_element_6"
-        android:backgroundTint="@color/white"/>
+        android:paddingTop="@dimen/small_padding"/>
 
 
     <TextView
@@ -28,11 +26,10 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="@string/label_date_birth"
+        android:textColor="@color/grayBtn"
         android:textAlignment="center"
         android:paddingBottom="@dimen/small_padding"
-        android:paddingTop="@dimen/small_padding"
-        android:textColor="@color/grayBtn"
-        android:background="@drawable/round_element_6"/>
+        android:paddingTop="@dimen/small_padding"/>
 
 
     <TextView
@@ -45,7 +42,6 @@
         android:textColor="@color/grayBtn"
         android:paddingBottom="@dimen/small_padding"
         android:paddingTop="@dimen/small_padding"
-        android:background="@drawable/round_element_6"
         />
 
 </LinearLayout>

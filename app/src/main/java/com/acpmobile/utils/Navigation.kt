@@ -27,8 +27,24 @@ class Navigation @Inject constructor(){
     fun openCheckEligibilityName(){
         activity?.navController?.navigate(R.id.action_eligibilityCheck_to_eligibilityName)
     }
+
     fun openCheckEligibilityDate(){
         activity?.navController?.navigate(R.id.action_eligibilityName_to_eligibilityDateFragment)
     }
 
+    fun openCheckEligibilityAddress(){
+        activity?.navController?.navigate(R.id.action_eligibilityDateFragment_to_eligibilityAddressFragment)
+    }
+
+    fun openVerifyingFragment(){
+        activity?.navController?.navigate(R.id.action_eligibilityAddressFragment_to_eligibilityVerifyingFragment)
+    }
+
+    fun openVerifyingSuccessFragment(){
+        activity?.navController?.navigate(R.id.action_eligibilityVerifyingFragment_to_eligibilityVerifyingSuccessFragment)
+    }
+
+    fun back(){
+        activity?.navController?.popBackStack()
+    }
 }

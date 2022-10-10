@@ -58,9 +58,47 @@
             android:id="@+id/action_eligibilityName_to_eligibilityDateFragment"
             app:destination="@id/eligibilityDateFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/eligibilityDateFragment"
-        android:name="com.acpmobile.ui.fragments.Account.EligibilityDateFragment"
+        android:name="com.acpmobile.ui.fragments.account.EligibilityDateFragment"
+        android:label="fragment_eligibility_date"
+        tools:layout="@layout/fragment_eligibility_date" >
+        <action
+            android:id="@+id/action_eligibilityDateFragment_to_eligibilityAddressFragment"
+            app:destination="@id/eligibilityAddressFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/eligibilityAddressFragment"
+        android:name="com.acpmobile.ui.fragments.account.EligibilityAddressFragment"
         android:label="fragment_eligibility_address"
-        tools:layout="@layout/fragment_eligibility_address" />
+        tools:layout="@layout/fragment_eligibility_address" >
+        <action
+            android:id="@+id/action_eligibilityAddressFragment_to_eligibilityVerifyingFragment"
+            app:destination="@id/eligibilityVerifyingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/eligibilityVerifyingFragment"
+        android:name="com.acpmobile.ui.fragments.account.EligibilityVerifyingFragment"
+        android:label="fragment_eligibility_verifying"
+        tools:layout="@layout/fragment_eligibility_verifying" >
+        <action
+            android:id="@+id/action_eligibilityVerifyingFragment_to_eligibilityVerifyingSuccessFragment"
+            app:destination="@id/eligibilityVerifyingSuccessFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/eligibilityVerificationFailedFragment"
+        android:name="com.acpmobile.ui.fragments.account.EligibilityVerificationFailedFragment"
+        android:label="fragment_eligibility_verification_failed"
+        tools:layout="@layout/fragment_eligibility_verification_failed" />
+
+    <fragment
+        android:id="@+id/eligibilityVerifyingSuccessFragment"
+        android:name="com.acpmobile.ui.fragments.account.EligibilityVerifyingSuccessFragment"
+        android:label="fragment_eligibility_verifying_success"
+        tools:layout="@layout/fragment_eligibility_verifying_success" />
+
 </navigation>

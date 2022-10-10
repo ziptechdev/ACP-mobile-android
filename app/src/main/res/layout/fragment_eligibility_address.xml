@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.Account.EligibilityAddressFragment">
+    tools:context=".ui.fragments.account.EligibilityAddressFragment">
     <include
         android:id="@+id/containerNameDateAddress"
         layout="@layout/container_view_name_date_address"
