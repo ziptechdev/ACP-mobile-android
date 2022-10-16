@@ -50,16 +50,16 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnGetStarted"
+        style="@style/ButtonBlue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        style="@style/ButtonBlue"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="80dp"
         android:text="@string/splash_button"
         app:icon="@drawable/ic_arrow_right"
-        app:iconTint="@color/white"
         app:iconGravity="textEnd"
+        app:iconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
