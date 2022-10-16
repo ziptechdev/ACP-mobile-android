@@ -30,10 +30,7 @@ class WelcomeFragmentFirst : Fragment() {
         _binding = FragmentWelcomeFirstBinding.inflate(inflater, container, false)
         val view = binding.root
         navigation.activity = activity as MainActivity
-        val toolbar = activity?.findViewById<Toolbar>(R.id.toolbar)
-        if (toolbar != null) {
-            toolbar.visibility = View.VISIBLE
-        }
+        navigation.activity?.showToolbar(false)
 
         binding.btnWelcomeContinue.setOnClickListener{
             navigation.openWelcomeSecondFragment()

@@ -60,5 +60,7 @@
     <string name="label_email"> Email Address</string>
     <string name="label_password"> Password</string>
     <string name="label_confirm_password"> Confirm Password</string>
+    <string name="toolbar_back">Back</string>
+    <string name="toolbar_welcome">Welcome</string>
 
 </resources>

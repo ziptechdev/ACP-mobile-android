@@ -32,7 +32,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/ivLeft"
             app:layout_constraintStart_toEndOf="@+id/ivLeft"
             app:layout_constraintTop_toTopOf="@+id/ivLeft"
-            android:text="Back" />
+            android:text="@string/toolbar_back" />
 
         <TextView
             android:id="@+id/tvTitle"
@@ -45,7 +45,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/ivLeft"
-            android:text="Welcome" />
+            android:text="@string/toolbar_welcome" />
 
         <ImageView
             android:id="@+id/ivRight"

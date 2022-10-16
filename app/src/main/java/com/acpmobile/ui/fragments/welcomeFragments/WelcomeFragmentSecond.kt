@@ -28,6 +28,7 @@ class WelcomeFragmentSecond : Fragment() {
         _binding = FragmentWelcomeSecondBinding.inflate(inflater, container, false)
         val view = binding.root
         navigation.activity = activity as MainActivity
+        navigation.activity?.showToolbar(true)
 
         binding.btnWelcomeSecondAccept.setOnClickListener{
             navigation.openCheckEligibilityOrCreateAccount()
