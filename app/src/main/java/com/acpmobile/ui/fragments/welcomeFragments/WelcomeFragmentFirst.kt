@@ -1,11 +1,13 @@
 package com.acpmobile.ui.fragments.welcomeFragments
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import com.acpmobile.R
 import com.acpmobile.databinding.FragmentWelcomeFirstBinding
 import com.acpmobile.ui.activity.MainActivity
@@ -31,7 +33,10 @@ class WelcomeFragmentFirst : Fragment() {
         val view = binding.root
         navigation.activity = activity as MainActivity
         navigation.activity?.showToolbar(false)
-
+        context?.let {
+            requireActivity().window.statusBarColor =
+                ContextCompat.getColor(it, R.color.colorPrimary)
+        }
         binding.btnWelcomeContinue.setOnClickListener{
             navigation.openWelcomeSecondFragment()
         }
