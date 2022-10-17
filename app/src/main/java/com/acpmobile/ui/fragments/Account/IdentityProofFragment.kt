@@ -20,8 +20,7 @@ class IdentityProofFragment : Fragment() {
     ): View? {
         _binding = FragmentIdentityProofBinding.inflate(inflater, container, false)
         val view = binding.root
-        binding.containerCircleBar.tvCircle1.setBackgroundResource(R.drawable.circle_element_blue)
-
+        binding.containerCircleBar.ivCircle1.setBackgroundResource(R.drawable.circle_element_blue)
         return view
     }
 

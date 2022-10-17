@@ -5,26 +5,26 @@
     android:backgroundTint="@color/white"
     android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/tvCircle1"
+    <ImageView
+        android:id="@+id/ivCircle1"
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:layout_marginEnd="15dp"
         android:background="@drawable/circle_element_gray" />
-    <TextView
-        android:id="@+id/tvCircle2"
+    <ImageView
+        android:id="@+id/ivCircle2"
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:layout_marginEnd="15dp"
         android:background="@drawable/circle_element_gray" />
-    <TextView
-        android:id="@+id/tvCircle3"
+    <ImageView
+        android:id="@+id/ivCircle3"
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:layout_marginEnd="15dp"
         android:background="@drawable/circle_element_gray" />
-    <TextView
-        android:id="@+id/tvCircle4"
+    <ImageView
+        android:id="@+id/ivCircle4"
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:background="@drawable/circle_element_gray" />
