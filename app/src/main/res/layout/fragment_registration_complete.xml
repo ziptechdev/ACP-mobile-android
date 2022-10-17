@@ -71,7 +71,6 @@
         app:layout_constraintBottom_toTopOf="@id/guidelineBottom"
         app:layout_constraintEnd_toEndOf="@+id/tvTitle"
         app:layout_constraintStart_toStartOf="@+id/tvTitle"
-        tools:ignore="TouchTargetSizeCheck"
         android:focusable="true" />
 
     <ImageView
