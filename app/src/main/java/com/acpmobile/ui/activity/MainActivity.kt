@@ -26,15 +26,19 @@ class MainActivity : AppCompatActivity() {
         // Hide status bar
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val w = window
-        w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
-        w.getDecorView()
-            .setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION)
-
-        binding.toolbar.tbMain.visibility = View.GONE
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
+    }
+
+    fun showToolbar(showLight: Boolean) {
+        if (showLight) {
+            binding.toolbarLight.root.visibility = View.VISIBLE
+            binding.toolbar.root.visibility = View.INVISIBLE
+        } else {
+            binding.toolbarLight.root.visibility = View.INVISIBLE
+            binding.toolbar.root.visibility = View.VISIBLE
+        }
     }
 }
