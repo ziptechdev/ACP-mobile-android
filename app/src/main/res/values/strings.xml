@@ -80,4 +80,12 @@
     <string name="label_registration_complete">Registration complete!</string>
     <string name="label_you_done_your_part">You’ve done your part. Now it’s time for us to back-check your information and approve registration. This process may take 2-3 business days.</string>
     <string name="label_login"><u>Login</u></string>
+    <string name="label_enter_bank_account_information">Enter bank account information that we will use to transfer funds.</string>
+    <string name="label_bank_name">Bank Name</string>
+    <string name="label_bank_number">Bank Number</string>
+    <string name="label_account_holder_name">Account Holder Name</string>
+    <string name="label_account_number">Account Number</string>
+    <string name="label_expiration_date">Expiration Date</string>
+    <string name="btn_complete">Complete</string>
+    
 </resources>
