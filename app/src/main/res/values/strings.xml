@@ -78,6 +78,8 @@
     <string name="toolbar_back">Back</string>
     <string name="toolbar_welcome">Welcome</string>
     <string name="label_registration_complete">Registration complete!</string>
-    <string name="label_you_done_your_part">You’ve done your part. Now it’s time for us to back-check your information and approve registration. This process may take 2-3 business days.</string>
+    <string name="label_you_done_your_part">You’ve done your part. Now it’s time for us to back-check your information and approve registration.\nThis process may take 2-3 business days.</string>
     <string name="label_login"><u>Login</u></string>
+    <string name="label_verification_complete">Verfication complete!</string>
+    <string name="btn_done">Done</string>
 </resources>
