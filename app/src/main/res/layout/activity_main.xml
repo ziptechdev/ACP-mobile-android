@@ -11,7 +11,7 @@
         layout="@layout/main_toolbar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:visibility="invisible"
         app:layout_constraintTop_toTopOf="parent" />
 
     <include
@@ -19,7 +19,6 @@
         layout="@layout/main_toolbar_layout_light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.fragment.app.FragmentContainerView
