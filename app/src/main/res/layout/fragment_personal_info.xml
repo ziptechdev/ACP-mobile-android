@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragments.Account.PersonalInfoFragment">
+
     <include
         android:id="@+id/containerViewPersonalIdentityBankInfo"
         layout="@layout/container_view_personal_identity_bank_info"
@@ -25,8 +26,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/containerViewPersonalIdentityBankInfo"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/containerViewPersonalIdentityBankInfo">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -186,15 +186,15 @@
                 app:layout_constraintEnd_toEndOf="@+id/tvSubtitle"
                 app:layout_constraintStart_toStartOf="@+id/etFirstName"
                 app:layout_constraintTop_toBottomOf="@+id/tvPassword"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleDrawable="@drawable/ic_show_password_black"
-                >
+                app:passwordToggleDrawable="@drawable/ic_show_password_selector"
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"/>
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <TextView
                 android:id="@+id/tvConfirmPassword"
                 android:layout_width="wrap_content"
@@ -215,16 +215,16 @@
                 app:boxCornerRadiusBottomStart="@dimen/corner_radius"
                 app:boxCornerRadiusTopEnd="@dimen/corner_radius"
                 app:boxCornerRadiusTopStart="@dimen/corner_radius"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleDrawable="@drawable/ic_show_password_black"
                 app:layout_constraintEnd_toEndOf="@+id/tvSubtitle"
                 app:layout_constraintStart_toStartOf="@+id/etFirstName"
-                app:layout_constraintTop_toBottomOf="@+id/tvConfirmPassword">
+                app:layout_constraintTop_toBottomOf="@+id/tvConfirmPassword"
+                app:passwordToggleDrawable="@drawable/ic_show_password_selector"
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"/>
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -269,8 +269,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/guideline"
                 app:layout_constraintEnd_toEndOf="@+id/tvSubtitle"
                 app:layout_constraintStart_toStartOf="@+id/tvSubtitle"
-                app:layout_constraintTop_toBottomOf="@id/etSSN"
-                />
+                app:layout_constraintTop_toBottomOf="@id/etSSN" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline"

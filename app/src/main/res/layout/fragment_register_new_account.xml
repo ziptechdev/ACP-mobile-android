@@ -99,7 +99,7 @@
             app:layout_constraintStart_toStartOf="@+id/etEMail"
             app:layout_constraintTop_toBottomOf="@+id/tvPassword"
             app:passwordToggleEnabled="true"
-            app:passwordToggleDrawable="@drawable/ic_show_password_black">
+            app:passwordToggleDrawable="@drawable/ic_show_password_selector">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -131,7 +131,7 @@
             app:layout_constraintStart_toStartOf="@+id/etEMail"
             app:layout_constraintTop_toBottomOf="@+id/tvConfirmPassword"
             app:passwordToggleEnabled="true"
-            app:passwordToggleDrawable="@drawable/ic_show_password_black">
+            app:passwordToggleDrawable="@drawable/ic_show_password_selector">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
