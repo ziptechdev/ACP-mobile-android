@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import com.acpmobile.R
 import com.acpmobile.databinding.FragmentWelcomeSecondBinding
 import com.acpmobile.ui.activity.MainActivity
 import com.acpmobile.utils.Navigation
@@ -28,8 +30,13 @@ class WelcomeFragmentSecond : Fragment() {
         _binding = FragmentWelcomeSecondBinding.inflate(inflater, container, false)
         val view = binding.root
         navigation.activity = activity as MainActivity
+        navigation.activity?.showToolbar(true)
+        context?.let {
+            requireActivity().window.statusBarColor =
+                ContextCompat.getColor(it, R.color.white)
+        }
 
-        binding.btnWelcomeSecondAccept.setOnClickListener{
+        binding.btnWelcomeSecondAccept.setOnClickListener {
             navigation.openCheckEligibilityOrCreateAccount()
         }
 
