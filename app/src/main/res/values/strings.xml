@@ -64,5 +64,6 @@
     <string name="label_we_ve_sent_numerical_confirmation_code_to_your_email">We’ve sent numerical confirmation code to your email. Please enter it below to verify it’s you and continue to the next step.</string>
     <string name="label_didn_t_receive_your_code">Didn’t receive your code?</string>
     <string name="label_resend">Resend.</string>
+    <string name="btn_confirm">Confirm</string>
 
 </resources>

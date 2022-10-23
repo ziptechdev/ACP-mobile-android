@@ -1,184 +1,501 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-
-    <TextView
-        android:id="@+id/tvTitle"
-        style="@style/TitleTextBlue"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/normal_margin"
-        android:layout_marginTop="@dimen/x_x_large_text_size"
-        android:layout_marginEnd="@dimen/normal_margin"
-        android:gravity="center"
-        android:text="@string/label_confirm_your_email"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <android.inputmethodservice.KeyboardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
-    <TextView
-        android:id="@+id/tvSubtitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x_x_large_text_size"
-        android:text="@string/label_we_ve_sent_numerical_confirmation_code_to_your_email"
-        app:layout_constraintEnd_toEndOf="@+id/tvTitle"
-        app:layout_constraintStart_toStartOf="@+id/tvTitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etCodeFirst"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/normal_margin"
-        android:orientation="vertical"
-        app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
-        app:boxCornerRadiusBottomStart="@dimen/corner_radius"
-        app:boxCornerRadiusTopEnd="@dimen/corner_radius"
-        app:boxCornerRadiusTopStart="@dimen/corner_radius"
-        app:boxStrokeWidth="0.3dp"
-        app:layout_constraintStart_toStartOf="@+id/tvSubtitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvSubtitle">
-
-        <com.google.android.material.textfield.TextInputEditText
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:maxLength="1" />
+            android:layout_height="wrap_content">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardViewClose"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginEnd="@dimen/normal_margin"
+                android:backgroundTint="@color/grayLight"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etCodeSecond"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/normal_margin"
-        android:orientation="vertical"
-        app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
-        app:boxCornerRadiusBottomStart="@dimen/corner_radius"
-        app:boxCornerRadiusTopEnd="@dimen/corner_radius"
-        app:boxCornerRadiusTopStart="@dimen/corner_radius"
-        app:boxStrokeWidth="0.3dp"
-        app:layout_constraintEnd_toStartOf="@+id/etCodeThird"
-        app:layout_constraintStart_toEndOf="@+id/etCodeFirst"
-        app:layout_constraintTop_toBottomOf="@+id/tvSubtitle">
+                <ImageView
+                    android:id="@+id/ivClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_close"
+                    app:tint="@color/grayDark" />
+            </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:maxLength="1"
-            android:textAlignment="center" />
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/TitleTextBlue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/normal_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/normal_margin"
+                android:gravity="center"
+                android:text="@string/label_confirm_your_email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardViewClose" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:text="@string/label_we_ve_sent_numerical_confirmation_code_to_your_email"
+                app:layout_constraintEnd_toEndOf="@+id/tvTitle"
+                app:layout_constraintStart_toStartOf="@+id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etCodeThird"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/normal_margin"
-        android:orientation="vertical"
-        app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
-        app:boxCornerRadiusBottomStart="@dimen/corner_radius"
-        app:boxCornerRadiusTopEnd="@dimen/corner_radius"
-        app:boxCornerRadiusTopStart="@dimen/corner_radius"
 
-        app:boxStrokeWidth="0.3dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSubtitle">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etCodeFirst"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:orientation="vertical"
+                app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
+                app:boxCornerRadiusBottomStart="@dimen/corner_radius"
+                app:boxCornerRadiusTopEnd="@dimen/corner_radius"
+                app:boxCornerRadiusTopStart="@dimen/corner_radius"
+                app:boxStrokeWidth="0.3dp"
+                app:layout_constraintStart_toStartOf="@+id/tvSubtitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvSubtitle">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:maxLength="1"
-            android:textAlignment="center" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textAlignment="center" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etCodeFourth"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/normal_margin"
-        android:orientation="vertical"
-        app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
-        app:boxCornerRadiusBottomStart="@dimen/corner_radius"
-        app:boxCornerRadiusTopEnd="@dimen/corner_radius"
-        app:boxCornerRadiusTopStart="@dimen/corner_radius"
-        app:boxStrokeWidth="0.3dp"
-        app:layout_constraintEnd_toStartOf="@+id/etCodeFifth"
-        app:layout_constraintStart_toEndOf="@+id/etCodeThird"
-        app:layout_constraintTop_toBottomOf="@+id/tvSubtitle">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etCodeSecond"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:orientation="vertical"
+                app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
+                app:boxCornerRadiusBottomStart="@dimen/corner_radius"
+                app:boxCornerRadiusTopEnd="@dimen/corner_radius"
+                app:boxCornerRadiusTopStart="@dimen/corner_radius"
+                app:boxStrokeWidth="0.3dp"
+                app:layout_constraintEnd_toStartOf="@+id/etCodeThird"
+                app:layout_constraintStart_toEndOf="@+id/etCodeFirst"
+                app:layout_constraintTop_toBottomOf="@+id/tvSubtitle">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:maxLength="1"
-            android:textAlignment="center" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textAlignment="center" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etCodeFifth"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/normal_margin"
-        android:orientation="vertical"
-        app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
-        app:boxCornerRadiusBottomStart="@dimen/corner_radius"
-        app:boxCornerRadiusTopEnd="@dimen/corner_radius"
-        app:boxCornerRadiusTopStart="@dimen/corner_radius"
-        app:boxStrokeWidth="0.3dp"
-        app:layout_constraintEnd_toEndOf="@+id/tvSubtitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvSubtitle">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etCodeThird"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:orientation="vertical"
+                app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
+                app:boxCornerRadiusBottomStart="@dimen/corner_radius"
+                app:boxCornerRadiusTopEnd="@dimen/corner_radius"
+                app:boxCornerRadiusTopStart="@dimen/corner_radius"
+                app:boxStrokeWidth="0.3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSubtitle">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:maxLength="1" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textAlignment="center" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="@dimen/normal_margin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCodeSecond">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etCodeFourth"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:orientation="vertical"
+                app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
+                app:boxCornerRadiusBottomStart="@dimen/corner_radius"
+                app:boxCornerRadiusTopEnd="@dimen/corner_radius"
+                app:boxCornerRadiusTopStart="@dimen/corner_radius"
+                app:boxStrokeWidth="0.3dp"
+                app:layout_constraintEnd_toStartOf="@+id/etCodeFifth"
+                app:layout_constraintStart_toEndOf="@+id/etCodeThird"
+                app:layout_constraintTop_toBottomOf="@+id/tvSubtitle">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_didn_t_receive_your_code"
-            android:textColor="@color/black" />
-        <TextView
-            android:id="@+id/tvResend"
-            android:layout_marginStart="@dimen/small_margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_resend"
-            android:textColor="@color/colorPrimary" />
-    </LinearLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textAlignment="center" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etCodeFifth"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:orientation="vertical"
+                app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
+                app:boxCornerRadiusBottomStart="@dimen/corner_radius"
+                app:boxCornerRadiusTopEnd="@dimen/corner_radius"
+                app:boxCornerRadiusTopStart="@dimen/corner_radius"
+                app:boxStrokeWidth="0.3dp"
+                app:layout_constraintEnd_toEndOf="@+id/tvSubtitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvSubtitle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textAlignment="center" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etCodeSecond">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_didn_t_receive_your_code"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tvResend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:text="@string/label_resend"
+                    android:textColor="@color/colorPrimary" />
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="0dp"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/x_x_large_text_size" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/x_x_large_text_size" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+                <TextView
+                    android:id="@+id/tv3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/x_x_large_text_size" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="0dp"
+                app:layout_constraintStart_toStartOf="@+id/materialCardView1"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView1">
+
+                <TextView
+                    android:id="@+id/tv4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/x_x_large_text_size" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView2">
+
+                <TextView
+                    android:id="@+id/tv5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="5"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/x_x_large_text_size" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/materialCardView3"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView3">
+
+                <TextView
+                    android:id="@+id/tv6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/x_x_large_text_size" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="0dp"
+                app:layout_constraintStart_toStartOf="@+id/materialCardView4"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView4">
+
+                <TextView
+                    android:id="@+id/tv7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="7"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/x_x_large_text_size" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView8"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView5">
+
+                <TextView
+                    android:id="@+id/tv8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="8"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/x_x_large_text_size" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView9"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/materialCardView6"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView6">
+
+                <TextView
+                    android:id="@+id/tv9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="9"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/x_x_large_text_size" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView0"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView8">
+
+                <TextView
+                    android:id="@+id/tv0"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/x_x_large_text_size" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardViewRemove"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/materialCardView9"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView9">
+
+                <ImageView
+                    android:id="@+id/ivRemove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_remove" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConfirm"
+                style="@style/ButtonBlue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginBottom="@dimen/medium_margin"
+                android:text="@string/btn_confirm"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/tvTermsAndPrivacyPolicy"
+                app:layout_constraintEnd_toEndOf="@+id/etCodeFifth"
+                app:layout_constraintStart_toStartOf="@+id/etCodeFirst"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView0" />
+
+            <include
+                android:id="@+id/tvTermsAndPrivacyPolicy"
+                layout="@layout/include_terms_and_privacy_policy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x_large_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
