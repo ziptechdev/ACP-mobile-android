@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/welcomeFirstFragment">
+    app:startDestination="@id/fragment_my_wallet">
 
     <fragment
         android:id="@+id/welcomeFirstFragment"
@@ -92,4 +92,9 @@
         android:label="fragment_eligibility_verifying_success"
         tools:layout="@layout/fragment_eligibility_verifying_success" />
 
+    <fragment
+        android:id="@+id/fragment_my_wallet"
+        android:name="com.acpmobile.ui.fragments.user.mywallet.MyWalletFragment"
+        android:label="fragment_eligibility_verifying_success"
+        tools:layout="@layout/fragment_my_wallet" />
 </navigation>

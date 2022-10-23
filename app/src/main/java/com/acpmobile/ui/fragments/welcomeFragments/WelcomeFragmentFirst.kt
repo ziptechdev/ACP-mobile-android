@@ -30,17 +30,16 @@ class WelcomeFragmentFirst : Fragment() {
     ): View? {
 
         _binding = FragmentWelcomeFirstBinding.inflate(inflater, container, false)
-        val view = binding.root
         navigation.activity = activity as MainActivity
         navigation.activity?.showToolbar(false)
         context?.let {
             requireActivity().window.statusBarColor =
                 ContextCompat.getColor(it, R.color.colorPrimary)
         }
-        binding.btnWelcomeContinue.setOnClickListener{
+        binding.btnWelcomeContinue.setOnClickListener {
             navigation.openWelcomeSecondFragment()
         }
-        return view
+        return binding.root
 
     }
 
