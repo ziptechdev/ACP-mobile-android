@@ -14,6 +14,19 @@
         <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
 
+    <style name="Theme.ACPMobile.Regular" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/white</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:statusBarColor">@color/white</item>
+    </style>
+
     <style name="TitleTextBlue" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textSize">@dimen/x_x_large_text_size</item>
@@ -25,7 +38,11 @@
         <item name="android:textSize">@dimen/x_x_large_text_size</item>
         <item name="android:textStyle">bold</item>
     </style>
-
+    <style name="TitleTextBlack" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
     <style name="TextBlue" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
@@ -49,13 +66,13 @@
         <item name="android:padding">@dimen/medium_padding</item>
         <item name="android:textAllCaps">false</item>
     </style>
-
+    
     <style name="ButtonBlueStroke">
         <item name="android:backgroundTint">@color/white</item>
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="cornerRadius">@dimen/corner_radius</item>
         <item name="android:padding">@dimen/medium_padding</item>
-        <item name="strokeWidth">2dp</item>
+        <item name="strokeWidth">1.5dp</item>
         <item name="strokeColor">@color/colorPrimary</item>
         <item name="android:textAllCaps">false</item>
     </style>
@@ -65,7 +82,7 @@
         <item name="android:textColor">@color/white</item>
         <item name="cornerRadius">@dimen/corner_radius</item>
         <item name="android:padding">@dimen/medium_padding</item>
-        <item name="strokeWidth">2dp</item>
+        <item name="strokeWidth">1.5dp</item>
         <item name="strokeColor">@color/white</item>
         <item name="android:textAllCaps">false</item>
     </style>

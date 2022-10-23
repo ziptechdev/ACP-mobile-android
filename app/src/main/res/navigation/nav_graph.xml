@@ -3,16 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splashFragment">
-
-    <fragment
-        android:id="@+id/splashFragment"
-        android:name="com.acpmobile.ui.fragments.splashFragment.SplashFragment"
-        tools:layout="@layout/fragment_splash">
-        <action
-            android:id="@+id/action_splashFragment_to_welcomeFirstFragment"
-            app:destination="@id/welcomeFirstFragment" />
-    </fragment>
+    app:startDestination="@id/welcomeFirstFragment">
 
     <fragment
         android:id="@+id/welcomeFirstFragment"
@@ -63,7 +54,7 @@
         android:id="@+id/eligibilityDateFragment"
         android:name="com.acpmobile.ui.fragments.account.EligibilityDateFragment"
         android:label="fragment_eligibility_date"
-        tools:layout="@layout/fragment_eligibility_date" >
+        tools:layout="@layout/fragment_eligibility_date">
         <action
             android:id="@+id/action_eligibilityDateFragment_to_eligibilityAddressFragment"
             app:destination="@id/eligibilityAddressFragment" />
@@ -73,7 +64,7 @@
         android:id="@+id/eligibilityAddressFragment"
         android:name="com.acpmobile.ui.fragments.account.EligibilityAddressFragment"
         android:label="fragment_eligibility_address"
-        tools:layout="@layout/fragment_eligibility_address" >
+        tools:layout="@layout/fragment_eligibility_address">
         <action
             android:id="@+id/action_eligibilityAddressFragment_to_eligibilityVerifyingFragment"
             app:destination="@id/eligibilityVerifyingFragment" />
@@ -83,7 +74,7 @@
         android:id="@+id/eligibilityVerifyingFragment"
         android:name="com.acpmobile.ui.fragments.account.EligibilityVerifyingFragment"
         android:label="fragment_eligibility_verifying"
-        tools:layout="@layout/fragment_eligibility_verifying" >
+        tools:layout="@layout/fragment_eligibility_verifying">
         <action
             android:id="@+id/action_eligibilityVerifyingFragment_to_eligibilityVerifyingSuccessFragment"
             app:destination="@id/eligibilityVerifyingSuccessFragment" />
