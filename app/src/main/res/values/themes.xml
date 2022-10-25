@@ -40,6 +40,7 @@
         <item name="android:textSize">@dimen/x_x_large_text_size</item>
         <item name="android:textStyle">bold</item>
     </style>
+
     <style name="TitleTextBlack" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/normal_text_size</item>
@@ -56,6 +57,14 @@
     <style name="ButtonBlue">
         <item name="android:backgroundTint">@color/colorPrimary</item>
         <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">@dimen/corner_radius</item>
+        <item name="android:padding">@dimen/medium_padding</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="ButtonYellow">
+        <item name="android:backgroundTint">@color/yellow</item>
+        <item name="android:textColor">@color/black</item>
         <item name="cornerRadius">@dimen/corner_radius</item>
         <item name="android:padding">@dimen/medium_padding</item>
         <item name="android:textAllCaps">false</item>
@@ -116,4 +125,6 @@
         <item name="android:padding">15dp</item>
         <item name="android:textSize">16sp</item>
     </style>
+
+    <color name="orange">#FFCC00</color>
 </resources>

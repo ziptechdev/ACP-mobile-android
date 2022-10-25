@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.Account.BankInfoFragment">
+    tools:context=".ui.fragments.account.BankInfoFragment">
     <include
         android:id="@+id/containerViewPersonalIdentityBankInfo"
         layout="@layout/container_view_personal_identity_bank_info"

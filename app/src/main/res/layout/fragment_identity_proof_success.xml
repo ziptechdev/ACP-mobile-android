@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragments.Account.IdentityProofSuccessFragment">
+    tools:context=".ui.fragments.account.IdentityProofSuccessFragment">
 
     <include
         android:id="@+id/containerViewPersonalIdentityBankInfo"
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_success_green"
-        android:layout_marginTop="@dimen/x_extra_large_margin"
+        android:layout_marginTop="@dimen/large_margin"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +38,7 @@
         android:layout_marginEnd="@dimen/normal_margin"
         android:text="@string/label_verification_complete"
         android:textAlignment="center"
-        android:layout_marginTop="@dimen/x_extra_large_margin"
+        android:layout_marginTop="@dimen/large_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivSuccess" />
@@ -59,9 +59,9 @@
         style="@style/ButtonBlue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x_extra_large_margin"
         android:text="@string/btn_done"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/containerCircleBar"
         app:layout_constraintEnd_toEndOf="@+id/tvSubtitle"
         app:layout_constraintStart_toStartOf="@+id/tvSubtitle"
         app:layout_constraintTop_toBottomOf="@+id/tvSubtitle" />
