@@ -112,6 +112,18 @@
     <string name="label_year_only">Year</string>
     <string name="label_day_only">Day</string>
     <string name="label_your_VISA_debit_card_request">Your VISA debit card request has been successfully submitted. The card will be shipped to your address within 2-3 business days.</string>
+    <string name="label_scan_id_document">Scan ID document</string>
+    <string name="label_position_one_the_following_documents">Position one of the following documents in frame:</string>
+    <string name="label_resident_card">Resident Card</string>
+    <string name="label_driver_s_license">Driver\'s License</string>
+    <string name="label_id">ID</string>
+    <string name="label_passport">Passport</string>
+    <string name="btn_scan_front">Scan Front</string>
+    <string name="btn_scan_back">Scan Back</string>
+    <string name="label_take_a_selfie">Take a selfie</string>
+    <string name="label_take_a_selfie_description">Position your face in the frame and take a photo.</string>
+    <string name="btn_open_camera">Open Camera</string>
+    <string name="btn_upload_photo">Upload Photo</string>
     <string name="label_request_debit_card">Request a debit card</string>
     <string name="label_acp_mobile_visa_debit_card">ACP Mobile VISA debit card will be sent to the address registered to your account. Please review this information before submitting request.</string>
     <string name="btn_request_card">Request Card</string>
@@ -123,4 +135,12 @@
     <string name="label_eligible">You are now eligible for ACP!</string>
     <string name="label_eligible_benefits">The benefit provides a discount of up to $30 per month toward internet service for eligible households and up to $75 per month for households on qualifying Tribal lands.</string>
     <string name="btn_apply_for_acp">Apply for ACP</string>
+    <string name="label_veterans_pension_or_survivor">Veterans Pension or Survivor Benefits</string>
+    <string name="label_us_department_veterans">U.S. Department of Veteran Affairs</string>
+    <string name="label_a_va_survivor_pension_offers_monthly">A VA Survivors Pension offers monthly payments to qualified surviving spouses and unmarried dependent children of wartime Veterans who meet certain income and net worth limits set by Congress.</string>
+    <string name="label_you_are_eligible">You are eligible</string>
+    <string name="btn_apply_now">Apply Now</string>
+    <string name="btn_auto_renewal_after_expiration">Auto-renewal after expiration</string>
+    <string name="btn_visit_website">Visit Website</string>
+    <string name="label_your_information_is_already_stored">Your information is already stored in your profile. Simply press ‘Apply Now’ button to begin application process. It may take 2-3 business days for us to reach back.</string>
 </resources>
