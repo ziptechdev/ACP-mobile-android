@@ -112,5 +112,11 @@
     <string name="label_year_only">Year</string>
     <string name="label_day_only">Day</string>
     <string name="label_your_VISA_debit_card_request">Your VISA debit card request has been successfully submitted. The card will be shipped to your address within 2-3 business days.</string>
-
+    <string name="label_request_debit_card">Request a debit card</string>
+    <string name="label_acp_mobile_visa_debit_card">ACP Mobile VISA debit card will be sent to the address registered to your account. Please review this information before submitting request.</string>
+    <string name="btn_request_card">Request Card</string>
+    <string name="btn_edit">Edit</string>
+    <string name="label_total_balance_in_usd">Total balance in <font color="#007AFF">USD</font>:</string>
+    <string name="label_you_need_card">You need a card!</string>
+    <string name="label_in_order_to_spend_your">In order to spend your funds you have to request a debit card by clicking the button below.</string>
 </resources>
