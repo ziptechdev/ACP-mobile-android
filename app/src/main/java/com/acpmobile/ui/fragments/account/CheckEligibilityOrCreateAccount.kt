@@ -33,6 +33,11 @@ class CheckEligibilityOrCreateAccount : Fragment() {
         binding.btnCheckEligibility.setOnClickListener {
             navigation.openCheckEligibility()
         }
+
+        binding.btnNewAccount.setOnClickListener {
+            navigation.openCreateNewAccountFragment()
+        }
+
         return view
     }
 }

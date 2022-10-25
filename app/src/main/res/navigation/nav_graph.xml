@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_checkEligibilityOrCreateAccount_to_eligibilityCheck"
             app:destination="@id/eligibilityCheck" />
+        <action
+            android:id="@+id/action_checkEligibilityOrCreateAccount_to_createNewAccountFragment"
+            app:destination="@id/createNewAccountFragment" />
     </fragment>
 
     <fragment
@@ -92,4 +95,75 @@
         android:label="fragment_eligibility_verifying_success"
         tools:layout="@layout/fragment_eligibility_verifying_success" />
 
+    <fragment
+        android:id="@+id/createNewAccountFragment"
+        android:name="com.acpmobile.ui.fragments.account.CreateNewAccountFragment"
+        android:label="fragment_create_new_account"
+        tools:layout="@layout/fragment_create_new_account" >
+        <action
+            android:id="@+id/action_createNewAccountFragment_to_personalInfoFragment"
+            app:destination="@id/personalInfoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/personalInfoFragment"
+        android:name="com.acpmobile.ui.fragments.account.PersonalInfoFragment"
+        android:label="fragment_personal_info"
+        tools:layout="@layout/fragment_personal_info" />
+
+    <fragment
+        android:id="@+id/identityProofFragment"
+        android:name="com.acpmobile.ui.fragments.account.IdentityProofFragment"
+        android:label="fragment_identity_proof"
+        tools:layout="@layout/fragment_identity_proof" >
+        <action
+            android:id="@+id/action_identityProofFragment_to_scanIdFragment"
+            app:destination="@id/scanIdFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/scanIdFragment"
+        android:name="com.acpmobile.ui.fragments.account.RegistrationScanIDFragment"
+        android:label="fragment_scan_id"
+        tools:layout="@layout/fragment_scan_id" >
+        <action
+            android:id="@+id/action_scanIdFragment_to_TakeSelfieFragment"
+            app:destination="@id/TakeSelfieFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/TakeSelfieFragment"
+        android:name="com.acpmobile.ui.fragments.account.RegistrationTakeSelfieFragment"
+        android:label="fragment_take_selfie"
+        tools:layout="@layout/fragment_take_selfie" >
+        <action
+            android:id="@+id/action_TakeSelfieFragment_to_fragmentIdentityProofSuccess"
+            app:destination="@id/fragmentIdentityProofSuccess" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentIdentityProofSuccess"
+        android:name="com.acpmobile.ui.fragments.account.IdentityProofSuccessFragment"
+        android:label="fragment_identity_proof_success"
+        tools:layout="@layout/fragment_identity_proof_success" >
+        <action
+            android:id="@+id/action_fragmentIdentityProofSuccess_to_fragmentIBankInfo"
+            app:destination="@id/fragmentIBankInfo" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentIBankInfo"
+        android:name="com.acpmobile.ui.fragments.account.BankInfoFragment"
+        android:label="fragment_bank_info"
+        tools:layout="@layout/fragment_bank_info" >
+        <action
+            android:id="@+id/action_fragmentIBankInfo_to_fragmentRegistrationComplete"
+            app:destination="@id/fragmentRegistrationComplete" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentRegistrationComplete"
+        android:name="com.acpmobile.ui.fragments.account.RegistrationCompleteFragment"
+        android:label="fragment_registration_complete"
+        tools:layout="@layout/fragment_registration_complete" />
 </navigation>
