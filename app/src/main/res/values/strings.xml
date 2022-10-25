@@ -124,5 +124,11 @@
     <string name="label_take_a_selfie_description">Position your face in the frame and take a photo.</string>
     <string name="btn_open_camera">Open Camera</string>
     <string name="btn_upload_photo">Upload Photo</string>
-
+    <string name="label_request_debit_card">Request a debit card</string>
+    <string name="label_acp_mobile_visa_debit_card">ACP Mobile VISA debit card will be sent to the address registered to your account. Please review this information before submitting request.</string>
+    <string name="btn_request_card">Request Card</string>
+    <string name="btn_edit">Edit</string>
+    <string name="label_total_balance_in_usd">Total balance in <font color="#007AFF">USD</font>:</string>
+    <string name="label_you_need_card">You need a card!</string>
+    <string name="label_in_order_to_spend_your">In order to spend your funds you have to request a debit card by clicking the button below.</string>
 </resources>
