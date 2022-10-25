@@ -31,6 +31,16 @@ class PersonalInfoFragment : Fragment() {
         val view = binding.root
         navigation.activity = activity as MainActivity
 
+        val mActivity = activity as MainActivity
+        mActivity.setToolbarTitle(getString(R.string.label_registration))
+
+        mActivity.hideActionsToolbar(
+            isBackVisible = true,
+            isLeftTitleVisible = true,
+            isTitleVisible = true,
+            isCloseVisible = true
+        )
+
         binding.containerViewPersonalIdentityBankInfo.tvPersonalInfo.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
         binding.containerViewPersonalIdentityBankInfo.tvPersonalInfo.setBackgroundResource(R.drawable.round_element_6)
 

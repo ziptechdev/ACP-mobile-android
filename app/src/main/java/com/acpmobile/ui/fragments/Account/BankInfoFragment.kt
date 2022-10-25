@@ -29,9 +29,29 @@ class BankInfoFragment : Fragment() {
 
         _binding = FragmentBankInfoBinding.inflate(inflater, container, false)
         val view = binding.root
-        navigation.activity = activity as MainActivity
 
-        binding.containerViewPersonalIdentityBankInfo.tvBankInfo.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+        val mActivity = activity as MainActivity
+        mActivity.showToolbar(true)
+        mActivity.hideActionsToolbar(
+            isBackVisible = true,
+            isLeftTitleVisible = true,
+            isTitleVisible = true,
+            isCloseVisible = true
+        )
+
+        context?.let {
+            requireActivity().window.statusBarColor =
+                ContextCompat.getColor(it, R.color.white)
+        }
+
+        navigation.activity = mActivity
+
+        binding.containerViewPersonalIdentityBankInfo.tvBankInfo.setTextColor(
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.black
+            )
+        )
         binding.containerViewPersonalIdentityBankInfo.tvBankInfo.setBackgroundResource(R.drawable.round_element_6)
 
         binding.btnComplete.setOnClickListener {

@@ -147,5 +147,6 @@
 
     <string name="label_eligibility_check">Eligibility Check</string>
     <string name="label_register">Register</string>
+    <string name="label_registration">Registration</string>
 
 </resources>
