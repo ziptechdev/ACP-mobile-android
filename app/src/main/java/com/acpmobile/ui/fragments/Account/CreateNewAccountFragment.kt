@@ -27,7 +27,14 @@ class CreateNewAccountFragment : Fragment() {
         _binding =
             FragmentCreateNewAccountBinding.inflate(inflater, container, false)
         val view = binding.root
-        navigation.activity = activity as MainActivity
+        val mActivity = activity as MainActivity
+        navigation.activity = mActivity
+        mActivity.hideActionsToolbar(
+            isBackVisible = true,
+            isLeftTitleVisible = true,
+            isTitleVisible = false,
+            isCloseVisible = false
+        )
 
         binding.btnRegister.setOnClickListener {
             navigation.openPersonalInfoFragment()

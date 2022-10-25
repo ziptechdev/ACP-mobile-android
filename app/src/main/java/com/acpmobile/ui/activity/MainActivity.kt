@@ -55,4 +55,25 @@ class MainActivity : AppCompatActivity() {
         binding.toolbarLight.root.visibility = View.INVISIBLE
         binding.toolbar.root.visibility = View.INVISIBLE
     }
+
+    fun hideActionsToolbar(
+        isBackVisible: Boolean,
+        isLeftTitleVisible: Boolean,
+        isTitleVisible: Boolean,
+        isCloseVisible: Boolean
+    ) {
+        binding.toolbarLight.ivLeft.visibility = if (isBackVisible) View.VISIBLE else View.INVISIBLE
+        binding.toolbarLight.tvLeftTitle.visibility =
+            if (isLeftTitleVisible) View.VISIBLE else View.INVISIBLE
+        binding.toolbarLight.tvTitle.visibility =
+            if (isTitleVisible) View.VISIBLE else View.INVISIBLE
+        binding.toolbarLight.ivRight.visibility =
+            if (isCloseVisible) View.VISIBLE else View.INVISIBLE
+
+        binding.toolbar.ivLeft.visibility = if (isBackVisible) View.VISIBLE else View.INVISIBLE
+        binding.toolbar.tvLeftTitle.visibility =
+            if (isLeftTitleVisible) View.VISIBLE else View.INVISIBLE
+        binding.toolbar.tvTitle.visibility = if (isTitleVisible) View.VISIBLE else View.INVISIBLE
+        binding.toolbar.ivRight.visibility = if (isCloseVisible) View.VISIBLE else View.INVISIBLE
+    }
 }
