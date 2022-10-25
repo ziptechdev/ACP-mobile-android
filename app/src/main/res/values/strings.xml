@@ -112,5 +112,17 @@
     <string name="label_year_only">Year</string>
     <string name="label_day_only">Day</string>
     <string name="label_your_VISA_debit_card_request">Your VISA debit card request has been successfully submitted. The card will be shipped to your address within 2-3 business days.</string>
+    <string name="label_scan_id_document">Scan ID document</string>
+    <string name="label_position_one_the_following_documents">Position one of the following documents in frame:</string>
+    <string name="label_resident_card">Resident Card</string>
+    <string name="label_driver_s_license">Driver\'s License</string>
+    <string name="label_id">ID</string>
+    <string name="label_passport">Passport</string>
+    <string name="btn_scan_front">Scan Front</string>
+    <string name="btn_scan_back">Scan Back</string>
+    <string name="label_take_a_selfie">Take a selfie</string>
+    <string name="label_take_a_selfie_description">Position your face in the frame and take a photo.</string>
+    <string name="btn_open_camera">Open Camera</string>
+    <string name="btn_upload_photo">Upload Photo</string>
 
 </resources>
