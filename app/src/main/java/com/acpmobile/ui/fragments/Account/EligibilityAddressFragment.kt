@@ -30,7 +30,10 @@ class EligibilityAddressFragment : Fragment() {
         _binding =
             FragmentEligibilityAddressBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        val mActivity = activity as MainActivity
         navigation.activity = activity as MainActivity
+        mActivity.showToolbar(true)
 
         binding.containerNameDateAddress.tvAddress.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
         binding.containerNameDateAddress.tvAddress.setBackgroundResource(R.drawable.round_element_6)
