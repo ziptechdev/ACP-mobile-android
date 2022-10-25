@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.acpmobile.R
 import com.acpmobile.databinding.FragmentCheckEligibilityOrCreateAccountBinding
 import com.acpmobile.ui.activity.MainActivity
 import com.acpmobile.utils.Navigation
@@ -28,11 +29,16 @@ class CheckEligibilityOrCreateAccount : Fragment() {
         _binding =
             FragmentCheckEligibilityOrCreateAccountBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        val mActivity = activity as MainActivity
+        mActivity.setToolbarTitle(getString(R.string.label_eligibility_check))
         navigation.activity = activity as MainActivity
 
         binding.btnCheckEligibility.setOnClickListener {
             navigation.openCheckEligibility()
         }
+
+
         return view
     }
 }
