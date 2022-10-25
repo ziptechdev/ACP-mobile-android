@@ -32,8 +32,10 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
 
         binding.toolbar.ivLeft.setOnClickListener { onBackPressed() }
-
         binding.toolbarLight.ivLeft.setOnClickListener { onBackPressed() }
+
+        binding.toolbar.ivRight.setOnClickListener { finish() }
+        binding.toolbarLight.ivRight.setOnClickListener { finish() }
     }
 
     fun showToolbar(showLight: Boolean) {
