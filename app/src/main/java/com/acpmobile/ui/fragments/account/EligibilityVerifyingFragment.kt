@@ -28,7 +28,9 @@ class EligibilityVerifyingFragment : Fragment() {
         _binding =
             FragmentEligibilityVerifyingBinding.inflate(inflater, container, false)
         val view = binding.root
-        navigation.activity = activity as MainActivity
+        val mActivity =  activity as MainActivity
+        navigation.activity = mActivity
+        mActivity.hideToolbar()
 
         binding.btnCancel.setOnClickListener {
             navigation.back()

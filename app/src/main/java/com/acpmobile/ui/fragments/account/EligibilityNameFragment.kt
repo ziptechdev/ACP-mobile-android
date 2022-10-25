@@ -31,6 +31,8 @@ class EligibilityNameFragment : Fragment() {
             FragmentEligibilityNameBinding.inflate(inflater, container, false)
         val view = binding.root
         navigation.activity = activity as MainActivity
+        val mActivity = activity as MainActivity
+        mActivity.setToolbarTitle(getString(R.string.label_eligibility_check))
 
         binding.containerNameDateAddress.tvName.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
         binding.containerNameDateAddress.tvName.setBackgroundResource(R.drawable.round_element_6)

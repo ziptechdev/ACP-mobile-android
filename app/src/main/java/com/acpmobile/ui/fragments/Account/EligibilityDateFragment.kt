@@ -33,8 +33,8 @@ class EligibilityDateFragment : Fragment() {
             FragmentEligibilityDateBinding.inflate(inflater, container, false)
         val view = binding.root
         navigation.activity = activity as MainActivity
-
-
+        val mActivity = activity as MainActivity
+        mActivity.setToolbarTitle(getString(R.string.label_eligibility_check))
 
         binding.containerNameDateAddress.tvDateBirth.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
         binding.containerNameDateAddress.tvDateBirth.setBackgroundResource(R.drawable.round_element_6)

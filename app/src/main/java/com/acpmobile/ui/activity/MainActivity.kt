@@ -30,6 +30,10 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
+
+        binding.toolbar.ivLeft.setOnClickListener { onBackPressed() }
+
+        binding.toolbarLight.ivLeft.setOnClickListener { onBackPressed() }
     }
 
     fun showToolbar(showLight: Boolean) {
@@ -40,5 +44,15 @@ class MainActivity : AppCompatActivity() {
             binding.toolbarLight.root.visibility = View.INVISIBLE
             binding.toolbar.root.visibility = View.VISIBLE
         }
+    }
+
+    fun setToolbarTitle(title: String) {
+        binding.toolbar.tvTitle.text = title
+        binding.toolbarLight.tvTitle.text = title
+    }
+
+    fun hideToolbar() {
+        binding.toolbarLight.root.visibility = View.INVISIBLE
+        binding.toolbar.root.visibility = View.INVISIBLE
     }
 }
