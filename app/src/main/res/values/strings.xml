@@ -119,4 +119,7 @@
     <string name="label_total_balance_in_usd">Total balance in <font color="#007AFF">USD</font>:</string>
     <string name="label_you_need_card">You need a card!</string>
     <string name="label_in_order_to_spend_your">In order to spend your funds you have to request a debit card by clicking the button below.</string>
+    <string name="label_home">Home</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
