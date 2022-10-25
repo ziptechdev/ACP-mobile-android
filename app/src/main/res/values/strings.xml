@@ -131,4 +131,13 @@
     <string name="label_total_balance_in_usd">Total balance in <font color="#007AFF">USD</font>:</string>
     <string name="label_you_need_card">You need a card!</string>
     <string name="label_in_order_to_spend_your">In order to spend your funds you have to request a debit card by clicking the button below.</string>
+    <string name="label_veterans_pension_or_survivor">Veterans Pension or Survivor Benefits</string>
+    <string name="label_us_department_veterans">U.S. Department of Veteran Affairs</string>
+    <string name="label_a_va_survivor_pension_offers_monthly">A VA Survivors Pension offers monthly payments to qualified surviving spouses and unmarried dependent children of wartime Veterans who meet certain income and net worth limits set by Congress.</string>
+    <string name="label_you_are_eligible">You are eligible</string>
+    <string name="btn_apply_now">Apply Now</string>
+    <string name="btn_auto_renewal_after_expiration">Auto-renewal after expiration</string>
+    <string name="btn_visit_website">Visit Website</string>
+    <string name="label_your_information_is_already_stored">Your information is already stored in your profile. Simply press ‘Apply Now’ button to begin application process. It may take 2-3 business days for us to reach back.</string>
+
 </resources>
