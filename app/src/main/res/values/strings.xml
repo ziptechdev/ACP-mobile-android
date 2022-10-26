@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">ACPMobile</string>
     <string name="splash_welcome">Welcome to ACP Mobile</string>
-    <string name="splash_first_text">This is your first time exploring ACP Mobile app.\nPress ‘Get Started’ button to explore the benfits.</string>
+    <string name="splash_first_text">This is your first time exploring ACP Mobile app.\nPress ‘Get Started’ button to explore the benefits.</string>
     <string name="splash_button">Get Started </string>
     <string name="welcome_first_title">Affordable Conectivity Program</string>
-    <string name="welcome_first_text">The Affordable Connectivity Program is an FCC benefit program that helps ensure that households can afford the broadband they need for work, school, healthcare and more.\n\nThe benefit provides a discount of up to $30 per month toward internet service for eligible households and up to $75 per month for households on qualifying Tribal lands. Eligible households can also receive a one-time discount of up to $100 to purchase a laptop, desktop computer, or tablet from participating providers if they contribute more than $10 and less than $50 toward the purchase price.\n\nThe Affordable Connectivity Program is limited to one monthly service discount and one device discount per household.\n\nBefore continuing you are required to review our Terms of Use and Privacy Policy.</string>
+    <string name="welcome_first_text">The Affordable Connectivity Program is an FCC benefit program that helps ensure that households can afford the broadband they need for work, school, healthcare and more.\n\nThe benefit provides a discount of up to $30 per month toward internet service for eligible households and up to $75 per month for households on qualifying Tribal lands. Eligible households can also receive a one-time discount of up to $100 to purchase a laptop, desktop computer, or tablet from participating providers if they contribute more than $10 and less than $50 toward the purchase price.\n\nThe Affordable Connectivity Program is limited to one monthly service discount and one device discount per household.\n\nBefore continuing you are required to review our <u>Terms of Use</u> and <u>Privacy Policy</u>.</string>
     <string name="welcome_first_button">Continue</string>
     <string name="welcome_second_title_first"> Terms of Use</string>
     <string name="welcome_second_text_first">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</string>
@@ -16,7 +16,7 @@
     <string name="label_and">\u0020and</string>
     <string name="label_privacy_and_policy">\u0020Privacy and Policy.</string>
     <string name="title_check_eligibility_or_create_new_account">Check eligibility or create new account</string>
-    <string name="label_acp_requires_proof">ACP requires proof of your identity to check if you are eligible for any of the <font color="#007AFF">assistance programs</font> approved by FCC. If you are already receiving government benefits, check your eligiblity status by clicking the button below. Otherwise create a new account and follow the required steps in order to verify your identitiy.*</string>
+    <string name="label_acp_requires_proof">ACP requires proof of your identity to check if you are eligible for any of the <font color="#007AFF">assistance programs</font> approved by FCC. If you are already receiving government benefits, check your eligibility status by clicking the button below. Otherwise, create a new account and follow the required steps to verify your identity.*</string>
     <string name="btn_check_eligibility">Check Eligibility</string>
     <string name="btn_new_account">New Account</string>
     <string name="label_check_eligbility_or_new_account_description">*All of your personal and identity information goes through National Verifier (NV), a body of FCC. No information is stored by us or third-party services.</string>
@@ -27,7 +27,7 @@
     <string name="label_your_full_legal_name">Your full legal name</string>
     <string name="label_the_name_you_use_on_official_document">The name you use on official documents, like your Social Security Card or State ID. Not a nickname.</string>
     <string name="label_first_name">First Name*</string>
-    <string name="label_middle_name">Middle Name (Optional)</string>
+    <string name="label_middle_name">Middle Name <font color="#8E8E93">(Optional)</font></string>
     <string name="label_last_name">Last Name*</string>
     <string name="label_Cannot_be_left_blank">*Cannot be left blank</string>
     <string name="btn_next">Next</string>
@@ -46,7 +46,7 @@
     <string name="verifying">Verifying...</string>
     <string name="checking_informations_description">We are back-checking your information through National Verifier. It may take a few minutes.</string>
     <string name="btn_cancel">Cancel</string>
-    <string name="identity_verified_description">Success! Your identity has been verified and you are eligible for ACP. You can continue by registering new ACP Mobile account.</string>
+    <string name="identity_verified_description">Success! Your identity has been verified and you are eligible for ACP. You can continue by registering a new ACP Mobile account.</string>
     <string name="btn_register">Register</string>
     <string name="welcome_john">Welcome, %1$s</string>
     <string name="label_your_home_address">Your home address</string>
@@ -56,7 +56,7 @@
     <string name="label_state">State*</string>
     <string name="btn_verify">Verify</string>
     <string name="label_register_new_account">Register new account</string>
-    <string name="label_register_new_account_by_entering_your">Hi John! Register new account by entering your email address and password below.</string>
+    <string name="label_register_new_account_by_entering_your">Hi John! Register a new account by entering your email address and password below.</string>
     <string name="label_email"> Email Address</string>
     <string name="label_password"> Password</string>
     <string name="label_confirm_password"> Confirm Password</string>
@@ -69,7 +69,7 @@
     <string name="label_identity_proof">Identity Proof</string>
     <string name="label_bank_info">Bank info</string>
     <string name="label_create_new_account">Create new account</string>
-    <string name="label_follow_the_registration_and_verification_process">Follow the registration and verification process to see if youre eligible for ACP services.\n\nAfter successfully completing the process, you will be awarded $10 to your digital wallet to spend with one of our <font color="#007AFF">partners.</font></string>
+    <string name="label_follow_the_registration_and_verification_process">Follow the registration and verification process to see if you\'re eligible for ACP services.\n\nAfter completing the process, you will be awarded $10 to your digital wallet to spend with one of our <font color="#007AFF">partners.</font></string>
     <string name="btn_get_started">Get Started</string>
     <string name="label_enter_personal_information_below">Enter personal information below that will be associated with your account.</string>
     <string name="label_first_name_only">First Name</string>
@@ -78,7 +78,7 @@
     <string name="label_phone_number">Phone Number</string>
     <string name="label_SSN">SSN (Social Security Number)</string>
     <string name="label_KYC_verification">KYC verification</string>
-    <string name="label_you_are_required_to_go">You are required to go through <font color="#007AFF">KYC (Know Your Customer)</font> process in order to continue.\nKYC requires a selfie/clear shot of your face and a photo of the document that confirms your identity (ID, passport, resident card, driver’s license).</string>
+    <string name="label_you_are_required_to_go">You are required to go through <font color="#007AFF">KYC (Know Your Customer)</font> process to continue.\nKYC requires a selfie/clear shot of your face and a photo of the document that confirms your identity (ID, passport, resident card, driver’s license).</string>
     <string name="btn_start_verification">Start Verification</string>
     <string name="toolbar_back">Back</string>
     <string name="toolbar_welcome">Welcome</string>
@@ -125,13 +125,12 @@
     <string name="btn_open_camera">Open Camera</string>
     <string name="btn_upload_photo">Upload Photo</string>
     <string name="label_request_debit_card">Request a debit card</string>
-    <string name="label_acp_mobile_visa_debit_card">ACP Mobile VISA debit card will be sent to the address registered to your account. Please review this information before submitting request.</string>
+    <string name="label_acp_mobile_visa_debit_card">ACP Mobile VISA debit card will be sent to the address registered to your account. Please review this information before submitting the request.</string>
     <string name="btn_request_card">Request Card</string>
     <string name="btn_edit">Edit</string>
     <string name="label_total_balance_in_usd">Total balance in <font color="#007AFF">USD</font>:</string>
     <string name="label_you_need_card">You need a card!</string>
-    <string name="label_in_order_to_spend_your">In order to spend your funds you have to request a debit card by clicking the button below.</string>
-
+    <string name="label_in_order_to_spend_your">To spend your funds you have to request a debit card by clicking the button below.</string>
     <string name="label_home">Home</string>
     <string name="label_eligible">You are now eligible for ACP!</string>
     <string name="label_eligible_benefits">The benefit provides a discount of up to $30 per month toward internet service for eligible households and up to $75 per month for households on qualifying Tribal lands.</string>
@@ -143,7 +142,7 @@
     <string name="btn_apply_now">Apply Now</string>
     <string name="btn_auto_renewal_after_expiration">Auto-renewal after expiration</string>
     <string name="btn_visit_website">Visit Website</string>
-    <string name="label_your_information_is_already_stored">Your information is already stored in your profile. Simply press ‘Apply Now’ button to begin application process. It may take 2-3 business days for us to reach back.</string>
+    <string name="label_your_information_is_already_stored">Your information is already stored in your profile. Simply press the ‘Apply Now’ button to begin the application process. It may take 2-3 business days for us to reach back.</string>
 
     <string name="label_eligibility_check">Eligibility Check</string>
     <string name="label_register">Register</string>

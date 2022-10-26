@@ -43,6 +43,8 @@
         android:id="@+id/tvSubtitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:lineSpacingExtra="10sp"
+        android:lineSpacingMultiplier="0.8"
         android:layout_marginTop="@dimen/medium_margin"
         android:text="@string/label_your_ACP_application"
         android:textAlignment="center"
