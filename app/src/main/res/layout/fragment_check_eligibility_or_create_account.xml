@@ -39,10 +39,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/btn_check_eligibility"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/x_extra_large_margin"
         app:layout_constraintEnd_toEndOf="@+id/tvSubtitle"
         app:layout_constraintStart_toStartOf="@+id/tvSubtitle"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tvSubtitle" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnNewAccount"
