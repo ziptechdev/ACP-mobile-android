@@ -42,7 +42,7 @@
     <string name="label_SSN_last_4_digits">SSN (Last 4 digits of your Social Security Number)*</string>
     <string name="btn_try_again">Try Again</string>
     <string name="title_identity_verification_failed">We could not verify your identity.</string>
-    <string name="subtitle_identity_verification_failed">You either entered wrong information or there is no such data in National Veifier system.</string>
+    <string name="subtitle_identity_verification_failed">You either entered wrong information or there is no such data in  <font color="#007AFF">National Verifier</font> system.</string>
     <string name="verifying">Verifying...</string>
     <string name="checking_informations_description">We are back-checking your information through National Verifier. It may take a few minutes.</string>
     <string name="btn_cancel">Cancel</string>
