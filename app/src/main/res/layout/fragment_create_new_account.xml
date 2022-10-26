@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.Account.CreateNewAccountFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineTop"
@@ -28,8 +31,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/medium_margin"
-        android:lineSpacingExtra="10sp"
-        android:lineSpacingMultiplier="0.8"
         android:text="@string/label_follow_the_registration_and_verification_process"
         app:layout_constraintEnd_toEndOf="@+id/tvTitle"
         app:layout_constraintStart_toStartOf="@+id/tvTitle"
@@ -39,7 +40,7 @@
         android:id="@+id/ivUserPhoto"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:layout_marginTop="@dimen/x_extra_large_margin"
+        android:layout_marginTop="@dimen/extra_large_margin"
         android:src="@drawable/img_new_user"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +51,7 @@
         style="@style/ButtonBlue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x_extra_large_margin"
+        android:layout_marginTop="@dimen/large_margin"
         android:text="@string/btn_get_started"
         android:textColor="@color/white"
         app:icon="@drawable/ic_arrow_right"
