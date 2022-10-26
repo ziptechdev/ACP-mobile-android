@@ -6,55 +6,38 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.acpmobile.R
+import com.acpmobile.databinding.FragmentEligibilityVerificationFailedBinding
+import com.acpmobile.databinding.FragmentEligibilityVerifyingSuccessBinding
+import com.acpmobile.ui.activity.MainActivity
+import com.acpmobile.utils.Navigation
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [EligibilityVerificationFailedFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+@AndroidEntryPoint
 class EligibilityVerificationFailedFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentEligibilityVerificationFailedBinding? = null
+    private val binding get() = _binding!!
+
+    @Inject
+    lateinit var navigation: Navigation
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_eligibility_verification_failed, container, false)
-    }
+        _binding = FragmentEligibilityVerificationFailedBinding.inflate(inflater, container, false)
+        val view = binding.root
+        navigation.activity = activity as MainActivity
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment EligibilityVerificationFailedFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            EligibilityVerificationFailedFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        binding.btnTryAgain.setOnClickListener {
+            navigation.back()
+        }
+
+//        binding.btnNewAccout.setOnClickListener {
+//            navigation.openNewAccountFromVerificationFailed()
+//        }
+
+        return view
     }
 }
