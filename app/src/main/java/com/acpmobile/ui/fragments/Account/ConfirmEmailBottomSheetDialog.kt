@@ -25,16 +25,6 @@ class ConfirmEmailBottomSheetDialog : BottomSheetDialogFragment() {
 
     override fun getTheme() = R.style.NoBackgroundDialogTheme
 
-//    override fun onCreateView(
-//        inflater: LayoutInflater,
-//        container: ViewGroup?,
-//        savedInstanceState: Bundle?
-//    ): View {
-//        val view: View = View.inflate(requireContext(), R.layout.confirm_email_bottom_sheet_dialog, null)
-//        view.setBackgroundResource(R.drawable.confirm_email_shape)
-//        return view
-//    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -50,8 +40,12 @@ class ConfirmEmailBottomSheetDialog : BottomSheetDialogFragment() {
            navigation.openIdentityProof()
         }
 
+        binding.ivClose.setOnClickListener {
+            dismiss()
+        }
         return view
     }
+
 
     companion object {
         const val TAG = "ModalBottomSheet"
