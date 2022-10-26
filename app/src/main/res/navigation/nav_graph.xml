@@ -81,19 +81,43 @@
         <action
             android:id="@+id/action_eligibilityVerifyingFragment_to_eligibilityVerifyingSuccessFragment"
             app:destination="@id/eligibilityVerifyingSuccessFragment" />
+        <action
+            android:id="@+id/action_eligibilityVerifyingFragment_to_eligibilityVerificationFailedFragment"
+            app:destination="@id/eligibilityVerificationFailedFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/eligibilityVerificationFailedFragment"
         android:name="com.acpmobile.ui.fragments.account.EligibilityVerificationFailedFragment"
         android:label="fragment_eligibility_verification_failed"
-        tools:layout="@layout/fragment_eligibility_verification_failed" />
+        tools:layout="@layout/fragment_eligibility_verification_failed" >
+    </fragment>
 
     <fragment
         android:id="@+id/eligibilityVerifyingSuccessFragment"
         android:name="com.acpmobile.ui.fragments.account.EligibilityVerifyingSuccessFragment"
         android:label="fragment_eligibility_verifying_success"
-        tools:layout="@layout/fragment_eligibility_verifying_success" />
+        tools:layout="@layout/fragment_eligibility_verifying_success" >
+        <action
+            android:id="@+id/action_eligibilityVerifyingSuccessFragment_to_fragmentRegisterNewAccount"
+            app:destination="@id/fragmentRegisterNewAccount" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentRegisterNewAccount"
+        android:name="com.acpmobile.ui.fragments.account.RegisterNewAccountFragment"
+        android:label="fragment_register_new_account"
+        tools:layout="@layout/fragment_register_new_account" >
+        <action
+            android:id="@+id/action_fragmentRegisterNewAccount_to_fragmentRegistrationCompleteEligibility"
+            app:destination="@id/fragmentRegistrationCompleteEligibility" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentRegistrationCompleteEligibility"
+        android:name="com.acpmobile.ui.fragments.account.RegistrationCompleteFragment"
+        android:label="fragment_registration_complete"
+        tools:layout="@layout/fragment_registration_complete" />
 
     <fragment
         android:id="@+id/createNewAccountFragment"
@@ -166,4 +190,6 @@
         android:name="com.acpmobile.ui.fragments.account.RegistrationCompleteFragment"
         android:label="fragment_registration_complete"
         tools:layout="@layout/fragment_registration_complete" />
+
+
 </navigation>

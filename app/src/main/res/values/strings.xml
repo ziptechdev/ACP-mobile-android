@@ -48,7 +48,8 @@
     <string name="btn_cancel">Cancel</string>
     <string name="identity_verified_description">Success! Your identity has been verified and you are eligible for ACP. You can continue by registering a new ACP Mobile account.</string>
     <string name="btn_register">Register</string>
-    <string name="welcome_john">Welcome, %1$s</string>
+<!--    <string name="welcome_john">Welcome, %1$s</string>-->
+    <string name="welcome_john">Welcome, John!</string>
     <string name="label_your_home_address">Your home address</string>
     <string name="label_the_address_where_you_will">The address where you will get service.\nDo not use a P.O. Box.</string>
     <string name="label_street_number_and_name">Street Number and Name*</string>
@@ -147,5 +148,9 @@
     <string name="label_eligibility_check">Eligibility Check</string>
     <string name="label_register">Register</string>
     <string name="label_registration">Registration</string>
+    <string name="label_welcome_to_acp">Welcome to ACP</string>
+    <string name="label_log_in_using_your">Log in using your credentials below.</string>
+    <string name="btn_login">Log In</string>
+    <string name="label_forgot_your_password"><font color="#007AFF">Forgot your password?</font></string>
 
 </resources>

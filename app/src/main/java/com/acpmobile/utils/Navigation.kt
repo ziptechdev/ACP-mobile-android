@@ -72,6 +72,22 @@ class Navigation @Inject constructor(){
         activity?.navController?.navigate(R.id.action_fragmentIBankInfo_to_fragmentRegistrationComplete)
     }
 
+    fun openVerificationSuccess(){
+        activity?.navController?.navigate(R.id.action_eligibilityVerifyingFragment_to_eligibilityVerifyingSuccessFragment)
+    }
+
+    fun openVerificationFailed(){
+        activity?.navController?.navigate(R.id.action_eligibilityVerifyingFragment_to_eligibilityVerificationFailedFragment)
+    }
+
+    fun openRegisterNewAccount(){
+        activity?.navController?.navigate(R.id.action_eligibilityVerifyingSuccessFragment_to_fragmentRegisterNewAccount)
+    }
+
+    fun openRegisterNewAccountComplete(){
+        activity?.navController?.navigate(R.id.action_fragmentRegisterNewAccount_to_fragmentRegistrationCompleteEligibility)
+    }
+
     fun back(){
         activity?.navController?.popBackStack()
     }

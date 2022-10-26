@@ -1,6 +1,7 @@
 package com.acpmobile.ui.fragments.account
 
 import android.os.Bundle
+import android.os.CountDownTimer
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -20,6 +21,8 @@ class EligibilityVerifyingFragment : Fragment() {
     @Inject
     lateinit var navigation: Navigation
 
+    var mCountDownTimer: CountDownTimer? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,10 +35,47 @@ class EligibilityVerifyingFragment : Fragment() {
         navigation.activity = mActivity
         mActivity.hideToolbar()
 
+        var i = 0
+
+        binding.progressBar.progress = i
+
+        mCountDownTimer = object : CountDownTimer(8000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                i++
+                binding.progressBar.progress = i * 100 / (8000 / 1000)
+                binding.tvProgressPercent.text = binding.progressBar.progress.toString().plus("%")
+            }
+
+            override fun onFinish() {
+                i++
+                binding.progressBar.progress = 100
+                navigation.openVerificationSuccess()
+
+            }
+        }
+
+        mCountDownTimer?.start()
+
         binding.btnCancel.setOnClickListener {
-            navigation.back()
+            activity?.finish()
+        }
+
+        binding.ivFail.setOnClickListener {
+            navigation.openVerificationFailed()
         }
 
         return view
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mCountDownTimer?.cancel()
+        binding.progressBar.progress = 0
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        mCountDownTimer?.cancel()
+        binding.progressBar.progress = 0
     }
 }
