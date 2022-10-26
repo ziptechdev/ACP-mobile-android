@@ -21,6 +21,7 @@ class RegistrationCompleteFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var mActivity: MainActivity
 
+
     @Inject
     lateinit var navigation: Navigation
 
@@ -45,6 +46,10 @@ class RegistrationCompleteFragment : Fragment() {
         context?.let {
             requireActivity().window.statusBarColor =
                 ContextCompat.getColor(it, R.color.colorPrimary)
+        }
+
+        binding.tvLogin.setOnClickListener{
+            navigation.openLogin()
         }
 
 
