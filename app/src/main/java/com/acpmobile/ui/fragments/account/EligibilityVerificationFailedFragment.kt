@@ -34,6 +34,17 @@ class EligibilityVerificationFailedFragment : Fragment() {
             navigation.back()
         }
 
+
+        val mActivity = activity as MainActivity
+        mActivity.showToolbar(true)
+        mActivity.hideActionsToolbar(
+            isBackVisible = false,
+            isLeftTitleVisible = false,
+            isTitleVisible = false,
+            isCloseVisible = true
+        )
+
+
 //        binding.btnNewAccout.setOnClickListener {
 //            navigation.openNewAccountFromVerificationFailed()
 //        }

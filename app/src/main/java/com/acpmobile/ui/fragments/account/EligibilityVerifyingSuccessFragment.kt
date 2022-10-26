@@ -31,6 +31,17 @@ class EligibilityVerifyingSuccessFragment : Fragment() {
         navigation.activity = activity as MainActivity
 
 
+        val mActivity = activity as MainActivity
+        mActivity.showToolbar(true)
+
+        mActivity.hideActionsToolbar(
+            isBackVisible = false,
+            isLeftTitleVisible = false,
+            isTitleVisible = false,
+            isCloseVisible = true
+        )
+
+
         binding.btnRegister.setOnClickListener {
             navigation.openRegisterNewAccount()
         }
