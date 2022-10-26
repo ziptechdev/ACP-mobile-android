@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import com.acpmobile.R
 import com.acpmobile.databinding.FragmentEligibilityDateBinding
 import com.acpmobile.databinding.FragmentEligibilityVerifyingSuccessBinding
@@ -34,6 +35,12 @@ class RegisterNewAccountFragment : Fragment() {
 
         val mActivity = activity as MainActivity
         mActivity.setToolbarTitle(getString(R.string.label_register))
+        mActivity.showToolbar(true)
+
+        context?.let {
+            requireActivity().window.statusBarColor =
+                ContextCompat.getColor(it, R.color.white)
+        }
 
         binding.btnRegister.setOnClickListener {
             navigation.openRegisterNewAccountComplete()
