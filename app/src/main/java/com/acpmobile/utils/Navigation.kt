@@ -88,6 +88,10 @@ class Navigation @Inject constructor(){
         activity?.navController?.navigate(R.id.action_fragmentRegisterNewAccount_to_fragmentRegistrationCompleteEligibility)
     }
 
+    fun openLogin(){
+        activity?.navController?.navigate(R.id.action_fragmentRegistrationCompleteEligibility_to_fragmentLogin)
+    }
+
     fun back(){
         activity?.navController?.popBackStack()
     }

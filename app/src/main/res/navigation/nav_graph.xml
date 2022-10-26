@@ -117,7 +117,11 @@
         android:id="@+id/fragmentRegistrationCompleteEligibility"
         android:name="com.acpmobile.ui.fragments.account.RegistrationCompleteFragment"
         android:label="fragment_registration_complete"
-        tools:layout="@layout/fragment_registration_complete" />
+        tools:layout="@layout/fragment_registration_complete" >
+        <action
+            android:id="@+id/action_fragmentRegistrationCompleteEligibility_to_fragmentLogin"
+            app:destination="@id/fragmentLogin" />
+    </fragment>
 
     <fragment
         android:id="@+id/createNewAccountFragment"
@@ -190,6 +194,12 @@
         android:name="com.acpmobile.ui.fragments.account.RegistrationCompleteFragment"
         android:label="fragment_registration_complete"
         tools:layout="@layout/fragment_registration_complete" />
+
+    <fragment
+        android:id="@+id/fragmentLogin"
+        android:name="com.acpmobile.ui.fragments.Profile.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
 
 
 </navigation>
