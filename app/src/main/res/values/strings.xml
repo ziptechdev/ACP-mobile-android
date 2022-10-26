@@ -147,5 +147,9 @@
     <string name="label_eligibility_check">Eligibility Check</string>
     <string name="label_register">Register</string>
     <string name="label_registration">Registration</string>
+    <string name="label_welcome_to_acp">Welcome to ACP</string>
+    <string name="label_log_in_using_your">Log in using your credentials below.</string>
+    <string name="btn_login">Log In</string>
+    <string name="label_forgot_your_password"><font color="#007AFF">Forgot your password?</font></string>
 
 </resources>
