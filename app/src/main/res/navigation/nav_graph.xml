@@ -185,15 +185,10 @@
         android:label="fragment_bank_info"
         tools:layout="@layout/fragment_bank_info" >
         <action
-            android:id="@+id/action_fragmentIBankInfo_to_fragmentRegistrationComplete"
-            app:destination="@id/fragmentRegistrationComplete" />
+            android:id="@+id/action_fragmentIBankInfo_to_fragmentRegistrationCompleteEligibility"
+            app:destination="@id/fragmentRegistrationCompleteEligibility" />
     </fragment>
 
-    <fragment
-        android:id="@+id/fragmentRegistrationComplete"
-        android:name="com.acpmobile.ui.fragments.account.RegistrationCompleteFragment"
-        android:label="fragment_registration_complete"
-        tools:layout="@layout/fragment_registration_complete" />
 
     <fragment
         android:id="@+id/fragmentLogin"

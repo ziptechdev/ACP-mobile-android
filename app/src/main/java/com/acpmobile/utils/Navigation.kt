@@ -69,7 +69,7 @@ class Navigation @Inject constructor(){
     }
 
     fun openRegistrationComplete(){
-        activity?.navController?.navigate(R.id.action_fragmentIBankInfo_to_fragmentRegistrationComplete)
+        activity?.navController?.navigate(R.id.action_fragmentIBankInfo_to_fragmentRegistrationCompleteEligibility)
     }
 
     fun openVerificationSuccess(){
