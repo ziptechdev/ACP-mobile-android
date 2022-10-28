@@ -112,6 +112,7 @@
         android:text="@string/btn_next"
         android:textColor="@color/white"
         app:icon="@drawable/ic_arrow_right"
+        app:iconTint="@color/white"
         app:iconGravity="textEnd"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="@+id/tvSubtitle"
