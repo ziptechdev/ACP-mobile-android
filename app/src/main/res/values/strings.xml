@@ -48,7 +48,7 @@
     <string name="btn_cancel">Cancel</string>
     <string name="identity_verified_description">Success! Your identity has been verified and you are eligible for ACP. You can continue by registering a new ACP Mobile account.</string>
     <string name="btn_register">Register</string>
-<!--    <string name="welcome_john">Welcome, %1$s</string>-->
+    <!--    <string name="welcome_john">Welcome, %1$s</string>-->
     <string name="welcome_john">Welcome, John!</string>
     <string name="label_your_home_address">Your home address</string>
     <string name="label_the_address_where_you_will">The address where you will get service.\nDo not use a P.O. Box.</string>
@@ -144,7 +144,6 @@
     <string name="btn_auto_renewal_after_expiration">Auto-renewal after expiration</string>
     <string name="btn_visit_website">Visit Website</string>
     <string name="label_your_information_is_already_stored">Your information is already stored in your profile. Simply press the ‘Apply Now’ button to begin the application process. It may take 2-3 business days for us to reach back.</string>
-
     <string name="label_eligibility_check">Eligibility Check</string>
     <string name="label_register">Register</string>
     <string name="label_registration">Registration</string>
@@ -152,5 +151,17 @@
     <string name="label_log_in_using_your">Log in using your credentials below.</string>
     <string name="btn_login">Log In</string>
     <string name="label_forgot_your_password"><font color="#007AFF">Forgot your password?</font></string>
-
+    <string name="label_apply_for_acp">Apply for ACP</string>
+    <string name="label_hi_john_you_can_now_easily">Hi John! You can now easily apply for ACP because you are currently taking part in the following government assistance programs:</string>
+    <string name="label_supplemental_nutrition">Supplemental Nutrition\nAssistance Program (SNAP)</string>
+    <string name="label_choose_plan">Choose Plan:</string>
+    <string name="label_choose_device">Choose Device:</string>
+    <string name="label_one_click_setup">One-click-setup phone</string>
+    <string name="label_free_30"><font color="#1C1C1E"><b>Free\n</b></font><strike>$30/mo</strike></string>
+    <string name="label_acp_explanation">\u2022  Unlimited Talk &amp; Text and Data\n\u2022  7GB 4G LTE Data\n\u2022  Turn your phone into a Wi-Fi hotspot!</string>
+    <string name="btn_change_picture">Change Picture</string>
+    <string name="btn_personal_info">Personal Info</string>
+    <string name="btn_legal">Legal</string>
+    <string name="btn_language">Language</string>
+    <string name="label_englis">English</string>
 </resources>
