@@ -64,7 +64,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnNext"
+                    android:id="@+id/btnApplyACP"
                     style="@style/ButtonYellow"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

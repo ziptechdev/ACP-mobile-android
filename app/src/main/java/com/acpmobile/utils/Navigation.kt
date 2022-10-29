@@ -92,6 +92,22 @@ class Navigation @Inject constructor(){
         activity?.navController?.navigate(R.id.action_fragmentRegistrationCompleteEligibility_to_fragmentLogin)
     }
 
+    fun openProfileFromLogin(){
+        activity?.navController?.navigate(R.id.action_fragmentLogin_to_fragmentProfileMain)
+    }
+
+    fun openApplyForService(){
+        activity?.navController?.navigate(R.id.action_fragmentProfileMain_to_fragmentApplyForService)
+    }
+
+    fun openApplyForACP(){
+        activity?.navController?.navigate(R.id.action_fragmentApplyForService_to_fragmentApplyForACP)
+    }
+
+    fun openACPSuccess(){
+        activity?.navController?.navigate(R.id.action_fragmentApplyForACP_to_fragmentACPSuccess)
+    }
+
     fun back(){
         activity?.navController?.popBackStack()
     }

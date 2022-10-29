@@ -1,6 +1,7 @@
 package com.acpmobile.ui.activity
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
@@ -36,6 +37,17 @@ class MainActivity : AppCompatActivity() {
 
         binding.toolbar.ivRight.setOnClickListener { finish() }
         binding.toolbarLight.ivRight.setOnClickListener { finish() }
+
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            Log.i("abu", "curent destination: " + destination.id )
+            if(destination.id == R.id.fragmentProfileMain){
+                binding.bottomNavigationViewMain.visibility = View.VISIBLE
+            }else{
+                binding.bottomNavigationViewMain.visibility = View.GONE
+            }
+
+        }
+
     }
 
     fun showToolbar(showLight: Boolean) {

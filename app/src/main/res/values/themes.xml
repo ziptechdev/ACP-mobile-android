@@ -125,6 +125,4 @@
         <item name="android:padding">15dp</item>
         <item name="android:textSize">16sp</item>
     </style>
-
-    <color name="orange">#FFCC00</color>
 </resources>

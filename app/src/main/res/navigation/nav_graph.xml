@@ -194,7 +194,45 @@
         android:id="@+id/fragmentLogin"
         android:name="com.acpmobile.ui.fragments.Profile.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_fragmentLogin_to_fragmentProfileMain"
+            app:destination="@id/fragmentProfileMain" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/fragmentProfileMain"
+        android:name="com.acpmobile.ui.fragments.Profile.ProfileAfterRegistrationFragment"
+        android:label="fragment_profile_after_registration"
+        tools:layout="@layout/fragment_profile_after_registration" >
+        <action
+            android:id="@+id/action_fragmentProfileMain_to_fragmentApplyForService"
+            app:destination="@id/fragmentApplyForService" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/fragmentApplyForService"
+        android:name="com.acpmobile.ui.fragments.ACP.ApplyForServiceFragment"
+        android:label="fragment_apply_for_service"
+        tools:layout="@layout/fragment_apply_for_service" >
+        <action
+            android:id="@+id/action_fragmentApplyForService_to_fragmentApplyForACP"
+            app:destination="@id/fragmentApplyForACP" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentApplyForACP"
+        android:name="com.acpmobile.ui.fragments.ACP.ApplyForACPFragment"
+        android:label="fragment_apply_for_a_c_p"
+        tools:layout="@layout/fragment_apply_for_a_c_p" >
+        <action
+            android:id="@+id/action_fragmentApplyForACP_to_fragmentACPSuccess"
+            app:destination="@id/fragmentACPSuccess" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentACPSuccess"
+        android:name="com.acpmobile.ui.fragments.ACP.ACPSuccessFragment"
+        android:label="fragment_a_c_p_success"
+        tools:layout="@layout/fragment_a_c_p_success" />
 </navigation>

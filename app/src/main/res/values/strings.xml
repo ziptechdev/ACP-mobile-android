@@ -163,5 +163,10 @@
     <string name="btn_personal_info">Personal Info</string>
     <string name="btn_legal">Legal</string>
     <string name="btn_language">Language</string>
-    <string name="label_englis">English</string>
+    <string name="label_english">English</string>
+    <string name="label_wallet">Wallet</string>
+    <string name="label_profile">Profile</string>
+    <string name="btn_apply">Apply</string>
+    <string name="label_acp">ACP</string>
+
 </resources>

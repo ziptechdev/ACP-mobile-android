@@ -8,12 +8,6 @@
     android:background="@color/colorPrimary"
     tools:context=".ui.fragments.ACP.ACPSuccessFragment">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineTop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.22" />
 
     <ImageView
         android:id="@+id/ivACPSuccess"
@@ -21,9 +15,10 @@
         android:layout_height="128dp"
         android:adjustViewBounds="false"
         android:src="@drawable/ic_registration_complete"
+        android:layout_marginTop="@dimen/x_extra_large_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvTitle"
@@ -53,23 +48,17 @@
         app:layout_constraintStart_toStartOf="@+id/tvTitle"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85" />
-
 
     <Button
         android:id="@+id/btnDone"
         style="@style/ButtonWhiteStroke"
         android:layout_width="0dp"
+        android:layout_marginTop="@dimen/extra_large_margin"
         android:layout_height="wrap_content"
         android:text="@string/btn_done"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
         app:layout_constraintEnd_toEndOf="@+id/tvSubtitle"
-        app:layout_constraintStart_toStartOf="@+id/tvSubtitle" />
+        app:layout_constraintStart_toStartOf="@+id/tvSubtitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubtitle" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

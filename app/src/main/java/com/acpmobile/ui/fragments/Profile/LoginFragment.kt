@@ -10,11 +10,18 @@ import com.acpmobile.R
 import com.acpmobile.databinding.FragmentCheckEligibilityOrCreateAccountBinding
 import com.acpmobile.databinding.FragmentLoginBinding
 import com.acpmobile.ui.activity.MainActivity
+import com.acpmobile.ui.fragments.account.ConfirmEmailBottomSheetDialog
+import com.acpmobile.utils.Navigation
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
+
+    @Inject
+    lateinit var navigation: Navigation
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,6 +29,7 @@ class LoginFragment : Fragment() {
     ): View? {
         _binding =
             FragmentLoginBinding.inflate(inflater, container, false)
+        navigation.activity = activity as MainActivity
 
         val mActivity = activity as MainActivity
         mActivity.setToolbarTitle(getString(R.string.label_login))
@@ -39,6 +47,10 @@ class LoginFragment : Fragment() {
             isTitleVisible = true,
             isCloseVisible = true
         )
+
+        binding.btnLogin.setOnClickListener {
+            navigation.openProfileFromLogin()
+        }
 
         return binding.root
     }
