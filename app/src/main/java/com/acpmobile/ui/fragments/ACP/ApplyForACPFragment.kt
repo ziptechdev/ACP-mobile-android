@@ -60,7 +60,7 @@ class ApplyForACPFragment : Fragment() {
                 choosePlanAcceptIcon.visibility = View.GONE
             } else {
                 choosePlanTextToExpend.visibility = View.VISIBLE
-                choosePlanAcceptIcon.visibility = View.GONE
+                choosePlanAcceptIcon.visibility = View.VISIBLE
             }
         }
 

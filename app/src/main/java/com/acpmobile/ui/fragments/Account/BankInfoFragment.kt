@@ -55,7 +55,15 @@ class BankInfoFragment : Fragment() {
         binding.containerViewPersonalIdentityBankInfo.tvBankInfo.setBackgroundResource(R.drawable.round_element_6)
 
         binding.btnComplete.setOnClickListener {
-            navigation.openRegistrationComplete()
+            val bankName = binding.etBankName.editText?.text.toString()
+            val bankNumber = binding.etBankNumber.editText?.text.toString()
+            val accountHolderName = binding.etAccountHolderName.editText?.text.toString()
+            val accountNumber = binding.etAccountNumber.editText?.text.toString()
+            val expirationDate = binding.etExpirationDate.editText?.text.toString()
+            if (bankName.isNotEmpty() && bankNumber.isNotEmpty() && accountHolderName.isNotEmpty()
+                && accountNumber.isNotEmpty() && expirationDate.isNotEmpty()
+            )
+                navigation.openRegistrationComplete()
         }
 
         return view

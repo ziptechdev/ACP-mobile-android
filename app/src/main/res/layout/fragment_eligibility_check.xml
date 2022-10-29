@@ -112,10 +112,12 @@
         android:text="@string/btn_next"
         android:textColor="@color/white"
         app:icon="@drawable/ic_arrow_right"
-        app:iconTint="@color/white"
         app:iconGravity="textEnd"
+        android:enabled="false"
+        app:iconTint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="@+id/tvSubtitle"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvSubtitle" />
 
     <androidx.constraintlayout.widget.Guideline
