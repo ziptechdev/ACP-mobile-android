@@ -49,7 +49,10 @@ class LoginFragment : Fragment() {
         )
 
         binding.btnLogin.setOnClickListener {
-            navigation.openProfileFromLogin()
+            val email = binding.etEMail.editText?.text.toString()
+            val password = binding.etPassword.editText?.text.toString()
+            if (email.isNotEmpty() && password.isNotEmpty())
+                navigation.openProfileFromLogin()
         }
 
         return binding.root

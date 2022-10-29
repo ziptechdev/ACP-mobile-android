@@ -7,8 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.acpmobile.R
-import com.acpmobile.databinding.FragmentEligibilityDateBinding
-import com.acpmobile.databinding.FragmentEligibilityVerifyingSuccessBinding
 import com.acpmobile.databinding.FragmentRegisterNewAccountBinding
 import com.acpmobile.ui.activity.MainActivity
 import com.acpmobile.utils.Navigation

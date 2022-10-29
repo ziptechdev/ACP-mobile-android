@@ -41,12 +41,30 @@ class PersonalInfoFragment : Fragment() {
             isCloseVisible = true
         )
 
-        binding.containerViewPersonalIdentityBankInfo.tvPersonalInfo.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+        binding.containerViewPersonalIdentityBankInfo.tvPersonalInfo.setTextColor(
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.black
+            )
+        )
         binding.containerViewPersonalIdentityBankInfo.tvPersonalInfo.setBackgroundResource(R.drawable.round_element_6)
 
         binding.btnNext.setOnClickListener {
+            val name = binding.etFirstName.editText?.text.toString()
+            val lastName = binding.etLastName.editText?.text.toString()
+            val email = binding.etEMail.editText?.text.toString()
+            val phoneNumber = binding.etPhoneNumber.editText?.text.toString()
+            val password = binding.etPassword.editText?.text.toString()
+            val confirmPassword = binding.etConfirmPassword.editText?.text.toString()
+            val ssn = binding.etSSN.editText?.text.toString()
+
+
             val blankFragment = ConfirmEmailBottomSheetDialog()
-            blankFragment.show(childFragmentManager, blankFragment.getTag());
+            if (name.isNotEmpty() && lastName.isNotEmpty() && email.isNotEmpty() && phoneNumber.isNotEmpty()
+                && password.isNotEmpty() && confirmPassword.isNotEmpty() && ssn.isNotEmpty()
+            )
+                if (password == confirmPassword)
+                    blankFragment.show(childFragmentManager, blankFragment.getTag());
         }
 
         return view

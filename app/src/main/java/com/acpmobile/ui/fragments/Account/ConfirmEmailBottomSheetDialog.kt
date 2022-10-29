@@ -37,7 +37,15 @@ class ConfirmEmailBottomSheetDialog : BottomSheetDialogFragment() {
         binding.clContainer.setBackgroundResource(R.drawable.confirm_email_shape)
 
         binding.btnConfirm.setOnClickListener {
-           navigation.openIdentityProof()
+            val code1 = binding.etCodeFirst.editText?.text.toString()
+            val code2 = binding.etCodeSecond.editText?.text.toString()
+            val code3 = binding.etCodeThird.editText?.text.toString()
+            val code4 = binding.etCodeFourth.editText?.text.toString()
+            val code5 = binding.etCodeFifth.editText?.text.toString()
+
+            if(code1.isNotEmpty() && code2.isNotEmpty() && code3.isNotEmpty()
+                && code4.isNotEmpty() && code5.isNotEmpty())
+                    navigation.openIdentityProof()
         }
 
         binding.ivClose.setOnClickListener {
