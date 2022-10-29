@@ -1,19 +1,17 @@
 package com.acpmobile.ui.activity
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.view.Window
-import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.acpmobile.R
 import com.acpmobile.databinding.ActivityMainBinding
+import com.acpmobile.utils.Navigation
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
+
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -22,11 +20,15 @@ class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
 
+    @Inject
+    lateinit var navigation: Navigation
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Hide status bar
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        navigation.activity = this
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -38,17 +40,35 @@ class MainActivity : AppCompatActivity() {
         binding.toolbar.ivRight.setOnClickListener { finish() }
         binding.toolbarLight.ivRight.setOnClickListener { finish() }
 
+
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
-            Log.i("abu", "curent destination: " + destination.id )
-            if(destination.id == R.id.fragmentProfileMain){
+            if (destination.id == R.id.fragmentProfileMain || destination.id == R.id.fragmentWallet ||
+                destination.id == R.id.fragmentProfile) {
                 binding.bottomNavigationViewMain.visibility = View.VISIBLE
-            }else{
+            } else {
                 binding.bottomNavigationViewMain.visibility = View.GONE
             }
-
         }
 
+        binding.bottomNavigationViewMain.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.home -> {
+                    navigation.openHome()
+                    return@setOnItemSelectedListener true
+                }
+                R.id.wallet -> {
+                    navigation.openWallet()
+                    return@setOnItemSelectedListener true
+                }
+                R.id.profile -> {
+                    navigation.openProfile()
+                    return@setOnItemSelectedListener true
+                }
+                else -> {false}
+            }
+        }
     }
+
 
     fun showToolbar(showLight: Boolean) {
         if (showLight) {

@@ -49,6 +49,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             app:cardCornerRadius="10dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
             app:layout_constraintEnd_toEndOf="@id/btnChangePicture"
             app:layout_constraintStart_toStartOf="@id/btnChangePicture"
             app:layout_constraintTop_toBottomOf="@+id/btnChangePicture"
@@ -56,6 +59,7 @@
             app:strokeWidth="1.5dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clPersonalInfo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -102,6 +106,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             app:cardCornerRadius="10dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
             app:layout_constraintEnd_toEndOf="@id/btnChangePicture"
             app:layout_constraintStart_toStartOf="@id/btnChangePicture"
             app:layout_constraintTop_toBottomOf="@+id/cvPersonalInfo"
@@ -109,6 +116,7 @@
             app:strokeWidth="1.5dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSecurity"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 

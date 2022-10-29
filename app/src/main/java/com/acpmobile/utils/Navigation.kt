@@ -108,6 +108,26 @@ class Navigation @Inject constructor(){
         activity?.navController?.navigate(R.id.action_fragmentApplyForACP_to_fragmentACPSuccess)
     }
 
+    fun openHome(){
+        activity?.navController?.navigate(R.id.fragmentProfileMain)
+    }
+
+    fun openWallet(){
+        activity?.navController?.navigate(R.id.fragmentWallet)
+    }
+
+    fun openProfile(){
+        activity?.navController?.navigate(R.id.fragmentProfile)
+    }
+
+    fun openPersonalInformation(){
+        activity?.navController?.navigate(R.id.action_fragmentProfile_to_fragmentPersonalInformation)
+    }
+
+    fun openSecurity(){
+        activity?.navController?.navigate(R.id.action_fragmentProfile_to_fragmentSecurity)
+    }
+
     fun back(){
         activity?.navController?.popBackStack()
     }

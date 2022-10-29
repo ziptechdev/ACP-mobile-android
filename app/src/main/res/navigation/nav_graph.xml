@@ -235,4 +235,36 @@
         android:name="com.acpmobile.ui.fragments.ACP.ACPSuccessFragment"
         android:label="fragment_a_c_p_success"
         tools:layout="@layout/fragment_a_c_p_success" />
+
+    <fragment
+        android:id="@+id/fragmentWallet"
+        android:name="com.acpmobile.ui.fragments.Wallet.MyWalletFragment"
+        android:label="fragment_my_wallet"
+        tools:layout="@layout/fragment_my_wallet" />
+
+    <fragment
+        android:id="@+id/fragmentProfile"
+        android:name="com.acpmobile.ui.fragments.Profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_fragmentProfile_to_fragmentPersonalInformation"
+            app:destination="@id/fragmentPersonalInformation" />
+        <action
+            android:id="@+id/action_fragmentProfile_to_fragmentSecurity"
+            app:destination="@id/fragmentSecurity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentPersonalInformation"
+        android:name="com.acpmobile.ui.fragments.Profile.PersonalInformationFragment"
+        android:label="fragment_personal_information"
+        tools:layout="@layout/fragment_personal_information" />
+
+    <fragment
+        android:id="@+id/fragmentSecurity"
+        android:name="com.acpmobile.ui.fragments.Profile.SecurityFragment"
+        android:label="fragment_security"
+        tools:layout="@layout/fragment_security" />
+
 </navigation>
