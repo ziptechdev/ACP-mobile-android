@@ -7,8 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.acpmobile.R
-import com.acpmobile.databinding.FragmentEligibilityDateBinding
-import com.acpmobile.databinding.FragmentEligibilityVerifyingSuccessBinding
 import com.acpmobile.databinding.FragmentRegisterNewAccountBinding
 import com.acpmobile.ui.activity.MainActivity
 import com.acpmobile.utils.Navigation
@@ -43,7 +41,12 @@ class RegisterNewAccountFragment : Fragment() {
         }
 
         binding.btnRegister.setOnClickListener {
-            navigation.openRegisterNewAccountComplete()
+            val email = binding.etEMail.editText?.text.toString()
+            val password = binding.etPassword.editText?.text.toString()
+            val confirmPassword = binding.etConfirmPassword.editText?.text.toString()
+            if (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty())
+                if (password == confirmPassword)
+                    navigation.openRegisterNewAccountComplete()
         }
 
         return view
