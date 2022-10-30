@@ -95,6 +95,14 @@
     <string name="btn_complete">Complete</string>
     <string name="label_verification_complete">Verification complete!</string>
     <string name="btn_done">Done</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mywallet_total_balance">Total balance</string>
+    <string name="btn_new_card">New Card</string>
+    <string name="label_all">All</string>
+    <string name="label_incoming">Incoming</string>
+    <string name="label_outgoing">Outgoing</string>
+    <string name="details">Details</string>
     <string name="label_confirmed">Confirmed!</string>
     <string name="label_your_ACP_application">Your ACP application has been successfully submitted and will be reviewed within 2-3 business days. If everything is correct, you will receive funds immediately and your device will be shipped within 5 businss days. Check notifications for further updates about the package.</string>
     <string name="label_security">Security</string>
@@ -169,5 +177,4 @@
     <string name="btn_apply">Apply</string>
     <string name="label_acp">ACP</string>
     <string name="label_my_wallet">My Wallet</string>
-
 </resources>
