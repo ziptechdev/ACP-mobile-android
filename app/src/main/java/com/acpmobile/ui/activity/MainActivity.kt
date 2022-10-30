@@ -43,14 +43,15 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             if (destination.id == R.id.fragmentProfileMain || destination.id == R.id.fragmentWallet ||
-                destination.id == R.id.fragmentProfile) {
+                destination.id == R.id.fragmentProfile
+            ) {
                 binding.bottomNavigationViewMain.visibility = View.VISIBLE
                 binding.toolbarProfile.root.visibility = View.VISIBLE
-                binding.toolbarLight.root.visibility = View.INVISIBLE
+                hideToolbar()
             } else {
                 binding.bottomNavigationViewMain.visibility = View.GONE
                 binding.toolbarProfile.root.visibility = View.INVISIBLE
-                binding.toolbarLight.root.visibility = View.VISIBLE
+                showToolbar(true)
             }
         }
 
@@ -68,7 +69,9 @@ class MainActivity : AppCompatActivity() {
                     navigation.openProfile()
                     return@setOnItemSelectedListener true
                 }
-                else -> {false}
+                else -> {
+                    false
+                }
             }
         }
     }
