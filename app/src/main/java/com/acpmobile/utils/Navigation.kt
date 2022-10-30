@@ -140,6 +140,10 @@ class Navigation @Inject constructor(){
         activity?.navController?.navigate(R.id.action_fragmentRequestDebitCard_to_fragmentRequestDebitCardConfirmed)
     }
 
+    fun openMyWalletCardsFromRequestCardConfirmed(){
+        activity?.navController?.navigate(R.id.action_fragmentRequestDebitCardConfirmed_to_fragmentMyWalletCards)
+    }
+
     fun back(){
         activity?.navController?.popBackStack()
     }

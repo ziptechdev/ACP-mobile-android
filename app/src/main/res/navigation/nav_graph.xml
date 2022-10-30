@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragment_my_wallet">
+    app:startDestination="@id/welcomeFirstFragment">
 
     <fragment
         android:id="@+id/welcomeFirstFragment"
@@ -189,12 +189,7 @@
             app:destination="@id/fragmentRegistrationCompleteEligibility" />
     </fragment>
 
-
     <fragment
-        android:id="@+id/fragment_my_wallet"
-        android:name="com.acpmobile.ui.fragments.user.mywallet.MyWalletFragment"
-        android:label="fragment_eligibility_verifying_success"
-        tools:layout="@layout/fragment_my_wallet" />
         android:id="@+id/fragmentLogin"
         android:name="com.acpmobile.ui.fragments.Profile.LoginFragment"
         android:label="fragment_login"
@@ -298,6 +293,15 @@
         android:id="@+id/fragmentRequestDebitCardConfirmed"
         android:name="com.acpmobile.ui.fragments.Wallet.RequestCardConfirmedFragment"
         android:label="fragment_request_card_confirmed"
-        tools:layout="@layout/fragment_request_card_confirmed" />
+        tools:layout="@layout/fragment_request_card_confirmed" >
+        <action
+            android:id="@+id/action_fragmentRequestDebitCardConfirmed_to_fragmentMyWalletCards"
+            app:destination="@id/fragmentMyWalletCards" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/fragmentMyWalletCards"
+        android:name="com.acpmobile.ui.fragments.user.mywallet.MyWalletCardsFragment"
+        android:label="fragment_my_wallet_cards"
+        tools:layout="@layout/fragment_my_wallet_cards" />
 </navigation>

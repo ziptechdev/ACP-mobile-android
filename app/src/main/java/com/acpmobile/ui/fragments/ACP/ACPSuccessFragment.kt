@@ -44,6 +44,9 @@ class ACPSuccessFragment : Fragment() {
                 ContextCompat.getColor(it, R.color.colorPrimary)
         }
 
+        binding.btnDone.setOnClickListener(){
+            navigation.openHome()
+        }
         return binding.root
     }
 

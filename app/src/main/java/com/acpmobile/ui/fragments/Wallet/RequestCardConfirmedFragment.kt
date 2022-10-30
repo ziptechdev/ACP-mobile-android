@@ -47,7 +47,9 @@ class RequestCardConfirmedFragment : Fragment() {
                 ContextCompat.getColor(it, R.color.colorPrimary)
         }
 
-
+        binding.btnDone.setOnClickListener(){
+            navigation.openMyWalletCardsFromRequestCardConfirmed()
+        }
 
         return view
     }

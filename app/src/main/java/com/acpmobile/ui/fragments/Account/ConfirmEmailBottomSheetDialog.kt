@@ -1,6 +1,8 @@
 package com.acpmobile.ui.fragments.account
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -50,6 +52,29 @@ class ConfirmEmailBottomSheetDialog : BottomSheetDialogFragment() {
 
         binding.ivClose.setOnClickListener {
             dismiss()
+        }
+
+        binding.tiEtCodeFirst.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (binding.tiEtCodeFirst.text.isNullOrEmpty() ) {
+                    binding.tiEtCodeFirst.background =
+                        resources.getDrawable(R.drawable.edittext_shape_invalid)
+                } else {
+                    binding.tiEtCodeFirst.background =
+                        resources.getDrawable(R.drawable.edittext_shape_valid)
+
+                }
+            }
+        })
+
+        binding.tv1.setOnClickListener(){
+            binding.tiEtCodeFirst.setText("1")
         }
         return view
     }
