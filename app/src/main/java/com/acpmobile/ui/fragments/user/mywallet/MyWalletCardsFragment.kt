@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.acpmobile.R
 import com.acpmobile.databinding.FragmentMyWalletCardsBinding
 import com.acpmobile.ui.fragments.user.mywallet.adapter.CreditCardsAdapter
 import com.acpmobile.ui.fragments.user.mywallet.adapter.FundsAdapter
@@ -20,6 +22,11 @@ class MyWalletCardsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentMyWalletCardsBinding.inflate(inflater, container, false)
+
+        context?.let {
+            requireActivity().window.statusBarColor =
+                ContextCompat.getColor(it, R.color.white)
+        }
 
         binding.rvCreditCards.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)

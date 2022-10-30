@@ -34,6 +34,11 @@ class ProfileAfterRegistrationFragment : Fragment() {
 
         mActivity.setToolbarTitle(getString(R.string.label_home))
 
+        context?.let {
+            requireActivity().window.statusBarColor =
+                ContextCompat.getColor(it, R.color.white)
+        }
+
         mActivity.hideActionsToolbar(
             isBackVisible = true,
             isLeftTitleVisible = true,
