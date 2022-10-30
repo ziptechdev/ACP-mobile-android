@@ -6,17 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.account.EligibilityVerifyingSuccessFragment">
 
-    <ImageView
-        android:id="@+id/imgClose"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:scaleType="center"
-        android:src="@drawable/ic_close"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/grayDark" />
+
 
     <ImageView
         android:id="@+id/imgSuccess"
@@ -48,13 +38,15 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:gravity="center"
+        android:lineSpacingExtra="10sp"
+        android:lineSpacingMultiplier="0.8"
         android:text="@string/identity_verified_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnTryAgain"
+        android:id="@+id/btnRegister"
         style="@style/ButtonBlue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -78,7 +70,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTryAgain" />
+        app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"

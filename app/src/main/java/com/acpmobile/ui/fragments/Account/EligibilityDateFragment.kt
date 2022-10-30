@@ -33,14 +33,24 @@ class EligibilityDateFragment : Fragment() {
             FragmentEligibilityDateBinding.inflate(inflater, container, false)
         val view = binding.root
         navigation.activity = activity as MainActivity
+        val mActivity = activity as MainActivity
+        mActivity.setToolbarTitle(getString(R.string.label_eligibility_check))
 
-
-
-        binding.containerNameDateAddress.tvDateBirth.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+        binding.containerNameDateAddress.tvDateBirth.setTextColor(
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.black
+            )
+        )
         binding.containerNameDateAddress.tvDateBirth.setBackgroundResource(R.drawable.round_element_6)
 
         binding.btnNext.setOnClickListener {
-            navigation.openCheckEligibilityAddress()
+            val month = binding.etMonthOfBirth.editText?.text.toString()
+            val day = binding.etDayOfBirth.editText?.text.toString()
+            val year = binding.etYearOfBirth.editText?.text.toString()
+            val ssn = binding.etSSNNumber.editText?.text.toString()
+            if (month.isNotEmpty() && day.isNotEmpty() && year.isNotEmpty() && ssn.isNotEmpty())
+                navigation.openCheckEligibilityAddress()
         }
 
         return view

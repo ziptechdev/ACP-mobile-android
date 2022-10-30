@@ -11,10 +11,9 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/large_margin"
-        android:layout_marginEnd="@dimen/large_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
         android:layout_marginTop="@dimen/medium_margin"
-        android:layout_marginBottom="@dimen/medium_margin"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/svWelcomeFirst"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +37,7 @@
             android:layout_height="6dp"
             android:layout_weight="45"
             android:background="@drawable/round_element_20"
-            android:backgroundTint="@color/grayDark" />
+            android:backgroundTint="@color/grayStroke" />
 
     </LinearLayout>
 
@@ -46,6 +45,7 @@
         android:id="@+id/svWelcomeFirst"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="@dimen/large_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,8 +54,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/large_margin"
-            android:layout_marginEnd="@dimen/large_margin"
+            android:layout_marginStart="@dimen/normal_margin"
+            android:layout_marginEnd="@dimen/normal_margin"
             android:orientation="vertical">
 
             <TextView
@@ -63,15 +63,19 @@
                 style="@style/TitleTextWhite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:lineSpacingExtra="10sp"
+                android:lineSpacingMultiplier="0.8"
                 android:text="@string/welcome_first_title" />
 
             <TextView
                 android:id="@+id/welcomeFirstSubTitle"
                 style="@style/TextWhite"
+                android:lineSpacingExtra="10sp"
+                android:lineSpacingMultiplier="0.8"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginBottom="@dimen/large_margin"
                 android:text="@string/welcome_first_text" />
 
             <com.google.android.material.button.MaterialButton
@@ -80,10 +84,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/large_margin"
-                android:layout_marginStart="@dimen/large_margin"
-                android:layout_marginEnd="@dimen/large_margin"
-                android:layout_marginBottom="@dimen/extra_large_margin"
                 android:text="@string/welcome_first_button"
+                android:layout_marginBottom="@dimen/extra_large_margin"
                 android:textAllCaps="false" />
         </LinearLayout>
     </ScrollView>

@@ -11,10 +11,9 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/large_margin"
-        android:layout_marginEnd="@dimen/large_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
         android:layout_marginTop="@dimen/medium_margin"
-        android:layout_marginBottom="@dimen/medium_margin"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/svWelcomeSecond"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,6 +45,9 @@
         android:id="@+id/svWelcomeSecond"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,8 +56,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/large_margin"
-            android:layout_marginEnd="@dimen/large_margin"
             android:orientation="vertical">
 
             <TextView
@@ -63,28 +63,32 @@
                 style="@style/TitleTextBlue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 android:text="@string/welcome_second_title_first" />
 
             <TextView
                 android:id="@+id/tvWelcomeSecondText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:lineSpacingExtra="10sp"
+                android:lineSpacingMultiplier="0.8"
                 android:text="@string/welcome_second_text_first" />
             <TextView
                 android:id="@+id/tvWelcomeSecondTitle2"
                 style="@style/TitleTextBlue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="@dimen/large_margin"
                 android:text="@string/welcome_second_title_second" />
 
             <TextView
                 android:id="@+id/tvWelcomeSecondText2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginBottom="@dimen/large_margin"
+                android:lineSpacingExtra="10sp"
+                android:lineSpacingMultiplier="0.8"
                 android:text="@string/welcome_second_text_second" />
 
             <com.google.android.material.button.MaterialButton
@@ -92,10 +96,8 @@
                 style="@style/ButtonBlue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/large_margin"
-                android:layout_marginStart="@dimen/large_margin"
-                android:layout_marginEnd="@dimen/large_margin"
                 android:layout_marginBottom="@dimen/extra_large_margin"
+                android:layout_marginTop="@dimen/large_margin"
                 android:text="@string/welcome_second_button"
                 android:textAllCaps="false"/>
         </LinearLayout>

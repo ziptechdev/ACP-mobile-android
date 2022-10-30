@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_checkEligibilityOrCreateAccount_to_eligibilityCheck"
             app:destination="@id/eligibilityCheck" />
+        <action
+            android:id="@+id/action_checkEligibilityOrCreateAccount_to_createNewAccountFragment"
+            app:destination="@id/createNewAccountFragment" />
     </fragment>
 
     <fragment
@@ -78,23 +81,223 @@
         <action
             android:id="@+id/action_eligibilityVerifyingFragment_to_eligibilityVerifyingSuccessFragment"
             app:destination="@id/eligibilityVerifyingSuccessFragment" />
+        <action
+            android:id="@+id/action_eligibilityVerifyingFragment_to_eligibilityVerificationFailedFragment"
+            app:destination="@id/eligibilityVerificationFailedFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/eligibilityVerificationFailedFragment"
         android:name="com.acpmobile.ui.fragments.account.EligibilityVerificationFailedFragment"
         android:label="fragment_eligibility_verification_failed"
-        tools:layout="@layout/fragment_eligibility_verification_failed" />
+        tools:layout="@layout/fragment_eligibility_verification_failed" >
+    </fragment>
 
     <fragment
         android:id="@+id/eligibilityVerifyingSuccessFragment"
         android:name="com.acpmobile.ui.fragments.account.EligibilityVerifyingSuccessFragment"
         android:label="fragment_eligibility_verifying_success"
-        tools:layout="@layout/fragment_eligibility_verifying_success" />
+        tools:layout="@layout/fragment_eligibility_verifying_success" >
+        <action
+            android:id="@+id/action_eligibilityVerifyingSuccessFragment_to_fragmentRegisterNewAccount"
+            app:destination="@id/fragmentRegisterNewAccount" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentRegisterNewAccount"
+        android:name="com.acpmobile.ui.fragments.account.RegisterNewAccountFragment"
+        android:label="fragment_register_new_account"
+        tools:layout="@layout/fragment_register_new_account" >
+        <action
+            android:id="@+id/action_fragmentRegisterNewAccount_to_fragmentRegistrationCompleteEligibility"
+            app:destination="@id/fragmentRegistrationCompleteEligibility" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentRegistrationCompleteEligibility"
+        android:name="com.acpmobile.ui.fragments.account.RegistrationCompleteFragment"
+        android:label="fragment_registration_complete"
+        tools:layout="@layout/fragment_registration_complete" >
+        <action
+            android:id="@+id/action_fragmentRegistrationCompleteEligibility_to_fragmentLogin"
+            app:destination="@id/fragmentLogin" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createNewAccountFragment"
+        android:name="com.acpmobile.ui.fragments.account.CreateNewAccountFragment"
+        android:label="fragment_create_new_account"
+        tools:layout="@layout/fragment_create_new_account" >
+        <action
+            android:id="@+id/action_createNewAccountFragment_to_personalInfoFragment"
+            app:destination="@id/personalInfoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/personalInfoFragment"
+        android:name="com.acpmobile.ui.fragments.account.PersonalInfoFragment"
+        android:label="fragment_personal_info"
+        tools:layout="@layout/fragment_personal_info" />
+
+    <fragment
+        android:id="@+id/identityProofFragment"
+        android:name="com.acpmobile.ui.fragments.account.IdentityProofFragment"
+        android:label="fragment_identity_proof"
+        tools:layout="@layout/fragment_identity_proof" >
+        <action
+            android:id="@+id/action_identityProofFragment_to_scanIdFragment"
+            app:destination="@id/scanIdFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/scanIdFragment"
+        android:name="com.acpmobile.ui.fragments.account.RegistrationScanIDFragment"
+        android:label="fragment_scan_id"
+        tools:layout="@layout/fragment_scan_id" >
+        <action
+            android:id="@+id/action_scanIdFragment_to_TakeSelfieFragment"
+            app:destination="@id/TakeSelfieFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/TakeSelfieFragment"
+        android:name="com.acpmobile.ui.fragments.account.RegistrationTakeSelfieFragment"
+        android:label="fragment_take_selfie"
+        tools:layout="@layout/fragment_take_selfie" >
+        <action
+            android:id="@+id/action_TakeSelfieFragment_to_fragmentIdentityProofSuccess"
+            app:destination="@id/fragmentIdentityProofSuccess" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentIdentityProofSuccess"
+        android:name="com.acpmobile.ui.fragments.account.IdentityProofSuccessFragment"
+        android:label="fragment_identity_proof_success"
+        tools:layout="@layout/fragment_identity_proof_success" >
+        <action
+            android:id="@+id/action_fragmentIdentityProofSuccess_to_fragmentIBankInfo"
+            app:destination="@id/fragmentIBankInfo" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentIBankInfo"
+        android:name="com.acpmobile.ui.fragments.account.BankInfoFragment"
+        android:label="fragment_bank_info"
+        tools:layout="@layout/fragment_bank_info" >
+        <action
+            android:id="@+id/action_fragmentIBankInfo_to_fragmentRegistrationCompleteEligibility"
+            app:destination="@id/fragmentRegistrationCompleteEligibility" />
+    </fragment>
+
 
     <fragment
         android:id="@+id/fragment_my_wallet"
         android:name="com.acpmobile.ui.fragments.user.mywallet.MyWalletFragment"
         android:label="fragment_eligibility_verifying_success"
         tools:layout="@layout/fragment_my_wallet" />
+        android:id="@+id/fragmentLogin"
+        android:name="com.acpmobile.ui.fragments.Profile.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_fragmentLogin_to_fragmentProfileMain"
+            app:destination="@id/fragmentProfileMain" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentProfileMain"
+        android:name="com.acpmobile.ui.fragments.Profile.ProfileAfterRegistrationFragment"
+        android:label="fragment_profile_after_registration"
+        tools:layout="@layout/fragment_profile_after_registration" >
+        <action
+            android:id="@+id/action_fragmentProfileMain_to_fragmentApplyForService"
+            app:destination="@id/fragmentApplyForService" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentApplyForService"
+        android:name="com.acpmobile.ui.fragments.ACP.ApplyForServiceFragment"
+        android:label="fragment_apply_for_service"
+        tools:layout="@layout/fragment_apply_for_service" >
+        <action
+            android:id="@+id/action_fragmentApplyForService_to_fragmentApplyForACP"
+            app:destination="@id/fragmentApplyForACP" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentApplyForACP"
+        android:name="com.acpmobile.ui.fragments.ACP.ApplyForACPFragment"
+        android:label="fragment_apply_for_a_c_p"
+        tools:layout="@layout/fragment_apply_for_a_c_p" >
+        <action
+            android:id="@+id/action_fragmentApplyForACP_to_fragmentACPSuccess"
+            app:destination="@id/fragmentACPSuccess" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentACPSuccess"
+        android:name="com.acpmobile.ui.fragments.ACP.ACPSuccessFragment"
+        android:label="fragment_a_c_p_success"
+        tools:layout="@layout/fragment_a_c_p_success" />
+
+    <fragment
+        android:id="@+id/fragmentWallet"
+        android:name="com.acpmobile.ui.fragments.Wallet.MyWalletFragment"
+        android:label="fragment_my_wallet"
+        tools:layout="@layout/fragment_my_wallet" >
+        <action
+            android:id="@+id/action_fragmentWallet_to_fragmentRequestDebitCard"
+            app:destination="@id/fragmentRequestDebitCard" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentProfile"
+        android:name="com.acpmobile.ui.fragments.Profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_fragmentProfile_to_fragmentPersonalInformation"
+            app:destination="@id/fragmentPersonalInformation" />
+        <action
+            android:id="@+id/action_fragmentProfile_to_fragmentSecurity"
+            app:destination="@id/fragmentSecurity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentPersonalInformation"
+        android:name="com.acpmobile.ui.fragments.Profile.PersonalInformationFragment"
+        android:label="fragment_personal_information"
+        tools:layout="@layout/fragment_personal_information" />
+
+    <fragment
+        android:id="@+id/fragmentSecurity"
+        android:name="com.acpmobile.ui.fragments.Profile.SecurityFragment"
+        android:label="fragment_security"
+        tools:layout="@layout/fragment_security" />
+
+    <fragment
+        android:id="@+id/fragmentRequestDebitCard"
+        android:name="com.acpmobile.ui.fragments.Wallet.RequestDebitCardFragment"
+        android:label="fragment_request_debit_card"
+        tools:layout="@layout/fragment_request_debit_card" >
+        <action
+            android:id="@+id/action_fragmentRequestDebitCard_to_fragmentRequestDebitCardEdit"
+            app:destination="@id/fragmentRequestDebitCardEdit" />
+        <action
+            android:id="@+id/action_fragmentRequestDebitCard_to_fragmentRequestDebitCardConfirmed"
+            app:destination="@id/fragmentRequestDebitCardConfirmed" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentRequestDebitCardEdit"
+        android:name="com.acpmobile.ui.fragments.Wallet.RequestDebitCardEditFragment"
+        android:label="fragment_request_debit_card_edit"
+        tools:layout="@layout/fragment_request_debit_card_edit" />
+
+    <fragment
+        android:id="@+id/fragmentRequestDebitCardConfirmed"
+        android:name="com.acpmobile.ui.fragments.Wallet.RequestCardConfirmedFragment"
+        android:label="fragment_request_card_confirmed"
+        tools:layout="@layout/fragment_request_card_confirmed" />
+
 </navigation>

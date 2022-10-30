@@ -41,6 +41,11 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="TitleTextBlack" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
     <style name="TextBlue" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
@@ -57,6 +62,14 @@
         <item name="android:textAllCaps">false</item>
     </style>
 
+    <style name="ButtonYellow">
+        <item name="android:backgroundTint">@color/yellow</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="cornerRadius">@dimen/corner_radius</item>
+        <item name="android:padding">@dimen/medium_padding</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
     <style name="ButtonGray">
         <item name="android:backgroundTint">@color/grayBtn</item>
         <item name="android:textColor">@color/white</item>
@@ -64,7 +77,7 @@
         <item name="android:padding">@dimen/medium_padding</item>
         <item name="android:textAllCaps">false</item>
     </style>
-
+    
     <style name="ButtonWhite">
         <item name="android:backgroundTint">@color/white</item>
         <item name="android:textColor">@color/colorPrimary</item>
@@ -73,12 +86,22 @@
         <item name="android:textAllCaps">false</item>
     </style>
 
+    <style name="ButtonWhiteWithBlueStroke">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="cornerRadius">@dimen/corner_radius</item>
+        <item name="android:padding">@dimen/medium_padding</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="strokeColor">@color/colorPrimary</item>
+    </style>
+
     <style name="ButtonBlueStroke">
         <item name="android:backgroundTint">@color/white</item>
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="cornerRadius">@dimen/corner_radius</item>
         <item name="android:padding">@dimen/medium_padding</item>
-        <item name="strokeWidth">2dp</item>
+        <item name="strokeWidth">1.5dp</item>
         <item name="strokeColor">@color/colorPrimary</item>
         <item name="android:textAllCaps">false</item>
     </style>
@@ -88,8 +111,18 @@
         <item name="android:textColor">@color/white</item>
         <item name="cornerRadius">@dimen/corner_radius</item>
         <item name="android:padding">@dimen/medium_padding</item>
-        <item name="strokeWidth">2dp</item>
+        <item name="strokeWidth">1.5dp</item>
         <item name="strokeColor">@color/white</item>
         <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="NoBackgroundDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@null</item>
+    </style>
+    <style name="TextViewDisable">
+        <item name="android:backgroundTint">@color/grayLight</item>
+        <item name="android:background"> @drawable/round_element_10</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 </resources>

@@ -4,10 +4,14 @@
     <color name="black">#1C1C1E</color>
     <color name="white">#FFFFFFFF</color>
     <color name="grayDark">#8E8E93</color>
+    <color name="grayStroke">#4DFFFFFF</color>
     <color name="grayLight">#F2F2F7</color>
     <color name="grayBtn">#C7C7CC</color>
     <color name="yellow">#FFCC00</color>
     <color name="red">#FF0000</color>
     <color name="green">#32D74B</color>
     <color name="purple">#321146</color>
+    <color name="blueLight">#EEF8FF</color>
+    <color name="lightBrown">#24916524</color>
+    <color name="lightBlue">#EEF8FF</color>
 </resources>

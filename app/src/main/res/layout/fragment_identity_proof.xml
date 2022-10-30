@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.Account.IdentityProofFragment">
+    tools:context=".ui.fragments.account.IdentityProofFragment">
 
     <include
         android:id="@+id/containerViewPersonalIdentityBankInfo"
@@ -36,6 +36,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/medium_margin"
+        android:lineSpacingExtra="10sp"
+        android:lineSpacingMultiplier="0.8"
         android:text="@string/label_you_are_required_to_go"
         app:layout_constraintEnd_toEndOf="@+id/tvTitle"
         app:layout_constraintStart_toStartOf="@+id/tvTitle"
@@ -57,24 +59,20 @@
     <include
         android:id="@+id/containerCircleBar"
         layout="@layout/container_view_circles"
-        android:layout_width="85dp"
-        android:layout_height="20dp"
-        android:layout_marginBottom="@dimen/large_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/normal_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/tvTermsAndPrivacyPolicy" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9" />
+
     <include
         android:id="@+id/tvTermsAndPrivacyPolicy"
         layout="@layout/include_terms_and_privacy_policy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/guideline"
+        android:layout_marginBottom="@dimen/x_large_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
