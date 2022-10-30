@@ -144,6 +144,10 @@ class Navigation @Inject constructor(){
         activity?.navController?.navigate(R.id.action_fragmentRequestDebitCardConfirmed_to_fragmentMyWalletCards)
     }
 
+    fun openNewAccountFromVerificationFailed(){
+        activity?.navController?.navigate(R.id.action_eligibilityVerificationFailedFragment_to_createNewAccountFragment)
+    }
+
     fun back(){
         activity?.navController?.popBackStack()
     }

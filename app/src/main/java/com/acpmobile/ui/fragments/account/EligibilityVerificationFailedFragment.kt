@@ -45,9 +45,9 @@ class EligibilityVerificationFailedFragment : Fragment() {
         )
 
 
-//        binding.btnNewAccout.setOnClickListener {
-//            navigation.openNewAccountFromVerificationFailed()
-//        }
+        binding.btnNewAccout.setOnClickListener {
+            navigation.openNewAccountFromVerificationFailed()
+        }
 
         return view
     }

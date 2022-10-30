@@ -54,6 +54,17 @@ class ConfirmEmailBottomSheetDialog : BottomSheetDialogFragment() {
             dismiss()
         }
 
+        binding.tiEtCodeFirst.background =
+            ContextCompat.getDrawable(requireContext(), R.drawable.edittext_bottom_shape_default)
+        binding.tiEtCodeSecond.background =
+            ContextCompat.getDrawable(requireContext(), R.drawable.edittext_bottom_shape_default)
+        binding.tiEtCodeThird.background =
+            ContextCompat.getDrawable(requireContext(), R.drawable.edittext_bottom_shape_default)
+        binding.tiEtCodeFourth.background =
+            ContextCompat.getDrawable(requireContext(), R.drawable.edittext_bottom_shape_default)
+        binding.tiEtCodeFifth.background =
+            ContextCompat.getDrawable(requireContext(),R.drawable.edittext_bottom_shape_default)
+
         binding.tiEtCodeFirst.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
             }
@@ -64,21 +75,200 @@ class ConfirmEmailBottomSheetDialog : BottomSheetDialogFragment() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (binding.tiEtCodeFirst.text.isNullOrEmpty() ) {
                     binding.tiEtCodeFirst.background =
-                        resources.getDrawable(R.drawable.edittext_shape_invalid)
+                        ContextCompat.getDrawable(requireContext(), R.drawable.edittext_shape_invalid)
                 } else {
                     binding.tiEtCodeFirst.background =
-                        resources.getDrawable(R.drawable.edittext_shape_valid)
+                        ContextCompat.getDrawable(requireContext(), R.drawable.edittext_shape_valid)
+
+                }
+            }
+        })
+
+        binding.tiEtCodeSecond.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                binding.tiEtCodeFirst.background =
+                    ContextCompat.getDrawable(requireContext(), R.drawable.edittext_bottom_shape_default)
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (binding.tiEtCodeSecond.text.isNullOrEmpty() ) {
+                    binding.tiEtCodeSecond.background =
+                        ContextCompat.getDrawable(requireContext(), R.drawable.edittext_shape_invalid)
+                } else {
+                    binding.tiEtCodeSecond.background =
+                        ContextCompat.getDrawable(requireContext(), R.drawable.edittext_shape_valid)
+
+                }
+            }
+        })
+
+
+        binding.tiEtCodeThird.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                binding.tiEtCodeSecond.background =
+                    ContextCompat.getDrawable(requireContext(), R.drawable.edittext_bottom_shape_default)
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (binding.tiEtCodeThird.text.isNullOrEmpty() ) {
+                    binding.tiEtCodeThird.background =
+                        ContextCompat.getDrawable(requireContext(), R.drawable.edittext_shape_invalid)
+                } else {
+                    binding.tiEtCodeThird.background =
+                        ContextCompat.getDrawable(requireContext(), R.drawable.edittext_shape_valid)
+
+                }
+            }
+        })
+
+        binding.tiEtCodeFourth.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                binding.tiEtCodeThird.background =
+                    ContextCompat.getDrawable(requireContext(), R.drawable.edittext_bottom_shape_default)
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (binding.tiEtCodeFourth.text.isNullOrEmpty() ) {
+                    binding.tiEtCodeFourth.background =
+                        ContextCompat.getDrawable(requireContext(), R.drawable.edittext_shape_invalid)
+                } else {
+                    binding.tiEtCodeFourth.background =
+                        ContextCompat.getDrawable(requireContext(), R.drawable.edittext_shape_valid)
+
+                }
+            }
+        })
+
+        binding.tiEtCodeFifth.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                binding.tiEtCodeFourth.background =
+                    ContextCompat.getDrawable(requireContext(), R.drawable.edittext_bottom_shape_default)
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (binding.tiEtCodeFifth.text.isNullOrEmpty() ) {
+                    binding.tiEtCodeFifth.background =
+                        ContextCompat.getDrawable(requireContext(), R.drawable.edittext_shape_invalid)
+                } else {
+                    binding.tiEtCodeFifth.background =
+                        ContextCompat.getDrawable(requireContext(), R.drawable.edittext_shape_valid)
 
                 }
             }
         })
 
         binding.tv1.setOnClickListener(){
-            binding.tiEtCodeFirst.setText("1")
+           addNumberToEditText("1")
         }
+        binding.tv2.setOnClickListener(){
+            addNumberToEditText("2")
+        }
+
+        binding.tv3.setOnClickListener(){
+            addNumberToEditText("3")
+        }
+
+        binding.tv4.setOnClickListener(){
+            addNumberToEditText("4")
+        }
+
+        binding.tv5.setOnClickListener(){
+            addNumberToEditText("5")
+        }
+
+        binding.tv6.setOnClickListener(){
+            addNumberToEditText("6")
+        }
+
+        binding.tv7.setOnClickListener(){
+            addNumberToEditText("7")
+        }
+
+        binding.tv8.setOnClickListener(){
+            addNumberToEditText("8")
+        }
+
+        binding.tv9.setOnClickListener(){
+            addNumberToEditText("9")
+        }
+
+        binding.tv0.setOnClickListener(){
+            addNumberToEditText("0")
+        }
+
+        binding.ivRemove.setOnClickListener(){
+            removeNumber()
+        }
+
         return view
     }
 
+
+    fun addNumberToEditText(number : String) {
+        if(binding.tiEtCodeFirst.text.isNullOrEmpty()){
+            binding.tiEtCodeFirst.setText(number)
+            return
+        }
+        if(binding.tiEtCodeSecond.text.isNullOrEmpty()){
+            binding.tiEtCodeSecond.setText(number)
+            return
+        }
+        if(binding.tiEtCodeThird.text.isNullOrEmpty()){
+            binding.tiEtCodeThird.setText(number)
+            return
+        }
+        if(binding.tiEtCodeFourth.text.isNullOrEmpty()){
+            binding.tiEtCodeFourth.setText(number)
+            return
+        }
+        if(binding.tiEtCodeFifth.text.isNullOrEmpty()){
+            binding.tiEtCodeFifth.setText(number)
+            return
+        }
+    }
+
+    private fun removeNumber() {
+        if(!binding.tiEtCodeFifth.text.isNullOrEmpty()){
+            binding.tiEtCodeFifth.setText("")
+            return
+        }
+
+        if(!binding.tiEtCodeFourth.text.isNullOrEmpty()){
+            binding.tiEtCodeFourth.setText("")
+            return
+        }
+
+        if(!binding.tiEtCodeThird.text.isNullOrEmpty()){
+            binding.tiEtCodeThird.setText("")
+            return
+        }
+
+        if(!binding.tiEtCodeSecond.text.isNullOrEmpty()){
+            binding.tiEtCodeSecond.setText("")
+            return
+        }
+
+        if(!binding.tiEtCodeFirst.text.isNullOrEmpty()){
+            binding.tiEtCodeFirst.setText("")
+            return
+        }
+    }
 
     companion object {
         const val TAG = "ModalBottomSheet"

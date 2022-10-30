@@ -1,12 +1,10 @@
 package com.acpmobile.ui.fragments.welcomeFragments
 
-import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import com.acpmobile.R
 import com.acpmobile.databinding.FragmentWelcomeFirstBinding

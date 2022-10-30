@@ -91,6 +91,9 @@
         android:name="com.acpmobile.ui.fragments.account.EligibilityVerificationFailedFragment"
         android:label="fragment_eligibility_verification_failed"
         tools:layout="@layout/fragment_eligibility_verification_failed" >
+        <action
+            android:id="@+id/action_eligibilityVerificationFailedFragment_to_createNewAccountFragment"
+            app:destination="@id/createNewAccountFragment" />
     </fragment>
 
     <fragment
