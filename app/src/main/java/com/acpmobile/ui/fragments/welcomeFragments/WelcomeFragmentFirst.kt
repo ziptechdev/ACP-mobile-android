@@ -1,17 +1,14 @@
 package com.acpmobile.ui.fragments.welcomeFragments
 
-import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import com.acpmobile.R
 import com.acpmobile.databinding.FragmentWelcomeFirstBinding
 import com.acpmobile.ui.activity.MainActivity
-import com.acpmobile.ui.fragments.account.ConfirmEmailBottomSheetDialog
 import com.acpmobile.utils.Navigation
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -38,8 +35,7 @@ class WelcomeFragmentFirst : Fragment() {
                 ContextCompat.getColor(it, R.color.colorPrimary)
         }
         binding.btnWelcomeContinue.setOnClickListener {
-            val blankFragment = ConfirmEmailBottomSheetDialog()
-            blankFragment.show(childFragmentManager, blankFragment.getTag());
+            navigation.openWelcomeSecondFragment()
         }
         return binding.root
 
