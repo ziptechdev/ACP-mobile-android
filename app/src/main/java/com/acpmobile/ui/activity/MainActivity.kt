@@ -45,8 +45,12 @@ class MainActivity : AppCompatActivity() {
             if (destination.id == R.id.fragmentProfileMain || destination.id == R.id.fragmentWallet ||
                 destination.id == R.id.fragmentProfile) {
                 binding.bottomNavigationViewMain.visibility = View.VISIBLE
+                binding.toolbarProfile.root.visibility = View.VISIBLE
+                binding.toolbarLight.root.visibility = View.INVISIBLE
             } else {
                 binding.bottomNavigationViewMain.visibility = View.GONE
+                binding.toolbarProfile.root.visibility = View.INVISIBLE
+                binding.toolbarLight.root.visibility = View.VISIBLE
             }
         }
 
