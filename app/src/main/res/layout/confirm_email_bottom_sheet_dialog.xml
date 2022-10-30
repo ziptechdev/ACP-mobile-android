@@ -71,10 +71,10 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/etCodeFirst"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:orientation="vertical"
                 app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
                 app:boxCornerRadiusBottomStart="@dimen/corner_radius"
@@ -90,6 +90,8 @@
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:enabled="false"
+                    android:background="@drawable/edittext_bottom_shape_default"
+
                     android:textColor="@color/black"
                     android:textSize="@dimen/medium_text_size"
                     android:maxLength="1"
@@ -114,6 +116,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvSubtitle">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtCodeSecond"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"

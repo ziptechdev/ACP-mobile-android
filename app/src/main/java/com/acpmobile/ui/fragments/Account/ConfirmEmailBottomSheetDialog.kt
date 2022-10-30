@@ -54,6 +54,8 @@ class ConfirmEmailBottomSheetDialog : BottomSheetDialogFragment() {
             dismiss()
         }
 
+        binding.tiEtCodeFirst.background =
+            resources.getDrawable(R.drawable.edittext_bottom_shape_default)
         binding.tiEtCodeFirst.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
             }
@@ -73,8 +75,33 @@ class ConfirmEmailBottomSheetDialog : BottomSheetDialogFragment() {
             }
         })
 
+        binding.tiEtCodeSecond.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                binding.tiEtCodeFirst.background =
+                    resources.getDrawable(R.drawable.edittext_bottom_shape_default)
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (binding.tiEtCodeSecond.text.isNullOrEmpty() ) {
+                    binding.tiEtCodeSecond.background =
+                        resources.getDrawable(R.drawable.edittext_shape_invalid)
+                } else {
+                    binding.tiEtCodeSecond.background =
+                        resources.getDrawable(R.drawable.edittext_shape_valid)
+
+                }
+            }
+        })
+
         binding.tv1.setOnClickListener(){
             binding.tiEtCodeFirst.setText("1")
+        }
+        binding.tv2.setOnClickListener(){
+            binding.tiEtCodeSecond.setText("2")
         }
         return view
     }
