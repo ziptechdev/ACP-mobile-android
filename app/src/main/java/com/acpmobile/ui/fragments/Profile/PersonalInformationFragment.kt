@@ -4,7 +4,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.acpmobile.R
 import com.acpmobile.databinding.FragmentPersonalInformationBinding
+import com.acpmobile.ui.activity.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -19,6 +21,9 @@ class PersonalInformationFragment : Fragment() {
     ): View? {
         _binding = FragmentPersonalInformationBinding.inflate(inflater, container, false)
         val view = binding.root
+        val mActivity = activity as MainActivity
+
+        mActivity.setToolbarTitle(getString(R.string.label_profile))
 
         binding.btnSave.setOnClickListener{
             val name = binding.etFirstName.editText?.text.toString()

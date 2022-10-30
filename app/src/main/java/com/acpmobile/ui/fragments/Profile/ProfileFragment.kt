@@ -32,6 +32,8 @@ class ProfileFragment : Fragment() {
         val view = binding.root
         navigation.activity = activity as MainActivity
 
+        val mActivity = activity as MainActivity
+        mActivity.setToolbarTitle(getString(R.string.label_profile))
 
         binding.cvPersonalInfo.setOnClickListener {
             navigation.openPersonalInformation()

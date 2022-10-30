@@ -168,5 +168,6 @@
     <string name="label_profile">Profile</string>
     <string name="btn_apply">Apply</string>
     <string name="label_acp">ACP</string>
+    <string name="label_my_wallet">My Wallet</string>
 
 </resources>

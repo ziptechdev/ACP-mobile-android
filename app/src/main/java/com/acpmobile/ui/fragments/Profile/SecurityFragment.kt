@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.acpmobile.R
 import com.acpmobile.databinding.FragmentSecurityBinding
+import com.acpmobile.ui.activity.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -18,6 +20,9 @@ class SecurityFragment : Fragment() {
     ): View? {
         _binding = FragmentSecurityBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        val mActivity = activity as MainActivity
+        mActivity.setToolbarTitle(getString(R.string.label_profile))
 
         binding.btnSave.setOnClickListener{
             val email = binding.etEMail.editText?.text.toString()

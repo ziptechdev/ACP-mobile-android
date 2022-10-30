@@ -240,7 +240,11 @@
         android:id="@+id/fragmentWallet"
         android:name="com.acpmobile.ui.fragments.Wallet.MyWalletFragment"
         android:label="fragment_my_wallet"
-        tools:layout="@layout/fragment_my_wallet" />
+        tools:layout="@layout/fragment_my_wallet" >
+        <action
+            android:id="@+id/action_fragmentWallet_to_fragmentRequestDebitCard"
+            app:destination="@id/fragmentRequestDebitCard" />
+    </fragment>
 
     <fragment
         android:id="@+id/fragmentProfile"
@@ -267,4 +271,28 @@
         android:label="fragment_security"
         tools:layout="@layout/fragment_security" />
 
+    <fragment
+        android:id="@+id/fragmentRequestDebitCard"
+        android:name="com.acpmobile.ui.fragments.Wallet.RequestDebitCardFragment"
+        android:label="fragment_request_debit_card"
+        tools:layout="@layout/fragment_request_debit_card" >
+        <action
+            android:id="@+id/action_fragmentRequestDebitCard_to_fragmentRequestDebitCardEdit"
+            app:destination="@id/fragmentRequestDebitCardEdit" />
+        <action
+            android:id="@+id/action_fragmentRequestDebitCard_to_fragmentRequestDebitCardConfirmed"
+            app:destination="@id/fragmentRequestDebitCardConfirmed" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentRequestDebitCardEdit"
+        android:name="com.acpmobile.ui.fragments.Wallet.RequestDebitCardEditFragment"
+        android:label="fragment_request_debit_card_edit"
+        tools:layout="@layout/fragment_request_debit_card_edit" />
+
+    <fragment
+        android:id="@+id/fragmentRequestDebitCardConfirmed"
+        android:name="com.acpmobile.ui.fragments.Wallet.RequestCardConfirmedFragment"
+        android:label="fragment_request_card_confirmed"
+        tools:layout="@layout/fragment_request_card_confirmed" />
 </navigation>
