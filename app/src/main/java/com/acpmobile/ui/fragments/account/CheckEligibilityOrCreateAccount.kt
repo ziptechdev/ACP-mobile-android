@@ -32,6 +32,14 @@ class CheckEligibilityOrCreateAccount : Fragment() {
 
         val mActivity = activity as MainActivity
         mActivity.setToolbarTitle(getString(R.string.label_eligibility_check))
+
+        mActivity.hideActionsToolbar(
+            isBackVisible = true,
+            isLeftTitleVisible = true,
+            isTitleVisible = true,
+            isCloseVisible = true
+        )
+
         navigation.activity = activity as MainActivity
 
         binding.btnCheckEligibility.setOnClickListener {

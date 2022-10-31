@@ -47,7 +47,7 @@ class EligibilityVerifyingSuccessFragment : Fragment() {
         }
 
         binding.btnCancel.setOnClickListener {
-            activity?.finish()
+            navigation.openCheckEligibilityOrCreateAccountFromDoneOrFailed()
         }
         return view
     }

@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import com.acpmobile.R
 import com.acpmobile.databinding.FragmentEligibilityCheckBinding
 import com.acpmobile.ui.activity.MainActivity
@@ -49,15 +50,15 @@ class EligibilityCheck : Fragment() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (binding.etZipCodeFirst.text.count() < 5 || binding.etZipCodeSecond.text.count() < 4) {
                     binding.clEditTextContainer.background =
-                        resources.getDrawable(R.drawable.edittext_shape_invalid)
+                        ContextCompat.getDrawable(requireContext(), R.drawable.edittext_shape_invalid)
                     binding.btnNext.backgroundTintList =
-                        resources.getColorStateList(R.color.grayBtn)
+                        ContextCompat.getColorStateList(requireContext(), R.color.grayBtn)
                     binding.btnNext.isEnabled = false
                 } else {
                     binding.clEditTextContainer.background =
-                        resources.getDrawable(R.drawable.edittext_shape_valid)
+                        ContextCompat.getDrawable(requireContext(), R.drawable.edittext_shape_valid)
                     binding.btnNext.backgroundTintList =
-                        resources.getColorStateList(R.color.colorPrimary)
+                        ContextCompat.getColorStateList(requireContext(), R.color.colorPrimary)
                     binding.btnNext.isEnabled = true
                 }
             }
@@ -73,15 +74,15 @@ class EligibilityCheck : Fragment() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (binding.etZipCodeSecond.text.count() < 4 || binding.etZipCodeFirst.text.count() < 5) {
                     binding.clEditTextContainer.background =
-                        resources.getDrawable(R.drawable.edittext_shape_invalid)
+                        ContextCompat.getDrawable(requireContext(), R.drawable.edittext_shape_invalid)
                     binding.btnNext.backgroundTintList =
-                        resources.getColorStateList(R.color.grayBtn)
+                        ContextCompat.getColorStateList(requireContext(), R.color.grayBtn)
                     binding.btnNext.isEnabled = false
                 } else {
                     binding.clEditTextContainer.background =
-                        resources.getDrawable(R.drawable.edittext_shape_valid)
+                        ContextCompat.getDrawable(requireContext(), R.drawable.edittext_shape_valid)
                     binding.btnNext.backgroundTintList =
-                        resources.getColorStateList(R.color.colorPrimary)
+                        ContextCompat.getColorStateList(requireContext(), R.color.colorPrimary)
                     binding.btnNext.isEnabled = true
                 }
             }

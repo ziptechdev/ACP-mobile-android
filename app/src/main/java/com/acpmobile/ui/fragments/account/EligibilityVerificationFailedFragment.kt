@@ -31,7 +31,7 @@ class EligibilityVerificationFailedFragment : Fragment() {
         navigation.activity = activity as MainActivity
 
         binding.btnTryAgain.setOnClickListener {
-            navigation.back()
+            navigation.openCheckEligibilityOrCreateAccountFromDoneOrFailed()
         }
 
 
