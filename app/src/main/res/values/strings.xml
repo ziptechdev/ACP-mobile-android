@@ -177,4 +177,34 @@
     <string name="btn_apply">Apply</string>
     <string name="label_acp">ACP</string>
     <string name="label_my_wallet">My Wallet</string>
+
+
+    <string-array name="Months">
+        <item>01/January</item>
+        <item>02/February</item>
+        <item>03/March</item>
+        <item>04/April</item>
+        <item>05/May</item>
+        <item>06/June</item>
+        <item>07/July</item>
+        <item>08/August</item>
+        <item>09/September</item>
+        <item>10/October</item>
+        <item>11/November</item>
+        <item>12/December</item>
+    </string-array>
+    <string-array name="US_states">
+        <item>AL</item><item>AK</item><item>AS</item><item>AZ</item><item>AR</item>
+        <item>CA</item><item>CO</item><item>CT</item><item>DE</item><item>DC</item>
+        <item>FM</item><item>FL</item><item>GA</item><item>GU</item><item>HI</item>
+        <item>ID</item><item>IL</item><item>IN</item><item>IA</item><item>KS</item>
+        <item>KY</item><item>LA</item><item>ME</item><item>MH</item><item>MD</item>
+        <item>MA</item><item>MI</item><item>MN</item><item>MS</item><item>MO</item>
+        <item>MT</item><item>NE</item><item>NV</item><item>NH</item><item>NJ</item>
+        <item>NM</item><item>NY</item><item>NC</item><item>ND</item><item>MP</item>
+        <item>OH</item><item>OK</item><item>OR</item><item>PW</item><item>PA</item>
+        <item>PR</item><item>RI</item><item>SC</item><item>SD</item><item>TN</item>
+        <item>TX</item><item>UT</item><item>VT</item><item>VI</item><item>VA</item>
+        <item>WA</item><item>WV</item><item>WI</item><item>WY</item>
+    </string-array>
 </resources>
