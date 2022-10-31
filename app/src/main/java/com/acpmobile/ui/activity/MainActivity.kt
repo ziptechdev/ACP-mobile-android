@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.toolbar.ivLeft.setOnClickListener { onBackPressed() }
         binding.toolbarLight.ivLeft.setOnClickListener { onBackPressed() }
+        binding.toolbarProfile.ivLeft.setOnClickListener { onBackPressed() }
 
         binding.toolbar.ivRight.setOnClickListener { finish() }
         binding.toolbarLight.ivRight.setOnClickListener { finish() }
@@ -43,13 +44,22 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             if (destination.id == R.id.fragmentProfileMain || destination.id == R.id.fragmentWallet ||
-                destination.id == R.id.fragmentProfile
+                destination.id == R.id.fragmentProfile || destination.id == R.id.fragmentRequestDebitCard
+                || destination.id == R.id.fragmentRequestDebitCardEdit  || destination.id == R.id.fragmentMyWalletCards
             ) {
                 binding.bottomNavigationViewMain.visibility = View.VISIBLE
-                binding.toolbarProfile.root.visibility = View.VISIBLE
-                hideToolbar()
+
             } else {
                 binding.bottomNavigationViewMain.visibility = View.GONE
+
+            }
+
+            if(destination.id == R.id.fragmentProfileMain || destination.id == R.id.fragmentWallet ||
+                destination.id == R.id.fragmentProfile || destination.id == R.id.fragmentPersonalInformation || destination.id == R.id.fragmentSecurity
+                || destination.id == R.id.fragmentRequestDebitCard  || destination.id == R.id.fragmentRequestDebitCardEdit  || destination.id == R.id.fragmentMyWalletCards){
+                binding.toolbarProfile.root.visibility = View.VISIBLE
+                hideToolbar()
+            }else{
                 binding.toolbarProfile.root.visibility = View.INVISIBLE
                 showToolbar(true)
             }
@@ -59,14 +69,17 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.home -> {
                     navigation.openHome()
+                    setToolbarTitle(getString(R.string.label_home))
                     return@setOnItemSelectedListener true
                 }
                 R.id.wallet -> {
                     navigation.openWallet()
+                    setToolbarTitle(getString(R.string.label_my_wallet))
                     return@setOnItemSelectedListener true
                 }
                 R.id.profile -> {
                     navigation.openProfile()
+                    setToolbarTitle(getString(R.string.label_profile))
                     return@setOnItemSelectedListener true
                 }
                 else -> {
@@ -90,6 +103,7 @@ class MainActivity : AppCompatActivity() {
     fun setToolbarTitle(title: String) {
         binding.toolbar.tvTitle.text = title
         binding.toolbarLight.tvTitle.text = title
+        binding.toolbarProfile.tvTitle.text = title
     }
 
     fun hideToolbar() {

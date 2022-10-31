@@ -81,9 +81,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvMonthOfBirth">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtMonth"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:datePickerMode="spinner" />
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -112,8 +116,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvDayOfBirth">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtDay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
                     android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -143,9 +152,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvYearOfBirth">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtYear"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"/>
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView

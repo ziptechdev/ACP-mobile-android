@@ -20,7 +20,7 @@
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnNext"
+            android:id="@+id/btnNewCard"
             style="@style/ButtonBlue"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnNext" />
+            app:layout_constraintTop_toBottomOf="@+id/btnNewCard" />
 
         <include
             android:id="@+id/container_view_transactions"
