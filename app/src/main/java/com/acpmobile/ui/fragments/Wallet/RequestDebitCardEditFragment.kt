@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.acpmobile.R
@@ -40,19 +41,26 @@ class RequestDebitCardEditFragment : Fragment() {
                 ContextCompat.getColor(it, R.color.white)
         }
 
-        binding.btnSave.setOnClickListener{
+        binding.btnSave.setOnClickListener {
             val streetNumberAndName = binding.etStreetNumberAndName.editText?.text.toString()
             val city = binding.etCity.editText?.text.toString()
             val state = binding.etState.editText?.text.toString()
             val zip = binding.etZipCode.editText?.text.toString()
             val phoneNumber = binding.etPhoneNumber.editText?.text.toString()
 
-            if(streetNumberAndName.isNotEmpty() && city.isNotEmpty() && state.isNotEmpty()
-                && zip.isNotEmpty() && phoneNumber.isNotEmpty()){
+            if (streetNumberAndName.isNotEmpty() && city.isNotEmpty() && state.isNotEmpty()
+                && zip.isNotEmpty() && phoneNumber.isNotEmpty()
+            ) {
                 navigation.back()
             }
         }
-
+        val stateSpinner = binding.tiEtState
+        val adapter = ArrayAdapter(
+            (activity as MainActivity),
+            android.R.layout.simple_list_item_1,
+            resources.getStringArray(R.array.US_states)
+        )
+        stateSpinner.setAdapter(adapter)
 
         return view
     }

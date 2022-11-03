@@ -1,9 +1,11 @@
 package com.acpmobile.ui.fragments.Profile
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import com.acpmobile.R
 import com.acpmobile.databinding.FragmentPersonalInformationBinding
 import com.acpmobile.ui.activity.MainActivity
@@ -25,7 +27,7 @@ class PersonalInformationFragment : Fragment() {
 
         mActivity.setToolbarTitle(getString(R.string.label_profile))
 
-        binding.btnSave.setOnClickListener{
+        binding.btnSave.setOnClickListener {
             val name = binding.etFirstName.editText?.text.toString()
             val lastName = binding.etLastName.editText?.text.toString()
             val month = binding.etMonthOfBirth.editText?.text.toString()
@@ -37,11 +39,28 @@ class PersonalInformationFragment : Fragment() {
             val zip = binding.etZipCode.editText?.text.toString()
             val ssn = binding.etSSN.editText?.text.toString()
 
-            if(name.isNotEmpty() && lastName.isNotEmpty() && month.isNotEmpty() && day.isNotEmpty()
+            if (name.isNotEmpty() && lastName.isNotEmpty() && month.isNotEmpty() && day.isNotEmpty()
                 && year.isNotEmpty() && streetNumberAndName.isNotEmpty() && city.isNotEmpty()
-                && state.isNotEmpty() && zip.isNotEmpty() && ssn.isNotEmpty())
-                    TODO("Vratiti se na profile screen")
+                && state.isNotEmpty() && zip.isNotEmpty() && ssn.isNotEmpty()
+            )
+                TODO("Vratiti se na profile screen")
         }
+
+        val stateSpinner = binding.tiEtState
+        val adapter = ArrayAdapter(
+            (activity as MainActivity),
+            android.R.layout.simple_list_item_1,
+            resources.getStringArray(R.array.US_states)
+        )
+        stateSpinner.setAdapter(adapter)
+
+        val monthSpinner = binding.tiEtMonth
+        val adapter2 = ArrayAdapter(
+            (activity as MainActivity),
+            android.R.layout.simple_list_item_1,
+            resources.getStringArray(R.array.Months)
+        )
+        monthSpinner.setAdapter(adapter2)
         return view
     }
 }

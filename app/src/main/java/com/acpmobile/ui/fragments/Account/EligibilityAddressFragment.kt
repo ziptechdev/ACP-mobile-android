@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.core.content.ContextCompat
 import com.acpmobile.R
 import com.acpmobile.databinding.FragmentEligibilityAddressBinding
@@ -51,6 +52,13 @@ class EligibilityAddressFragment : Fragment() {
             if (streetNumberAndName.isNotEmpty() && city.isNotEmpty() && state.isNotEmpty() && zip.isNotEmpty())
                 navigation.openVerifyingFragment()
         }
+        val stateSpinner = binding.tiEtState
+        val adapter = ArrayAdapter(
+            (activity as MainActivity),
+            android.R.layout.simple_list_item_1,
+            resources.getStringArray(R.array.US_states)
+        )
+        stateSpinner.setAdapter(adapter)
         return view
     }
 
