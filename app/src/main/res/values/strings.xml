@@ -7,8 +7,21 @@
     <string name="welcome_first_text">The Affordable Connectivity Program is an FCC benefit program that helps ensure that households can afford the broadband they need for work, school, healthcare and more.\n\nThe benefit provides a discount of up to $30 per month toward internet service for eligible households and up to $75 per month for households on qualifying Tribal lands. Eligible households can also receive a one-time discount of up to $100 to purchase a laptop, desktop computer, or tablet from participating providers if they contribute more than $10 and less than $50 toward the purchase price.\n\nThe Affordable Connectivity Program is limited to one monthly service discount and one device discount per household.\n\nBefore continuing you are required to review our <u>Terms of Use</u> and <u>Privacy Policy</u>.</string>
     <string name="welcome_first_button">Continue</string>
     <string name="welcome_second_title_first"> Terms of Use</string>
-    <string name="welcome_second_text_first">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</string>
+    <string name="welcome_second_text_first">At ACP, accessible from acpmobile.com, one of our
+main priorities is the privacy of our visitors. This
+Privacy Policy document contains types of
+information that is collected and recorded by ACP
+and how we use it.</string>
+    <string name="welcome_second_title_second2">If you have additional questions or require more
+information about our Privacy Policy, do not hesitate to contact us.</string>
     <string name="welcome_second_title_second"> Privacy Policy</string>
+    <string name="welcome_second_title_second3">This Privacy Policy applies only to our online activities and is valid for visitors to our website woth
+regards to the information that they shared and/or
+collect in ACP. This policy is not applicable to any
+information collected offline or via channels other
+than this website. Our Privacy Policy was created
+with the help of the Free Privacy Policy Generator.</string>
+
     <string name="welcome_second_text_second"> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</string>
     <string name="welcome_second_button">Accept</string>
     <string name="label_read_our">Read our</string>
@@ -178,7 +191,6 @@
     <string name="label_acp">ACP</string>
     <string name="label_my_wallet">My Wallet</string>
 
-
     <string-array name="Months">
         <item>01/January</item>
         <item>02/February</item>
@@ -207,4 +219,24 @@
         <item>TX</item><item>UT</item><item>VT</item><item>VI</item><item>VA</item>
         <item>WA</item><item>WV</item><item>WI</item><item>WY</item>
     </string-array>
+
+    <string name="privacy_and_policy">Privacy and Policy</string>
+    <string name="label_consent">Consent</string>
+    <string name="label_by_using_our_website">By using our website, you hereby consent to our
+Privacy Policy and agree to its terms.</string>
+    <string name="label_information_we_collect">Information we collect</string>
+    <string name="label_personal_info_description">The personal information that you are asked to
+provide, and the reasons why you are asked to
+provide it, will be made clear to you at the point we
+ask you to provide your personal information.</string>
+    <string name="label_personal_info_description_2">If you contact us directly. we may receive additional
+information about you such as your name, email
+address, phone number, the contents of the
+message and/or attachments you may send us, and
+any other information you may choose to provide.</string>
+    <string name="label_personal_info_description_3">When you register for an Account, we may ask for
+your contact information, including items such as
+name, company name, address, email address, and telephone number.</string>
+
+
 </resources>
