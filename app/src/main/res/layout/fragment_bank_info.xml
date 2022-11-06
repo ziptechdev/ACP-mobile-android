@@ -72,6 +72,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvBankName">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtBankName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -103,6 +104,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvBankNumber">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtBankNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -133,6 +135,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvAccountHolderName">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtAccountHolderName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -163,6 +166,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvAccountNumber">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtAccountNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -193,6 +197,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvExpirationDate">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtExpirationDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />

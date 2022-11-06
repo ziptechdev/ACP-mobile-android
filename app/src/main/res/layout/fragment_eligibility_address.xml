@@ -83,6 +83,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvStreetNumber">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtStreetNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -113,6 +114,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvCity">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtCity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -179,6 +181,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvState">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtZipCode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number" />

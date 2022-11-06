@@ -84,6 +84,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvFirstName">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtFirstName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -145,6 +146,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvLastName">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtLastName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
