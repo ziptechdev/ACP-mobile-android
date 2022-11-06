@@ -69,6 +69,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvFirstName">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtFirstName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -129,6 +130,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvLastName">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtLastName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -207,6 +209,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvDayOfBirth">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtDayOfBirth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
@@ -240,6 +243,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvYearOfBirth">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtYearOfBirth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
@@ -282,6 +286,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvStreetNumberAndName">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtStreetNumberAndName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -312,6 +317,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvCity">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtCity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -378,6 +384,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvState">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtZipCode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:calendarViewShown="false"
@@ -420,6 +427,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvSSN">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtSSN"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number" />

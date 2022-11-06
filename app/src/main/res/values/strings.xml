@@ -238,5 +238,7 @@ any other information you may choose to provide.</string>
 your contact information, including items such as
 name, company name, address, email address, and telephone number.</string>
 
+    <string name="label_required_field">Required field</string>
+    <string name="label_passwords_must_be_same">Passwords must be same!</string>
 
 </resources>
