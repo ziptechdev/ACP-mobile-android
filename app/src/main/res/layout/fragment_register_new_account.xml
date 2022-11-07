@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".ui.fragments.account.RegisterNewAccountFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,7 +15,7 @@
             android:id="@+id/ivUserPhoto"
             android:layout_width="128dp"
             android:layout_height="128dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="@dimen/top_margin_medium"
             android:src="@drawable/img_new_user"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -25,9 +26,9 @@
             style="@style/TitleTextBlue"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/normal_margin"
+            android:layout_marginStart="@dimen/start_end_margin"
             android:layout_marginTop="@dimen/extra_large_margin"
-            android:layout_marginEnd="@dimen/normal_margin"
+            android:layout_marginEnd="@dimen/start_end_margin"
             android:text="@string/label_register_new_account"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +38,7 @@
             android:id="@+id/tvSubtitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/margin_between_tittle_and_subtitle"
             android:lineSpacingExtra="10sp"
             android:lineSpacingMultiplier="0.8"
             android:text="@string/label_register_new_account_by_entering_your"
@@ -73,7 +74,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"/>
+                android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -101,13 +102,13 @@
             app:layout_constraintEnd_toEndOf="@+id/tvSubtitle"
             app:layout_constraintStart_toStartOf="@+id/etEMail"
             app:layout_constraintTop_toBottomOf="@+id/tvPassword"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleDrawable="@drawable/ic_show_password_selector">
+            app:passwordToggleDrawable="@drawable/ic_show_password_selector"
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -133,13 +134,13 @@
             app:layout_constraintEnd_toEndOf="@+id/tvSubtitle"
             app:layout_constraintStart_toStartOf="@+id/etEMail"
             app:layout_constraintTop_toBottomOf="@+id/tvConfirmPassword"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleDrawable="@drawable/ic_show_password_selector">
+            app:passwordToggleDrawable="@drawable/ic_show_password_selector"
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -168,7 +169,7 @@
             layout="@layout/include_terms_and_privacy_policy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/x_large_text_size"
+            android:layout_marginBottom="@dimen/terms_of_use_bottom_margin"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"

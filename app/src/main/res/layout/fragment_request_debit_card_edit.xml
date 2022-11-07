@@ -10,11 +10,12 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -25,9 +26,9 @@
                 style="@style/TitleTextBlue"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/normal_margin"
-                android:layout_marginTop="@dimen/extra_large_margin"
-                android:layout_marginEnd="@dimen/normal_margin"
+                android:layout_marginStart="@dimen/start_end_margin"
+                android:layout_marginTop="@dimen/top_margin_medium"
+                android:layout_marginEnd="@dimen/start_end_margin"
                 android:text="@string/label_request_debit_card"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +38,7 @@
                 android:id="@+id/tvSubtitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/margin_between_tittle_and_subtitle"
                 android:lineSpacingExtra="10sp"
                 android:lineSpacingMultiplier="0.8"
                 android:text="@string/label_acp_mobile_visa_debit_card"
@@ -58,15 +59,15 @@
             <TextView
                 android:id="@+id/etFirstName"
                 style="@style/TextViewDisable"
-                android:text="Jhon"
-                android:textColor="@color/grayDark"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/small_margin"
                 android:layout_marginEnd="8dp"
+                android:text="Jhon"
+                android:textColor="@color/grayDark"
                 app:layout_constraintEnd_toStartOf="@+id/etLastName"
                 app:layout_constraintStart_toStartOf="@+id/tvSubtitle"
-                app:layout_constraintTop_toBottomOf="@+id/tvFirstName"/>
+                app:layout_constraintTop_toBottomOf="@+id/tvFirstName" />
 
             <TextView
                 android:id="@+id/tvLastName"
@@ -81,15 +82,15 @@
             <TextView
                 android:id="@+id/etLastName"
                 style="@style/TextViewDisable"
-                android:textColor="@color/grayDark"
-                android:text="Doe"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="@dimen/small_margin"
+                android:text="Doe"
+                android:textColor="@color/grayDark"
                 app:layout_constraintEnd_toEndOf="@+id/tvSubtitle"
                 app:layout_constraintStart_toEndOf="@id/etFirstName"
-                app:layout_constraintTop_toBottomOf="@+id/tvLastName"/>
+                app:layout_constraintTop_toBottomOf="@+id/tvLastName" />
 
             <TextView
                 android:id="@+id/tvStreetNumberAndName"
@@ -106,12 +107,12 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
                 android:orientation="vertical"
                 app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
                 app:boxCornerRadiusBottomStart="@dimen/corner_radius"
                 app:boxCornerRadiusTopEnd="@dimen/corner_radius"
                 app:boxCornerRadiusTopStart="@dimen/corner_radius"
-                android:layout_marginTop="@dimen/small_margin"
                 app:layout_constraintEnd_toEndOf="@+id/tvTitle"
                 app:layout_constraintStart_toStartOf="@+id/tvTitle"
                 app:layout_constraintTop_toBottomOf="@+id/tvStreetNumberAndName">
@@ -119,7 +120,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"/>
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -137,12 +138,12 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
                 android:orientation="vertical"
                 app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
                 app:boxCornerRadiusBottomStart="@dimen/corner_radius"
                 app:boxCornerRadiusTopEnd="@dimen/corner_radius"
                 app:boxCornerRadiusTopStart="@dimen/corner_radius"
-                android:layout_marginTop="@dimen/small_margin"
                 app:layout_constraintEnd_toEndOf="@+id/tvTitle"
                 app:layout_constraintStart_toStartOf="@+id/tvTitle"
                 app:layout_constraintTop_toBottomOf="@+id/tvCity">
@@ -150,7 +151,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"/>
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -168,13 +169,13 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
                 android:layout_marginEnd="8dp"
                 android:orientation="vertical"
                 app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
                 app:boxCornerRadiusBottomStart="@dimen/corner_radius"
                 app:boxCornerRadiusTopEnd="@dimen/corner_radius"
                 app:boxCornerRadiusTopStart="@dimen/corner_radius"
-                android:layout_marginTop="@dimen/small_margin"
                 app:layout_constraintEnd_toStartOf="@+id/etZipCode"
                 app:layout_constraintStart_toStartOf="@+id/etCity"
                 app:layout_constraintTop_toBottomOf="@+id/tvState">
@@ -202,12 +203,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/small_margin"
                 android:orientation="vertical"
                 app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
                 app:boxCornerRadiusBottomStart="@dimen/corner_radius"
                 app:boxCornerRadiusTopEnd="@dimen/corner_radius"
                 app:boxCornerRadiusTopStart="@dimen/corner_radius"
-                android:layout_marginTop="@dimen/small_margin"
                 app:layout_constraintEnd_toEndOf="@+id/etStreetNumberAndName"
                 app:layout_constraintStart_toEndOf="@+id/etState"
                 app:layout_constraintTop_toBottomOf="@+id/tvState">
@@ -234,13 +235,13 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_marginTop="@dimen/small_margin"
                 android:layout_marginBottom="@dimen/large_margin"
+                android:orientation="vertical"
                 app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
                 app:boxCornerRadiusBottomStart="@dimen/corner_radius"
                 app:boxCornerRadiusTopEnd="@dimen/corner_radius"
                 app:boxCornerRadiusTopStart="@dimen/corner_radius"
-                android:layout_marginTop="@dimen/small_margin"
                 app:layout_constraintBottom_toTopOf="@id/btnSave"
                 app:layout_constraintEnd_toEndOf="@+id/tvTitle"
                 app:layout_constraintStart_toStartOf="@+id/tvTitle"
@@ -249,7 +250,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"/>
+                    android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
@@ -257,7 +258,8 @@
                 style="@style/ButtonBlue"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/extra_large_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                android:layout_marginBottom="@dimen/large_margin"
                 android:text="@string/btn_save"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"

@@ -11,9 +11,9 @@
         layout="@layout/container_view_personal_identity_bank_info"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginStart="@dimen/start_end_margin"
         android:layout_marginTop="@dimen/medium_margin"
-        android:layout_marginEnd="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/start_end_margin"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,9 +37,9 @@
                 android:id="@+id/tvSubtitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/normal_margin"
-                android:layout_marginTop="@dimen/extra_large_margin"
-                android:layout_marginEnd="@dimen/normal_margin"
+                android:layout_marginStart="@dimen/start_end_margin"
+                android:layout_marginTop="@dimen/top_margin_small"
+                android:layout_marginEnd="@dimen/start_end_margin"
                 android:lineSpacingExtra="10sp"
                 android:lineSpacingMultiplier="0.8"
                 android:text="@string/label_enter_personal_information_below"
@@ -75,7 +75,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"/>
+                    android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -106,7 +106,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"/>
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -136,7 +136,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"/>
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -166,7 +166,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"/>
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -260,7 +260,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"/>
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton

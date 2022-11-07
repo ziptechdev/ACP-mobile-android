@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.welcomeFragments.WelcomeFragmentSecond"
-    android:backgroundTint="@color/white">
+    android:backgroundTint="@color/white"
+    tools:context=".ui.fragments.welcomeFragments.WelcomeFragmentSecond">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/normal_margin"
-        android:layout_marginEnd="@dimen/normal_margin"
+        android:layout_marginStart="@dimen/start_end_margin"
         android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginEnd="@dimen/start_end_margin"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/svWelcomeSecond"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,9 +45,9 @@
         android:id="@+id/svWelcomeSecond"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginStart="@dimen/start_end_margin"
         android:layout_marginTop="@dimen/large_margin"
-        android:layout_marginStart="@dimen/normal_margin"
-        android:layout_marginEnd="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/start_end_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,10 +69,11 @@
                 android:id="@+id/tvWelcomeSecondText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/margin_between_tittle_and_subtitle"
                 android:lineSpacingExtra="10sp"
                 android:lineSpacingMultiplier="0.8"
                 android:text="@string/welcome_second_text_first" />
+
             <TextView
                 android:id="@+id/tvWelcomeSecondTitle2"
                 style="@style/TitleTextBlue"
@@ -85,8 +86,7 @@
                 android:id="@+id/tvWelcomeSecondText2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/medium_margin"
-                android:layout_marginBottom="@dimen/large_margin"
+                android:layout_marginTop="@dimen/margin_between_tittle_and_subtitle"
                 android:lineSpacingExtra="10sp"
                 android:lineSpacingMultiplier="0.8"
                 android:text="@string/welcome_second_text_second" />
@@ -96,10 +96,10 @@
                 style="@style/ButtonBlue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_btn_and_text_medium"
                 android:layout_marginBottom="@dimen/extra_large_margin"
-                android:layout_marginTop="@dimen/large_margin"
                 android:text="@string/welcome_second_button"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
