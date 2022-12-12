@@ -66,7 +66,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/etMonthOfBirth"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/small_margin"
@@ -79,14 +79,15 @@
                 app:layout_constraintStart_toStartOf="@+id/tvSubtitle"
                 app:layout_constraintTop_toBottomOf="@+id/tvMonthOfBirth">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
                     android:id="@+id/tiEtMonth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="false"
                     android:cursorVisible="false"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:inputType="none" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -106,6 +107,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/small_margin"
                 android:orientation="vertical"
+                android:textAlignment="center"
                 app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
                 app:boxCornerRadiusBottomStart="@dimen/corner_radius"
                 app:boxCornerRadiusTopEnd="@dimen/corner_radius"
@@ -122,7 +124,8 @@
                     android:cursorVisible="false"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:textAlignment="center" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -142,6 +145,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/small_margin"
                 android:orientation="vertical"
+                android:textAlignment="center"
                 app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
                 app:boxCornerRadiusBottomStart="@dimen/corner_radius"
                 app:boxCornerRadiusTopEnd="@dimen/corner_radius"
@@ -154,11 +158,8 @@
                     android:id="@+id/tiEtYear"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
-                    android:inputType="text" />
+                    android:inputType="number"
+                    android:textAlignment="center" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -186,10 +187,10 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvSSNNumber">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtSSNNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:calendarViewShown="false"
-                    android:inputType="text" />
+                    android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView

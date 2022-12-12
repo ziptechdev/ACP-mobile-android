@@ -1,29 +1,26 @@
 package com.acpmobile.ui.fragments.account
 
-import android.app.AlertDialog
-import android.app.DatePickerDialog
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.DatePicker
+import android.widget.ArrayAdapter
 import androidx.core.content.ContextCompat
 import com.acpmobile.R
 import com.acpmobile.databinding.FragmentEligibilityDateBinding
 import com.acpmobile.ui.activity.MainActivity
 import com.acpmobile.utils.Navigation
 import dagger.hilt.android.AndroidEntryPoint
-import java.text.SimpleDateFormat
-import java.util.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class EligibilityDateFragment : Fragment() {
+class EligibilityDateFragment : Fragment(), TextWatcher {
 
     private var _binding: FragmentEligibilityDateBinding? = null
     private val binding get() = _binding!!
-    var cal = Calendar.getInstance()
 
 
     @Inject
@@ -50,96 +47,105 @@ class EligibilityDateFragment : Fragment() {
         )
         binding.containerNameDateAddress.tvDateBirth.setBackgroundResource(R.drawable.round_element_6)
 
+        binding.tiEtMonth.addTextChangedListener(this)
+        binding.tiEtDay.addTextChangedListener(this)
+        binding.tiEtYear.addTextChangedListener(this)
+        binding.tiEtSSNNumber.addTextChangedListener(this)
+
         binding.btnNext.setOnClickListener {
             val month = binding.etMonthOfBirth.editText?.text.toString()
             val day = binding.etDayOfBirth.editText?.text.toString()
             val year = binding.etYearOfBirth.editText?.text.toString()
             val ssn = binding.etSSNNumber.editText?.text.toString()
+
+            if (month.isEmpty()) {
+                binding.etMonthOfBirth.error =
+                    context?.resources?.getString(R.string.label_required_field)
+                binding.etMonthOfBirth.requestFocus()
+            } else {
+                binding.etMonthOfBirth.error = null
+            }
+
+            if (day.isEmpty()) {
+                binding.etDayOfBirth.error =
+                    context?.resources?.getString(R.string.label_required_field)
+                binding.etDayOfBirth.requestFocus()
+            } else {
+                binding.etDayOfBirth.error = null
+            }
+
+            if (year.isEmpty()) {
+                binding.etYearOfBirth.error =
+                    context?.resources?.getString(R.string.label_required_field)
+                binding.etYearOfBirth.requestFocus()
+            } else {
+                binding.etYearOfBirth.error = null
+            }
+
+            if (ssn.isEmpty()) {
+                binding.etSSNNumber.error =
+                    context?.resources?.getString(R.string.label_required_field)
+                binding.etSSNNumber.requestFocus()
+            } else {
+                binding.etSSNNumber.error = null
+            }
+
+
             if (month.isNotEmpty() && day.isNotEmpty() && year.isNotEmpty() && ssn.isNotEmpty())
                 navigation.openCheckEligibilityAddress()
         }
 
-
-
-        val dateSetListenerMonth =
-            DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-                cal.set(Calendar.YEAR, year)
-                cal.set(Calendar.MONTH, monthOfYear)
-                cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-                updateDateInViewMonth()
-            }
-
-        val dateSetListenerDay =
-            DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-                cal.set(Calendar.YEAR, year)
-                cal.set(Calendar.MONTH, monthOfYear)
-                cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-                updateDateInViewDay()
-            }
-        val dateSetListenerYear =
-            DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-                cal.set(Calendar.YEAR, year)
-                cal.set(Calendar.MONTH, monthOfYear)
-                cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-                updateDateInViewYear()
-            }
-
-        // when you click on the button, show DatePickerDialog that is set with OnDateSetListener
-        binding.tiEtMonth.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(view: View) {
-                DatePickerDialog(requireContext(),
-                    R.style.DataPickerTheme,
-                    dateSetListenerMonth,
-                    // set DatePickerDialog to point to today's date when it loads up
-                    cal.get(Calendar.YEAR),
-                    cal.get(Calendar.MONTH),
-                    cal.get(Calendar.DAY_OF_MONTH)).show()
-            }
-
-        })
-        binding.tiEtDay.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(view: View) {
-                DatePickerDialog(requireContext(),
-                    R.style.DataPickerTheme,
-                    dateSetListenerDay,
-                    // set DatePickerDialog to point to today's date when it loads up
-                    cal.get(Calendar.YEAR),
-                    cal.get(Calendar.MONTH),
-                    cal.get(Calendar.DAY_OF_MONTH)).show()
-            }
-
-        })
-        binding.tiEtYear.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(view: View) {
-                DatePickerDialog(requireContext(),
-                    R.style.DataPickerTheme,
-                    dateSetListenerYear,
-                    // set DatePickerDialog to point to today's date when it loads up
-                    cal.get(Calendar.YEAR),
-                    cal.get(Calendar.MONTH),
-                    cal.get(Calendar.DAY_OF_MONTH)).show()
-            }
-
-        })
-
+        val monthSpinner = binding.tiEtMonth
+        val adapter = ArrayAdapter(
+            (activity as MainActivity),
+            android.R.layout.simple_list_item_1,
+            resources.getStringArray(R.array.Months)
+        )
+        monthSpinner.setAdapter(adapter)
         return view
     }
 
-    private fun updateDateInViewMonth() {
-        val myFormat = "MMMM" // mention the format you need
-        val sdf = SimpleDateFormat(myFormat, Locale.US)
-        binding.tiEtMonth.setText(sdf.format(cal.getTime()))
+    override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
     }
 
-    private fun updateDateInViewDay() {
-        val myFormat = "dd" // mention the format you need
-        val sdf = SimpleDateFormat(myFormat, Locale.US)
-        binding.tiEtDay.setText(sdf.format(cal.getTime()))
+    override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
     }
 
-    private fun updateDateInViewYear() {
-        val myFormat = "yyyy" // mention the format you need
-        val sdf = SimpleDateFormat(myFormat, Locale.US)
-        binding.tiEtYear.setText(sdf.format(cal.getTime()))
+    override fun afterTextChanged(p0: Editable?) {
+        when (p0) {
+            binding.etMonthOfBirth.editText?.editableText -> if (!binding.etMonthOfBirth.editText?.text.isNullOrEmpty()) {
+                binding.etMonthOfBirth.error = null
+            } else {
+                binding.etMonthOfBirth.error =
+                    context?.resources?.getString(R.string.label_required_field)
+                binding.etMonthOfBirth.requestFocus()
+            }
+
+            binding.etDayOfBirth.editText?.editableText -> if (!binding.etDayOfBirth.editText?.text.isNullOrEmpty()) {
+                binding.etDayOfBirth.error = null
+            } else {
+                binding.etDayOfBirth.error =
+                    context?.resources?.getString(R.string.label_required_field)
+                binding.etDayOfBirth.requestFocus()
+            }
+
+            binding.etYearOfBirth.editText?.editableText -> if (!binding.etYearOfBirth.editText?.text.isNullOrEmpty()) {
+                binding.etYearOfBirth.error = null
+            } else {
+                binding.etYearOfBirth.error =
+                    context?.resources?.getString(R.string.label_required_field)
+                binding.etYearOfBirth.requestFocus()
+            }
+
+            binding.etSSNNumber.editText?.editableText -> if (!binding.etSSNNumber.editText?.text.isNullOrEmpty()) {
+                binding.etSSNNumber.error = null
+            } else {
+                binding.etSSNNumber.error =
+                    context?.resources?.getString(R.string.label_required_field)
+                binding.etSSNNumber.requestFocus()
+            }
+
+        }
     }
 }

@@ -73,6 +73,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvFirstName">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtFirstName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -104,6 +105,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvLastName">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtLastName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -134,6 +136,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvEMail">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtEMail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -164,9 +167,10 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvPhoneNumber">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtPhoneNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text" />
+                    android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -196,6 +200,7 @@
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword" />
@@ -228,6 +233,7 @@
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtConfirmPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword" />
@@ -258,9 +264,10 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvSSN">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiEtSSN"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text" />
+                    android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton

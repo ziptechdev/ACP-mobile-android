@@ -63,7 +63,7 @@
                 style="@style/TitleTextBlue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/welcome_second_title_first" />
+                android:text="@string/privacy_and_policy" />
 
             <TextView
                 android:id="@+id/tvWelcomeSecondText"
@@ -76,20 +76,57 @@
 
             <TextView
                 android:id="@+id/tvWelcomeSecondTitle2"
-                style="@style/TitleTextBlue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/large_margin"
-                android:text="@string/welcome_second_title_second" />
+                android:textSize="@dimen/medium_text_size"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="@dimen/normal_margin"
+                android:text="@string/label_consent" />
 
             <TextView
-                android:id="@+id/tvWelcomeSecondText2"
+                android:id="@+id/tvWelcomeSecondText4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/normal_margin"
+                android:lineSpacingExtra="10sp"
+                android:lineSpacingMultiplier="0.8"
+                android:text="@string/label_by_using_our_website" />
+
+            <TextView
+                android:id="@+id/tvWelcomeSecondTitle3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/medium_text_size"
+                android:layout_marginTop="@dimen/normal_margin"
+                android:textColor="@color/colorPrimary"
+                android:text="@string/label_information_we_collect" />
+
+            <TextView
+                android:id="@+id/tvWelcomeSecondText5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/normal_margin"
+                android:lineSpacingExtra="10sp"
+                android:lineSpacingMultiplier="0.8"
+                android:text="@string/label_personal_info_description" />
+
+            <TextView
+                android:id="@+id/tvWelcomeSecondText6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/normal_margin"
+                android:lineSpacingExtra="10sp"
+                android:lineSpacingMultiplier="0.8"
+                android:text="@string/label_personal_info_description_2" />
+
+            <TextView
+                android:id="@+id/tvWelcomeSecondText7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/margin_between_tittle_and_subtitle"
                 android:lineSpacingExtra="10sp"
                 android:lineSpacingMultiplier="0.8"
-                android:text="@string/welcome_second_text_second" />
+                android:text="@string/label_personal_info_description_3" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnWelcomeSecondAccept"
