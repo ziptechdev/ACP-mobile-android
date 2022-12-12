@@ -11,9 +11,9 @@
         layout="@layout/container_view_name_date_address"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginStart="@dimen/start_end_margin"
         android:layout_marginTop="@dimen/medium_margin"
-        android:layout_marginEnd="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/start_end_margin"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,9 +38,9 @@
                 style="@style/TitleTextBlue"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/normal_margin"
-                android:layout_marginTop="@dimen/extra_large_margin"
-                android:layout_marginEnd="@dimen/normal_margin"
+                android:layout_marginStart="@dimen/start_end_margin"
+                android:layout_marginTop="@dimen/top_margin_medium"
+                android:layout_marginEnd="@dimen/start_end_margin"
                 android:text="@string/label_your_full_legal_name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,7 @@
                 android:id="@+id/tvSubtitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/margin_between_tittle_and_subtitle"
                 android:lineSpacingExtra="10sp"
                 android:lineSpacingMultiplier="0.8"
                 android:text="@string/label_the_name_you_use_on_official_document"
@@ -182,7 +182,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.8" />
+                app:layout_constraintGuide_percent="0.85" />
 
             <include
                 android:id="@+id/tvTermsAndPrivacyPolicy"
@@ -192,7 +192,6 @@
                 android:layout_marginBottom="@dimen/x_large_text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.495"
                 app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

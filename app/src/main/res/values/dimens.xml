@@ -16,13 +16,25 @@
     <dimen name="small_padding">4dp</dimen>
     <dimen name="normal_padding">8dp</dimen>
     <dimen name="medium_padding">12dp</dimen>
-    <dimen name="extra_large_margin">48dp</dimen>
-    <dimen name="x_extra_large_margin">64dp</dimen>
-    <dimen name="large_margin">32dp</dimen>
-    <dimen name="normal_margin">24dp</dimen>
-    <dimen name="medium_margin">16dp</dimen>
     <dimen name="edit_text_vertical_margin">12dp</dimen>
+    <dimen name="corner_radius">10dp</dimen>
     <dimen name="margin">8dp</dimen>
     <dimen name="small_margin">4dp</dimen>
-    <dimen name="corner_radius">10dp</dimen>
+    <dimen name="normal_margin">12dp</dimen>
+    <dimen name="medium_margin">16dp</dimen>
+    <dimen name="large_margin">28dp</dimen>
+
+    <!--different dimens for every size of screen-->
+    <dimen name="extra_large_margin">32dp</dimen>
+    <dimen name="x_extra_large_margin">64dp</dimen>
+
+    <!-- Extra dimens for all screen -->
+    <dimen name="terms_of_use_bottom_margin">24dp</dimen>
+    <dimen name="terms_of_use_bottom_margin_large">48dp</dimen>
+    <dimen name="top_margin_small">30dp</dimen>
+
+    <!-- dimens for specific screen  -->>
+    <dimen name="login_button_top_margin">50dp</dimen>
+
+
 </resources>

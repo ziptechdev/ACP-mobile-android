@@ -24,9 +24,9 @@
                 style="@style/TitleTextBlue"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/normal_margin"
-                android:layout_marginTop="@dimen/extra_large_margin"
-                android:layout_marginEnd="@dimen/normal_margin"
+                android:layout_marginStart="@dimen/start_end_margin"
+                android:layout_marginTop="@dimen/top_margin_medium"
+                android:layout_marginEnd="@dimen/start_end_margin"
                 android:lineSpacingExtra="10sp"
                 android:lineSpacingMultiplier="0.8"
                 android:text="@string/title_check_eligibility_or_create_new_account"
@@ -38,7 +38,7 @@
                 android:id="@+id/tvSubtitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/normal_margin"
+                android:layout_marginTop="@dimen/margin_between_tittle_and_subtitle_medium"
                 android:lineSpacingExtra="10sp"
                 android:lineSpacingMultiplier="0.8"
                 android:text="@string/label_acp_requires_proof"
@@ -51,7 +51,7 @@
                 style="@style/ButtonBlue"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/large_margin"
+                android:layout_marginTop="@dimen/check_eligibility_or_create_new_account_margin_between_btn_and_subtitle"
                 android:text="@string/btn_check_eligibility"
                 app:layout_constraintEnd_toEndOf="@+id/tvSubtitle"
                 app:layout_constraintStart_toStartOf="@+id/tvSubtitle"
@@ -84,7 +84,7 @@
                 layout="@layout/include_terms_and_privacy_policy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="@dimen/check_eligibility_or_create_new_account_margin_between_terms_and_subtitle"
                 android:layout_marginBottom="@dimen/normal_margin"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -93,7 +93,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

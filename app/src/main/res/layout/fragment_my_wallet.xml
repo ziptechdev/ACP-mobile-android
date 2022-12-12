@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".ui.fragments.Wallet.MyWalletFragment">
-
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <androidx.cardview.widget.CardView
         android:id="@+id/cvTotalBalance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/extra_large_margin"
-        android:layout_marginStart="@dimen/normal_margin"
-        android:layout_marginEnd="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/top_margin_medium"
+        android:layout_marginStart="@dimen/start_end_margin"
+        android:layout_marginEnd="@dimen/start_end_margin"
         android:backgroundTint="@color/lightBrown"
         app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,9 +71,9 @@
         style="@style/TitleTextBlue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/normal_margin"
-        android:layout_marginTop="@dimen/large_margin"
-        android:layout_marginEnd="@dimen/normal_margin"
+        android:layout_marginStart="@dimen/start_end_margin"
+        android:layout_marginTop="@dimen/top_margin_small"
+        android:layout_marginEnd="@dimen/start_end_margin"
         android:text="@string/label_you_need_card"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +83,7 @@
         android:id="@+id/tvSubtitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginTop="@dimen/margin_between_tittle_and_subtitle_medium"
         android:lineSpacingExtra="10sp"
         android:lineSpacingMultiplier="0.8"
         android:text="@string/label_in_order_to_spend_your"
@@ -93,12 +96,16 @@
         style="@style/ButtonBlue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_margin_medium"
+        android:layout_marginBottom="20dp"
         android:text="@string/btn_request_card"
-        android:layout_marginTop="@dimen/large_margin"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/tvSubtitle"
         app:layout_constraintStart_toStartOf="@+id/tvSubtitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvSubtitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSubtitle"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

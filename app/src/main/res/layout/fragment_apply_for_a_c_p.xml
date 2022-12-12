@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".ui.fragments.ACP.ApplyForACPFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="@dimen/normal_margin"
-        android:layout_marginEnd="@dimen/normal_margin">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/start_end_margin"
+        android:layout_marginEnd="@dimen/start_end_margin">
 
         <TextView
             android:id="@+id/tvTitle"
             style="@style/TitleTextBlue"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/extra_large_margin"
+            android:layout_marginTop="@dimen/top_margin_medium"
             android:text="@string/label_apply_for_acp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +28,7 @@
             android:id="@+id/tvSubtitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/margin_between_tittle_and_subtitle_medium"
             android:lineSpacingExtra="10sp"
             android:lineSpacingMultiplier="0.8"
             android:text="@string/label_hi_john_you_can_now_easily"
@@ -39,7 +40,7 @@
             android:id="@+id/cvACP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/normal_margin"
+            android:layout_marginTop="@dimen/margin_between_tittle_and_subtitle_medium"
             android:backgroundTint="@color/lightBlue"
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -107,7 +108,7 @@
             android:id="@+id/cvChoosePlan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/normal_margin"
+            android:layout_marginTop="@dimen/margin_between_tittle_and_subtitle_medium"
             android:backgroundTint="@color/lightBlue"
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -179,7 +180,7 @@
             android:id="@+id/cvChooseDevice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/normal_margin"
+            android:layout_marginTop="@dimen/margin_between_tittle_and_subtitle_medium"
             android:backgroundTint="@color/lightBlue"
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -226,7 +227,8 @@
             style="@style/ButtonBlue"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/large_margin"
+            android:layout_marginTop="@dimen/top_margin_medium"
+            android:layout_marginBottom="10dp"
             android:text="@string/btn_apply"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
@@ -234,7 +236,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cvChooseDevice"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
