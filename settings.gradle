@@ -3,8 +3,19 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
-    }
+
+        gradlePluginPortal()
+        exclusiveContent {
+            forRepository {
+                maven {
+                    url 'https://repo.mobile.jumio.ai'
+                }
+            }
+            filter {
+                includeGroup "com.jumio.android"
+                includeGroup "com.iproov.sdk"
+            }
+        }    }
 }
 rootProject.name = "ACPMobile"
 include ':app'
