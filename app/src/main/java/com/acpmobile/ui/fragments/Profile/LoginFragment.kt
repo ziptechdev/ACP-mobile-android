@@ -18,7 +18,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class LoginFragment : Fragment(), TextWatcher {
+class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
@@ -50,60 +50,60 @@ class LoginFragment : Fragment(), TextWatcher {
             isCloseVisible = true
         )
 
-        binding.tiEtEmail.addTextChangedListener(this)
-        binding.tiEtPassword.addTextChangedListener(this)
+//        binding.tiEtEmail.addTextChangedListener(this)
+//        binding.tiEtPassword.addTextChangedListener(this)
+//
+//        binding.btnLogin.setOnClickListener {
+//            val email = binding.etEmail.editText?.text.toString()
+//            val password = binding.etPassword.editText?.text.toString()
+//
+//            if (email.isEmpty()) {
+//                binding.etEmail.error =
+//                    context?.resources?.getString(R.string.label_required_field)
+//                binding.etEmail.requestFocus()
+//            } else {
+//                binding.etEmail.error = null
+//            }
 
-        binding.btnLogin.setOnClickListener {
-            val email = binding.etEmail.editText?.text.toString()
-            val password = binding.etPassword.editText?.text.toString()
-
-            if (email.isEmpty()) {
-                binding.etEmail.error =
-                    context?.resources?.getString(R.string.label_required_field)
-                binding.etEmail.requestFocus()
-            } else {
-                binding.etEmail.error = null
-            }
-
-            if (password.isEmpty()) {
-                binding.etPassword.error =
-                    context?.resources?.getString(R.string.label_required_field)
-                binding.etPassword.requestFocus()
-            } else {
-                binding.etPassword.error = null
-            }
-
-            if (email.isNotEmpty() && password.isNotEmpty())
-                navigation.openProfileFromLogin()
-        }
+//            if (password.isEmpty()) {
+//                binding.etPassword.error =
+//                    context?.resources?.getString(R.string.label_required_field)
+//                binding.etPassword.requestFocus()
+//            } else {
+//                binding.etPassword.error = null
+//            }
+//
+//            if (email.isNotEmpty() && password.isNotEmpty())
+//                navigation.openProfileFromLogin()
+//        }
 
         return binding.root
     }
 
-    override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-    }
+//    override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+//    }
+//
+//    override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+//
+//    }
 
-    override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-    }
-
-    override fun afterTextChanged(p0: Editable?) {
-        when (p0) {
-            binding.etEmail.editText?.editableText -> if (!binding.etEmail.editText?.text.isNullOrEmpty()) {
-                binding.etEmail.error = null
-            } else {
-                binding.etEmail.error =
-                    context?.resources?.getString(R.string.label_required_field)
-                binding.etEmail.requestFocus()
-            }
-
-            binding.etPassword.editText?.editableText -> if (!binding.etPassword.editText?.text.isNullOrEmpty()) {
-                binding.etPassword.error = null
-            } else {
-                binding.etPassword.error =
-                    context?.resources?.getString(R.string.label_required_field)
-                binding.etPassword.requestFocus()
-            }
-        }
-    }
+//    override fun afterTextChanged(p0: Editable?) {
+//        when (p0) {
+//            binding.etEmail.editText?.editableText -> if (!binding.etEmail.editText?.text.isNullOrEmpty()) {
+//                binding.etEmail.error = null
+//            } else {
+//                binding.etEmail.error =
+//                    context?.resources?.getString(R.string.label_required_field)
+//                binding.etEmail.requestFocus()
+//            }
+//
+//            binding.etPassword.editText?.editableText -> if (!binding.etPassword.editText?.text.isNullOrEmpty()) {
+//                binding.etPassword.error = null
+//            } else {
+//                binding.etPassword.error =
+//                    context?.resources?.getString(R.string.label_required_field)
+//                binding.etPassword.requestFocus()
+//            }
+//        }
+//    }
 }

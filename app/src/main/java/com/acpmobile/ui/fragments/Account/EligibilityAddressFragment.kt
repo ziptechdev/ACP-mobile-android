@@ -46,6 +46,7 @@ class EligibilityAddressFragment : Fragment(), TextWatcher {
         )
         binding.containerNameDateAddress.tvAddress.setBackgroundResource(R.drawable.round_element_6)
 
+        binding.tiEtZipCode.setText(navigation.activity?.nationalVerifierRequest!!.zipCode)
 
         binding.tiEtStreetNumber.addTextChangedListener(this)
         binding.tiEtCity.addTextChangedListener(this)
@@ -90,8 +91,16 @@ class EligibilityAddressFragment : Fragment(), TextWatcher {
                 binding.etZipCode.error = null
             }
 
-            if (streetNumberAndName.isNotEmpty() && city.isNotEmpty() && state.isNotEmpty() && zip.isNotEmpty())
+            if (streetNumberAndName.isNotEmpty() && city.isNotEmpty() && state.isNotEmpty() && zip.isNotEmpty()) {
+                navigation.activity?.nationalVerifierRequest!!.address =
+                    binding.tiEtStreetNumber.text.toString()
+                navigation.activity?.nationalVerifierRequest!!.city =
+                    binding.tiEtCity.text.toString()
+                navigation.activity?.nationalVerifierRequest!!.state =
+                    binding.tiEtState.text.toString()
+
                 navigation.openVerifyingFragment()
+            }
         }
 
         val stateSpinner = binding.tiEtState

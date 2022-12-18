@@ -3,6 +3,7 @@ package com.acpmobile.ui.fragments.account
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -91,8 +92,14 @@ class EligibilityDateFragment : Fragment(), TextWatcher {
             }
 
 
-            if (month.isNotEmpty() && day.isNotEmpty() && year.isNotEmpty() && ssn.isNotEmpty())
+            val monthSubstring = binding.tiEtMonth.text.toString().subSequence(0, 2)
+
+            if (month.isNotEmpty() && day.isNotEmpty() && year.isNotEmpty() && ssn.isNotEmpty()) {
+                navigation.activity?.nationalVerifierRequest!!.dateOfBirth = binding.tiEtYear.text.toString().plus("/").plus(monthSubstring).plus("/").plus(binding.tiEtDay.text.toString())
+                navigation.activity?.nationalVerifierRequest!!.socialSecurityNumber = binding.tiEtSSNNumber.text.toString()
+
                 navigation.openCheckEligibilityAddress()
+            }
         }
 
         val monthSpinner = binding.tiEtMonth

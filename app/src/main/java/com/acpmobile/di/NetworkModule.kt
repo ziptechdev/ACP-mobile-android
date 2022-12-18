@@ -1,6 +1,7 @@
 package com.acpmobile.di
 
 import com.acpmobile.data.service.ApiService
+import com.acpmobile.utils.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,6 +21,7 @@ object NetworkModule {
     @Provides
     fun provideOkHttp(): OkHttpClient {
         return OkHttpClient.Builder()
+            .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
             .build()
     }
 
@@ -35,8 +37,7 @@ object NetworkModule {
     @Provides
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            //TODO ADD API URL
-            .baseUrl("")
+            .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()

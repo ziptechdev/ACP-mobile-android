@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.acpmobile.R
+import com.acpmobile.data.model.NationalVerifierRequest
 import com.acpmobile.databinding.FragmentEligibilityCheckBinding
 import com.acpmobile.ui.activity.MainActivity
 import com.acpmobile.utils.Navigation
@@ -36,7 +37,10 @@ class EligibilityCheck : Fragment() {
         val mActivity = activity as MainActivity
         mActivity.setToolbarTitle(getString(R.string.label_eligibility_check))
 
+        navigation.activity?.nationalVerifierRequest = NationalVerifierRequest()
+
         binding.btnNext.setOnClickListener {
+            navigation.activity?.nationalVerifierRequest!!.zipCode = binding.etZipCodeFirst.text.toString().plus(binding.etZipCodeSecond.text.toString())
             navigation.openCheckEligibilityName()
         }
 

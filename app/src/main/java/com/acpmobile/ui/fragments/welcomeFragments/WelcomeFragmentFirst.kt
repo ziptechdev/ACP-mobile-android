@@ -10,6 +10,7 @@ import com.acpmobile.R
 import com.acpmobile.databinding.FragmentWelcomeFirstBinding
 import com.acpmobile.ui.activity.MainActivity
 import com.acpmobile.utils.Navigation
+import com.acpmobile.utils.SharedPreferencesHelper
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -19,8 +20,12 @@ class WelcomeFragmentFirst : Fragment() {
     private var _binding: FragmentWelcomeFirstBinding? = null
     private val binding get() = _binding!!
 
+
     @Inject
     lateinit var navigation: Navigation
+
+    @Inject
+    lateinit var helper: SharedPreferencesHelper
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +42,10 @@ class WelcomeFragmentFirst : Fragment() {
         binding.btnWelcomeContinue.setOnClickListener {
             navigation.openWelcomeSecondFragment()
         }
+
+        //TODO Remove this
+        helper.setString("aa", "MyString")
+
         return binding.root
 
     }

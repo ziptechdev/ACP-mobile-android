@@ -71,8 +71,13 @@ class EligibilityNameFragment : Fragment(), TextWatcher {
 
 
             if (name.isNotEmpty() && lastName.isNotEmpty()) {
+                navigation.activity?.nationalVerifierRequest!!.firstName = binding.tiEtFirstName.text.toString()
+                navigation.activity?.nationalVerifierRequest!!.middleName = binding.tiEtMiddleName.text.toString()
+                navigation.activity?.nationalVerifierRequest!!.lastName = binding.tiEtLastName.text.toString()
+
                 navigation.openCheckEligibilityDate()
             }
+
         }
 
         return view

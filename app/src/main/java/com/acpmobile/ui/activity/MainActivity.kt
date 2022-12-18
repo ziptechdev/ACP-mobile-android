@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.acpmobile.R
+import com.acpmobile.data.model.NationalVerifierRequest
 import com.acpmobile.databinding.ActivityMainBinding
 import com.acpmobile.utils.Navigation
 import dagger.hilt.android.AndroidEntryPoint
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var navController: NavController
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
+    var nationalVerifierRequest: NationalVerifierRequest? = null
 
     @Inject
     lateinit var navigation: Navigation
