@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.acpmobile.databinding.FragmentEligibilityVerifyingBinding
 import com.acpmobile.ui.activity.MainActivity
+import com.acpmobile.ui.fragments.Account.viewmodels.NationalVerifierViewModel
 import com.acpmobile.utils.Navigation
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -17,6 +19,7 @@ class EligibilityVerifyingFragment : Fragment() {
 
     private var _binding: FragmentEligibilityVerifyingBinding? = null
     private val binding get() = _binding!!
+    private val viewModel: NationalVerifierViewModel by viewModels()
 
     @Inject
     lateinit var navigation: Navigation
@@ -34,6 +37,10 @@ class EligibilityVerifyingFragment : Fragment() {
         val mActivity =  activity as MainActivity
         navigation.activity = mActivity
         mActivity.hideToolbar()
+
+        viewModel.nationalVerifier(navigation.activity?.nationalVerifierRequest!!)
+
+        //TODO Add livedata in view model and observer in this fragment
 
         var i = 0
 
