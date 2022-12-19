@@ -67,6 +67,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvEMail">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiEtEMail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress" />
@@ -100,6 +101,7 @@
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiEtPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword" />
