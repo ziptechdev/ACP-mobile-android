@@ -18,7 +18,6 @@ class KYCViewModel @Inject constructor(
     fun kycRegister(request: KYCRequest) {
         viewModelScope.launch {
             val result =  mainRepository.kycRequest(request)
-            Log.i("DADASDASDASD", result.isSuccessful.toString())
         }
     }
 }
