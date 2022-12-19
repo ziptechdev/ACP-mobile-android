@@ -14,13 +14,16 @@ import com.acpmobile.utils.Navigation
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import android.text.TextWatcher
+import androidx.fragment.app.viewModels
 import com.acpmobile.data.model.BankAccount
+import com.acpmobile.ui.fragments.Account.viewmodels.KYCViewModel
 
 @AndroidEntryPoint
 class BankInfoFragment : Fragment(), TextWatcher {
 
     private var _binding: FragmentBankInfoBinding? = null
     private val binding get() = _binding!!
+    private val viewModel: KYCViewModel by viewModels()
 
     @Inject
     lateinit var navigation: Navigation
@@ -46,6 +49,7 @@ class BankInfoFragment : Fragment(), TextWatcher {
             requireActivity().window.statusBarColor =
                 ContextCompat.getColor(it, R.color.white)
         }
+
 
         navigation.activity = mActivity
 
@@ -121,6 +125,7 @@ class BankInfoFragment : Fragment(), TextWatcher {
                     expirationDate
                 )
                 mActivity.kycRequest?.bankAccount = bankAccount
+                viewModel.kycRegister(navigation.activity?.kycRequest!!)
                 navigation.openRegistrationComplete()
             }
         }
