@@ -14,6 +14,7 @@ import com.acpmobile.utils.Navigation
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import android.text.TextWatcher
+import com.acpmobile.data.model.BankAccount
 
 @AndroidEntryPoint
 class BankInfoFragment : Fragment(), TextWatcher {
@@ -111,8 +112,17 @@ class BankInfoFragment : Fragment(), TextWatcher {
 
             if (bankName.isNotEmpty() && bankNumber.isNotEmpty() && accountHolderName.isNotEmpty()
                 && accountNumber.isNotEmpty() && expirationDate.isNotEmpty()
-            )
+            ) {
+                val bankAccount = BankAccount(
+                    bankName,
+                    bankNumber,
+                    accountHolderName,
+                    accountNumber,
+                    expirationDate
+                )
+                mActivity.kycRequest?.bankAccount = bankAccount
                 navigation.openRegistrationComplete()
+            }
         }
 
         return view

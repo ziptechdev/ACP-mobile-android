@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.acpmobile.R
+import com.acpmobile.data.model.KYCRequest
+import com.acpmobile.data.model.User
 import com.acpmobile.databinding.FragmentPersonalInfoBinding
 import com.acpmobile.ui.activity.MainActivity
 import com.acpmobile.utils.Navigation
@@ -24,6 +26,7 @@ class PersonalInfoFragment : Fragment(), TextWatcher {
     @Inject
     lateinit var navigation: Navigation
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,6 +38,8 @@ class PersonalInfoFragment : Fragment(), TextWatcher {
 
         val mActivity = activity as MainActivity
         mActivity.setToolbarTitle(getString(R.string.label_registration))
+
+        mActivity.kycRequest = KYCRequest()
 
         mActivity.hideActionsToolbar(
             isBackVisible = true,
@@ -139,9 +144,13 @@ class PersonalInfoFragment : Fragment(), TextWatcher {
             val blankFragment = ConfirmEmailBottomSheetDialog()
             if (name.isNotEmpty() && lastName.isNotEmpty() && email.isNotEmpty() && phoneNumber.isNotEmpty()
                 && password.isNotEmpty() && confirmPassword.isNotEmpty() && ssn.isNotEmpty()
-            )
+            ) {
+                val user =
+                    User(null, name, lastName, email, password, confirmPassword, phoneNumber, ssn)
+                mActivity.kycRequest?.user = user
                 if (password == confirmPassword)
-                    blankFragment.show(childFragmentManager, blankFragment.getTag());
+                    blankFragment.show(childFragmentManager, blankFragment.getTag())
+            }
         }
 
         return view
