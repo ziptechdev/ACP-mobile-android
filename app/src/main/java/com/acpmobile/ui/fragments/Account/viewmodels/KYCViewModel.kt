@@ -3,7 +3,9 @@ package com.acpmobile.ui.fragments.Account.viewmodels
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.acpmobile.data.model.EmailVerificationRequest
 import com.acpmobile.data.model.KYCRequest
+import com.acpmobile.data.model.User
 import com.acpmobile.data.repo.MainRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -17,7 +19,13 @@ class KYCViewModel @Inject constructor(
 
     fun kycRegister(request: KYCRequest) {
         viewModelScope.launch {
-            val result =  mainRepository.kycRequest(request)
+            val result = mainRepository.kycRequest(request)
+        }
+    }
+
+    fun verifyEmail(request: EmailVerificationRequest) {
+        viewModelScope.launch {
+            val result = mainRepository.verifyEmail(request)
         }
     }
 }
