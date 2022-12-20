@@ -2,17 +2,17 @@ package com.acpmobile.data.model
 
 data class NationalVerifierRequest(
 
-    var firstName : String,
-    var middleName : String,
-    var lastName : String,
-    var address : String,
-    var state : String,
-    var city : String,
-    var zipCode : String,
-    var phoneNumber : String,
-    var dateOfBirth : String,
-    var eligibilityProgramCode : String,
-    var consentInd : String,
-    var socialSecurityNumber : String
+    var firstName : String? = null,
+    var middleName : String? = null,
+    var lastName : String? = null,
+    var address : String? = null,
+    var state : String? = null,
+    var city : String? = null,
+    var zipCode : String? = null,
+    var phoneNumber : String? = null,
+    var dateOfBirth : String? = null,
+    var eligibilityProgramCode : String? = null,
+    var consentInd : String? = null,
+    var socialSecurityNumber : String? = null
 
     )

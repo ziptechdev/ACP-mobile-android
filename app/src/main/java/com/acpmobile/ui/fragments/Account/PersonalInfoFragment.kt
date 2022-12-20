@@ -8,9 +8,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.viewModels
 import com.acpmobile.R
+import com.acpmobile.data.model.EmailVerificationRequest
+import com.acpmobile.data.model.KYCRequest
+import com.acpmobile.data.model.User
 import com.acpmobile.databinding.FragmentPersonalInfoBinding
 import com.acpmobile.ui.activity.MainActivity
+import com.acpmobile.ui.fragments.Account.viewmodels.KYCViewModel
 import com.acpmobile.utils.Navigation
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -20,9 +25,12 @@ class PersonalInfoFragment : Fragment(), TextWatcher {
 
     private var _binding: FragmentPersonalInfoBinding? = null
     private val binding get() = _binding!!
+    private val viewModel: KYCViewModel by viewModels()
+
 
     @Inject
     lateinit var navigation: Navigation
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,6 +43,8 @@ class PersonalInfoFragment : Fragment(), TextWatcher {
 
         val mActivity = activity as MainActivity
         mActivity.setToolbarTitle(getString(R.string.label_registration))
+
+        mActivity.kycRequest = KYCRequest()
 
         mActivity.hideActionsToolbar(
             isBackVisible = true,
@@ -135,13 +145,17 @@ class PersonalInfoFragment : Fragment(), TextWatcher {
                 binding.etPassword.error = null
                 binding.etConfirmPassword.error = null
             }
-
             val blankFragment = ConfirmEmailBottomSheetDialog()
             if (name.isNotEmpty() && lastName.isNotEmpty() && email.isNotEmpty() && phoneNumber.isNotEmpty()
                 && password.isNotEmpty() && confirmPassword.isNotEmpty() && ssn.isNotEmpty()
-            )
+            ) {
+                val user =
+                    User(null, name, lastName, email, password, confirmPassword, phoneNumber, ssn)
+                mActivity.kycRequest?.user = user
+                viewModel.verifyEmail(EmailVerificationRequest(email))
                 if (password == confirmPassword)
-                    blankFragment.show(childFragmentManager, blankFragment.getTag());
+                    blankFragment.show(childFragmentManager, blankFragment.getTag())
+            }
         }
 
         return view
