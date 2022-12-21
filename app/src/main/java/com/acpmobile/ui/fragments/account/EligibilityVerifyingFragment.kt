@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.acpmobile.databinding.FragmentEligibilityVerifyingBinding
 import com.acpmobile.ui.activity.MainActivity
-import com.acpmobile.ui.fragments.Account.viewmodels.NationalVerifierViewModel
+import com.acpmobile.ui.fragments.account.viewmodels.NationalVerifierViewModel
 import com.acpmobile.utils.Constants
 import com.acpmobile.utils.Navigation
 import com.acpmobile.utils.SharedPreferencesHelper
@@ -22,6 +22,7 @@ class EligibilityVerifyingFragment : Fragment() {
 
     private var _binding: FragmentEligibilityVerifyingBinding? = null
     private val binding get() = _binding!!
+
     private val viewModel: NationalVerifierViewModel by viewModels()
 
     @Inject
@@ -48,6 +49,7 @@ class EligibilityVerifyingFragment : Fragment() {
 
         viewModel.response.observe(viewLifecycleOwner){
             helper.setString(Constants.ELIGIBILITY_CHECK_ID, it.eligibilityCheckId)
+            navigation.activity?.nationalVerifierRequest = null
         }
 
         var i = 0

@@ -1,4 +1,4 @@
-package com.acpmobile.ui.fragments.Wallet
+package com.acpmobile.ui.fragments.acp
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,16 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.acpmobile.R
-import com.acpmobile.databinding.FragmentMyWalletBinding
-import com.acpmobile.databinding.FragmentRequestDebitCardBinding
+import com.acpmobile.databinding.FragmentACPSuccessBinding
 import com.acpmobile.ui.activity.MainActivity
 import com.acpmobile.utils.Navigation
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class RequestDebitCardFragment : Fragment() {
-    private var _binding: FragmentRequestDebitCardBinding? = null
+class ACPSuccessFragment : Fragment() {
+
+    private var _binding: FragmentACPSuccessBinding? = null
     private val binding get() = _binding!!
 
     @Inject
@@ -26,27 +26,28 @@ class RequestDebitCardFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentRequestDebitCardBinding.inflate(inflater, container, false)
-        val view = binding.root
+        _binding =
+            FragmentACPSuccessBinding.inflate(inflater, container, false)
         navigation.activity = activity as MainActivity
-
         val mActivity = activity as MainActivity
 
-        mActivity.setToolbarTitle(getString(R.string.label_my_wallet))
-
+        mActivity.showToolbar(false)
+        mActivity.hideActionsToolbar(
+            isBackVisible = false,
+            isLeftTitleVisible = false,
+            isTitleVisible = false,
+            isCloseVisible = false
+        )
         context?.let {
             requireActivity().window.statusBarColor =
-                ContextCompat.getColor(it, R.color.white)
+                ContextCompat.getColor(it, R.color.colorPrimary)
         }
 
-        binding.btnEdit.setOnClickListener(){
-            navigation.openRequestCardEdit()
+        binding.btnDone.setOnClickListener(){
+            navigation.openHome()
         }
-
-        binding.btnRequestCard.setOnClickListener(){
-            navigation.openRequestCardConfirmed()
-        }
-
-        return view
+        return binding.root
     }
+
+
 }

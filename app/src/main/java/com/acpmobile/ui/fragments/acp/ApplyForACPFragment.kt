@@ -1,9 +1,8 @@
-package com.acpmobile.ui.fragments.ACP
+package com.acpmobile.ui.fragments.acp
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.VerifiedInputEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat

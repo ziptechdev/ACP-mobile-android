@@ -7,7 +7,7 @@
     android:layout_gravity="center_vertical"
     android:background="@color/colorPrimary"
     android:fillViewport="true"
-    tools:context=".ui.fragments.ACP.ACPSuccessFragment">
+    tools:context=".ui.fragments.acp.ACPSuccessFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

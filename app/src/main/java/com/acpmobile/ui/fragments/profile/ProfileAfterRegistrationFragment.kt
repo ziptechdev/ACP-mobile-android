@@ -1,4 +1,4 @@
-package com.acpmobile.ui.fragments.Profile
+package com.acpmobile.ui.fragments.profile
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.acpmobile.R
-import com.acpmobile.databinding.FragmentIdentityProofBinding
 import com.acpmobile.databinding.FragmentProfileAfterRegistrationBinding
 import com.acpmobile.ui.activity.MainActivity
 import com.acpmobile.utils.Navigation

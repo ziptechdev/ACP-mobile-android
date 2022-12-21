@@ -1,4 +1,6 @@
-package com.acpmobile.data.model
+package com.acpmobile.data.response
+
+import com.acpmobile.data.model.Verification
 
 data class EmailVerificationResponse(
     val statusCode: Int,

@@ -1,4 +1,4 @@
-package com.acpmobile.ui.fragments.Wallet
+package com.acpmobile.ui.fragments.wallet
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,18 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.acpmobile.R
-import com.acpmobile.databinding.FragmentLoginBinding
-import com.acpmobile.databinding.FragmentMyWalletBinding
-import com.acpmobile.databinding.FragmentProfileAfterRegistrationBinding
+import com.acpmobile.databinding.FragmentRequestDebitCardBinding
 import com.acpmobile.ui.activity.MainActivity
 import com.acpmobile.utils.Navigation
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class MyWalletFragment : Fragment() {
-
-    private var _binding: FragmentMyWalletBinding? = null
+class RequestDebitCardFragment : Fragment() {
+    private var _binding: FragmentRequestDebitCardBinding? = null
     private val binding get() = _binding!!
 
     @Inject
@@ -28,7 +25,7 @@ class MyWalletFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentMyWalletBinding.inflate(inflater, container, false)
+        _binding = FragmentRequestDebitCardBinding.inflate(inflater, container, false)
         val view = binding.root
         navigation.activity = activity as MainActivity
 
@@ -41,8 +38,12 @@ class MyWalletFragment : Fragment() {
                 ContextCompat.getColor(it, R.color.white)
         }
 
+        binding.btnEdit.setOnClickListener(){
+            navigation.openRequestCardEdit()
+        }
+
         binding.btnRequestCard.setOnClickListener(){
-            navigation.openRequestCard()
+            navigation.openRequestCardConfirmed()
         }
 
         return view

@@ -194,7 +194,7 @@
 
     <fragment
         android:id="@+id/fragmentLogin"
-        android:name="com.acpmobile.ui.fragments.Profile.LoginFragment"
+        android:name="com.acpmobile.ui.fragments.profile.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -204,7 +204,7 @@
 
     <fragment
         android:id="@+id/fragmentProfileMain"
-        android:name="com.acpmobile.ui.fragments.Profile.ProfileAfterRegistrationFragment"
+        android:name="com.acpmobile.ui.fragments.profile.ProfileAfterRegistrationFragment"
         android:label="fragment_profile_after_registration"
         tools:layout="@layout/fragment_profile_after_registration" >
         <action
@@ -214,7 +214,7 @@
 
     <fragment
         android:id="@+id/fragmentApplyForService"
-        android:name="com.acpmobile.ui.fragments.ACP.ApplyForServiceFragment"
+        android:name="com.acpmobile.ui.fragments.acp.ApplyForServiceFragment"
         android:label="fragment_apply_for_service"
         tools:layout="@layout/fragment_apply_for_service" >
         <action
@@ -224,7 +224,7 @@
 
     <fragment
         android:id="@+id/fragmentApplyForACP"
-        android:name="com.acpmobile.ui.fragments.ACP.ApplyForACPFragment"
+        android:name="com.acpmobile.ui.fragments.acp.ApplyForACPFragment"
         android:label="fragment_apply_for_a_c_p"
         tools:layout="@layout/fragment_apply_for_a_c_p" >
         <action
@@ -234,13 +234,13 @@
 
     <fragment
         android:id="@+id/fragmentACPSuccess"
-        android:name="com.acpmobile.ui.fragments.ACP.ACPSuccessFragment"
+        android:name="com.acpmobile.ui.fragments.acp.ACPSuccessFragment"
         android:label="fragment_a_c_p_success"
         tools:layout="@layout/fragment_a_c_p_success" />
 
     <fragment
         android:id="@+id/fragmentWallet"
-        android:name="com.acpmobile.ui.fragments.Wallet.MyWalletFragment"
+        android:name="com.acpmobile.ui.fragments.wallet.MyWalletFragment"
         android:label="fragment_my_wallet"
         tools:layout="@layout/fragment_my_wallet" >
         <action
@@ -250,7 +250,7 @@
 
     <fragment
         android:id="@+id/fragmentProfile"
-        android:name="com.acpmobile.ui.fragments.Profile.ProfileFragment"
+        android:name="com.acpmobile.ui.fragments.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
@@ -263,19 +263,19 @@
 
     <fragment
         android:id="@+id/fragmentPersonalInformation"
-        android:name="com.acpmobile.ui.fragments.Profile.PersonalInformationFragment"
+        android:name="com.acpmobile.ui.fragments.profile.PersonalInformationFragment"
         android:label="fragment_personal_information"
         tools:layout="@layout/fragment_personal_information" />
 
     <fragment
         android:id="@+id/fragmentSecurity"
-        android:name="com.acpmobile.ui.fragments.Profile.SecurityFragment"
+        android:name="com.acpmobile.ui.fragments.profile.SecurityFragment"
         android:label="fragment_security"
         tools:layout="@layout/fragment_security" />
 
     <fragment
         android:id="@+id/fragmentRequestDebitCard"
-        android:name="com.acpmobile.ui.fragments.Wallet.RequestDebitCardFragment"
+        android:name="com.acpmobile.ui.fragments.wallet.RequestDebitCardFragment"
         android:label="fragment_request_debit_card"
         tools:layout="@layout/fragment_request_debit_card" >
         <action
@@ -288,13 +288,13 @@
 
     <fragment
         android:id="@+id/fragmentRequestDebitCardEdit"
-        android:name="com.acpmobile.ui.fragments.Wallet.RequestDebitCardEditFragment"
+        android:name="com.acpmobile.ui.fragments.wallet.RequestDebitCardEditFragment"
         android:label="fragment_request_debit_card_edit"
         tools:layout="@layout/fragment_request_debit_card_edit" />
 
     <fragment
         android:id="@+id/fragmentRequestDebitCardConfirmed"
-        android:name="com.acpmobile.ui.fragments.Wallet.RequestCardConfirmedFragment"
+        android:name="com.acpmobile.ui.fragments.wallet.RequestCardConfirmedFragment"
         android:label="fragment_request_card_confirmed"
         tools:layout="@layout/fragment_request_card_confirmed" >
         <action

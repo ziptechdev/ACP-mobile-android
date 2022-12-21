@@ -1,4 +1,4 @@
-package com.acpmobile.data.model
+package com.acpmobile.data.request
 
 data class NationalVerifierRequest(
 

@@ -1,4 +1,4 @@
-package com.acpmobile.ui.fragments.Profile
+package com.acpmobile.ui.fragments.profile
 
 import android.os.Bundle
 import android.text.Editable

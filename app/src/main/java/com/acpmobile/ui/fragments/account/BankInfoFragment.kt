@@ -16,7 +16,7 @@ import javax.inject.Inject
 import android.text.TextWatcher
 import androidx.fragment.app.viewModels
 import com.acpmobile.data.model.BankAccount
-import com.acpmobile.ui.fragments.Account.viewmodels.KYCViewModel
+import com.acpmobile.ui.fragments.account.viewmodels.KYCViewModel
 
 @AndroidEntryPoint
 class BankInfoFragment : Fragment(), TextWatcher {

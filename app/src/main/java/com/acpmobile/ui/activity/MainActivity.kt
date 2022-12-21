@@ -2,13 +2,12 @@ package com.acpmobile.ui.activity
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.acpmobile.R
-import com.acpmobile.data.model.KYCRequest
-import com.acpmobile.data.model.NationalVerifierRequest
+import com.acpmobile.data.request.KYCRequest
+import com.acpmobile.data.request.NationalVerifierRequest
 import com.acpmobile.databinding.ActivityMainBinding
 import com.acpmobile.utils.Navigation
 import dagger.hilt.android.AndroidEntryPoint

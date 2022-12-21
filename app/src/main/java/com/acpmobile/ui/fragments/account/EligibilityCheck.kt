@@ -3,14 +3,13 @@ package com.acpmobile.ui.fragments.account
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.acpmobile.R
-import com.acpmobile.data.model.NationalVerifierRequest
+import com.acpmobile.data.request.NationalVerifierRequest
 import com.acpmobile.databinding.FragmentEligibilityCheckBinding
 import com.acpmobile.ui.activity.MainActivity
 import com.acpmobile.utils.Navigation

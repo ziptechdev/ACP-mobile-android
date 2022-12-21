@@ -10,12 +10,12 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import com.acpmobile.R
-import com.acpmobile.data.model.EmailVerificationRequest
-import com.acpmobile.data.model.KYCRequest
+import com.acpmobile.data.request.EmailVerificationRequest
+import com.acpmobile.data.request.KYCRequest
 import com.acpmobile.data.model.User
 import com.acpmobile.databinding.FragmentPersonalInfoBinding
 import com.acpmobile.ui.activity.MainActivity
-import com.acpmobile.ui.fragments.Account.viewmodels.KYCViewModel
+import com.acpmobile.ui.fragments.account.viewmodels.KYCViewModel
 import com.acpmobile.utils.Navigation
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject

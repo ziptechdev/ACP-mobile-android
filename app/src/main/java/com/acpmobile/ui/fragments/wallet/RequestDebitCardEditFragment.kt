@@ -1,4 +1,4 @@
-package com.acpmobile.ui.fragments.Wallet
+package com.acpmobile.ui.fragments.wallet
 
 import android.os.Bundle
 import android.text.Editable

@@ -1,6 +1,11 @@
 package com.acpmobile.data.service
 
-import com.acpmobile.data.model.*
+import com.acpmobile.data.request.EmailVerificationRequest
+import com.acpmobile.data.request.KYCRequest
+import com.acpmobile.data.request.NationalVerifierRequest
+import com.acpmobile.data.response.EmailVerificationResponse
+import com.acpmobile.data.response.KYCResponse
+import com.acpmobile.data.response.NationalVerifierResponse
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.Headers

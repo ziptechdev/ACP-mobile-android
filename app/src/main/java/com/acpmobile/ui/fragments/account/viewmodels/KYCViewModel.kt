@@ -1,11 +1,9 @@
-package com.acpmobile.ui.fragments.Account.viewmodels
+package com.acpmobile.ui.fragments.account.viewmodels
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.acpmobile.data.model.EmailVerificationRequest
-import com.acpmobile.data.model.KYCRequest
-import com.acpmobile.data.model.User
+import com.acpmobile.data.request.EmailVerificationRequest
+import com.acpmobile.data.request.KYCRequest
 import com.acpmobile.data.repo.MainRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
