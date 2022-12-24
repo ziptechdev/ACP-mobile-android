@@ -8,10 +8,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.viewModels
 import com.acpmobile.R
+import com.acpmobile.data.request.EligibilityRegisterRequest
 import com.acpmobile.databinding.FragmentRegisterNewAccountBinding
 import com.acpmobile.ui.activity.MainActivity
+import com.acpmobile.ui.fragments.account.viewmodels.EligibilityRegisterViewModel
 import com.acpmobile.utils.Navigation
+import com.acpmobile.utils.SharedPreferencesHelper
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -20,9 +24,14 @@ class RegisterNewAccountFragment : Fragment(), TextWatcher {
 
     private var _binding: FragmentRegisterNewAccountBinding? = null
     private val binding get() = _binding!!
+    private val viewModel: EligibilityRegisterViewModel by viewModels()
+
 
     @Inject
     lateinit var navigation: Navigation
+
+    @Inject
+    lateinit var helper: SharedPreferencesHelper
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -76,8 +85,16 @@ class RegisterNewAccountFragment : Fragment(), TextWatcher {
             }
 
             if (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty())
-                if (password == confirmPassword)
+                if (password == confirmPassword) {
+                    //TODO "PROVJERITI DA LI SE OVAKO KORISTI GET STRING HELPER"
+                    var eligibilityID = helper.getString("Constants.ELIGIBILITY_CHECK_ID", " ")
+                    var eligibilityRegisterRequest = EligibilityRegisterRequest(email, password)
+                    viewModel.eligibilityRegister(eligibilityID, eligibilityRegisterRequest)
+
+                    //TODO "OBRADITI RESPONS"
+
                     navigation.openRegisterNewAccountComplete()
+                }
         }
 
         return view
