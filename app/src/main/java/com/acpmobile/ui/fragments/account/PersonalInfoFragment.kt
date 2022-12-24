@@ -3,12 +3,15 @@ package com.acpmobile.ui.fragments.account
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import com.acpmobile.R
 import com.acpmobile.data.request.EmailVerificationRequest
 import com.acpmobile.data.request.KYCRequest
@@ -145,20 +148,43 @@ class PersonalInfoFragment : Fragment(), TextWatcher {
                 binding.etPassword.error = null
                 binding.etConfirmPassword.error = null
             }
-            val blankFragment = ConfirmEmailBottomSheetDialog()
             if (name.isNotEmpty() && lastName.isNotEmpty() && email.isNotEmpty() && phoneNumber.isNotEmpty()
                 && password.isNotEmpty() && confirmPassword.isNotEmpty() && ssn.isNotEmpty()
             ) {
                 val user =
                     User(null, name, lastName, email, password, confirmPassword, phoneNumber, ssn)
                 mActivity.kycRequest?.user = user
+                binding.pbRequestVerificationCode.visibility = View.VISIBLE
                 viewModel.verifyEmail(EmailVerificationRequest(email))
-                if (password == confirmPassword)
-                    blankFragment.show(childFragmentManager, blankFragment.getTag())
+
             }
         }
 
+        observeViewModel()
+
         return view
+    }
+
+    private fun observeViewModel() {
+        viewModel.loading.observe(viewLifecycleOwner) { isLoading ->
+            binding.pbRequestVerificationCode.visibility =
+                if (isLoading) View.VISIBLE else View.GONE
+            binding.btnNext.isEnabled = !isLoading
+        }
+
+        viewModel.verificationError.observe(viewLifecycleOwner) { isError ->
+            if (isError)
+                Toast.makeText(
+                    context,
+                    context?.getString(R.string.error_message),
+                    Toast.LENGTH_SHORT
+                ).show()
+        }
+
+        viewModel.verificationCode.observe(viewLifecycleOwner) { verificationModel ->
+            val blankFragment = ConfirmEmailBottomSheetDialog()
+            blankFragment.show(childFragmentManager, blankFragment.getTag())
+        }
     }
 
     override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
