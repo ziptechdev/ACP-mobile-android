@@ -38,7 +38,7 @@ class PersonalInfoFragment : Fragment(), TextWatcher {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding =
             FragmentPersonalInfoBinding.inflate(inflater, container, false)
         val view = binding.root
@@ -182,7 +182,8 @@ class PersonalInfoFragment : Fragment(), TextWatcher {
         }
 
         viewModel.verificationCode.observe(viewLifecycleOwner) { verificationModel ->
-            val blankFragment = ConfirmEmailBottomSheetDialog()
+            Log.i("VERIFICATIONRESPONSE", verificationModel.verificationCode.toString())
+            val blankFragment = ConfirmEmailBottomSheetDialog().newInstance(verificationModel.verificationCode)
             blankFragment.show(childFragmentManager, blankFragment.getTag())
         }
     }
