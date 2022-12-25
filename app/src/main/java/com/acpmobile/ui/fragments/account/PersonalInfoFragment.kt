@@ -11,7 +11,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import com.acpmobile.R
 import com.acpmobile.data.request.EmailVerificationRequest
 import com.acpmobile.data.request.KYCRequest
@@ -38,7 +37,7 @@ class PersonalInfoFragment : Fragment(), TextWatcher {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding =
             FragmentPersonalInfoBinding.inflate(inflater, container, false)
         val view = binding.root
@@ -172,7 +171,7 @@ class PersonalInfoFragment : Fragment(), TextWatcher {
             binding.btnNext.isEnabled = !isLoading
         }
 
-        viewModel.verificationError.observe(viewLifecycleOwner) { isError ->
+        viewModel.error.observe(viewLifecycleOwner) { isError ->
             if (isError)
                 Toast.makeText(
                     context,
@@ -181,8 +180,9 @@ class PersonalInfoFragment : Fragment(), TextWatcher {
                 ).show()
         }
 
-        viewModel.verificationCode.observe(viewLifecycleOwner) { verificationModel ->
-            val blankFragment = ConfirmEmailBottomSheetDialog()
+        viewModel.verificationCodeLiveData.observe(viewLifecycleOwner) { verificationModel ->
+            Log.i("VERIFICATIONRESPONSE", verificationModel.verificationCode.toString())
+            val blankFragment = ConfirmEmailBottomSheetDialog().newInstance(verificationModel.verificationCode)
             blankFragment.show(childFragmentManager, blankFragment.getTag())
         }
     }
