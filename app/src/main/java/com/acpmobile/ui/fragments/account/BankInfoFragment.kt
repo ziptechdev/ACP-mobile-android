@@ -14,6 +14,8 @@ import com.acpmobile.utils.Navigation
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import android.text.TextWatcher
+import android.util.Log
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.acpmobile.data.model.BankAccount
 import com.acpmobile.ui.fragments.account.viewmodels.KYCViewModel
@@ -126,18 +128,41 @@ class BankInfoFragment : Fragment(), TextWatcher {
                 )
                 mActivity.kycRequest?.bankAccount = bankAccount
                 viewModel.kycRegister(navigation.activity?.kycRequest!!)
-                navigation.openRegistrationComplete()
             }
         }
 
+        observeViewModel()
+
         return view
+    }
+
+
+    private fun observeViewModel() {
+        viewModel.loading.observe(viewLifecycleOwner) { isLoading ->
+            binding.pbRequestKYCRegister.visibility =
+                if (isLoading) View.VISIBLE else View.GONE
+            binding.btnComplete.isEnabled = !isLoading
+        }
+
+        viewModel.error.observe(viewLifecycleOwner) { isError ->
+            if (isError)
+                Toast.makeText(
+                    context,
+                    context?.getString(R.string.error_message),
+                    Toast.LENGTH_SHORT
+                ).show()
+        }
+
+        viewModel.userLiveData.observe(viewLifecycleOwner) { user ->
+            Log.i("VERIFICATIONRESPONSE", user.firstName + " " + user.lastName)
+            navigation.openRegistrationComplete()
+        }
     }
 
     override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
     }
 
     override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
     }
 
     override fun afterTextChanged(p0: Editable?) {
