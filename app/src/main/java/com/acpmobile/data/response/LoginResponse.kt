@@ -1,9 +1,9 @@
 package com.acpmobile.data.response
 
-import java.util.Objects
+import com.acpmobile.data.model.LoginUser
 
 class LoginResponse(
     val statusCode: Int,
     val message: String,
-    val data: Objects? = null
+    val data: LoginUser
 )

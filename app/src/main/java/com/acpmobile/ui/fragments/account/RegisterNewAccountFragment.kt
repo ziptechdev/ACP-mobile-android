@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import com.acpmobile.R
@@ -14,6 +15,7 @@ import com.acpmobile.data.request.EligibilityRegisterRequest
 import com.acpmobile.databinding.FragmentRegisterNewAccountBinding
 import com.acpmobile.ui.activity.MainActivity
 import com.acpmobile.ui.fragments.account.viewmodels.EligibilityRegisterViewModel
+import com.acpmobile.utils.Constants
 import com.acpmobile.utils.Navigation
 import com.acpmobile.utils.SharedPreferencesHelper
 import dagger.hilt.android.AndroidEntryPoint
@@ -87,17 +89,33 @@ class RegisterNewAccountFragment : Fragment(), TextWatcher {
             if (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty())
                 if (password == confirmPassword) {
                     //TODO "PROVJERITI DA LI SE OVAKO KORISTI GET STRING HELPER"
-                    var eligibilityID = helper.getString("Constants.ELIGIBILITY_CHECK_ID", " ")
-                    var eligibilityRegisterRequest = EligibilityRegisterRequest(email, password)
+                    val eligibilityID = helper.getString(Constants.ELIGIBILITY_CHECK_ID, " ")
+                    val eligibilityRegisterRequest = EligibilityRegisterRequest(email, password)
                     viewModel.eligibilityRegister(eligibilityID, eligibilityRegisterRequest)
-
-                    //TODO "OBRADITI RESPONS"
-
-                    navigation.openRegisterNewAccountComplete()
                 }
         }
-
+        observeViewModel()
         return view
+    }
+
+    private fun observeViewModel() {
+        viewModel.loading.observe(viewLifecycleOwner) { isLoading ->
+            //TODO Uraditi nesto dok se ceka na izvrsenje
+        }
+
+        viewModel.eligibleRegisterError.observe(viewLifecycleOwner) { isError ->
+            if (isError)
+                Toast.makeText(
+                    context,
+                    context?.getString(R.string.error_message),
+                    Toast.LENGTH_SHORT
+                ).show()
+        }
+
+        viewModel.eligibleUser.observe(viewLifecycleOwner) { eligibleUser ->
+            //TODO Uraditi nesto sa eligibleUser podacima
+            navigation.openRegisterNewAccountComplete()
+        }
     }
 
     override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {

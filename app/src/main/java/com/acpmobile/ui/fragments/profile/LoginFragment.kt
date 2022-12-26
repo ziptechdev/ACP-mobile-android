@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import com.acpmobile.R
@@ -77,17 +78,32 @@ class LoginFragment : Fragment(), TextWatcher {
 
             if (email.isNotEmpty() && password.isNotEmpty())
             {
-                var loginRequest = LoginRequest(email, password)
+                val loginRequest = LoginRequest(email, password)
                 viewModel.userLogin(loginRequest)
-                //TODO "OBRADITI RESPONS"
-
-                navigation.openProfileFromLogin()
             }
         }
-
+        observeViewModel()
         return binding.root
     }
+    private fun observeViewModel() {
+        viewModel.loading.observe(viewLifecycleOwner) { isLoading ->
+            //TODO Uraditi nesto dok se ceka na izvrsenje
+        }
 
+        viewModel.loginUserError.observe(viewLifecycleOwner) { isError ->
+            if (isError)
+                Toast.makeText(
+                    context,
+                    context?.getString(R.string.error_message),
+                    Toast.LENGTH_SHORT
+                ).show()
+        }
+
+        viewModel.loginUser.observe(viewLifecycleOwner) { loginUser ->
+            //TODO Sacuvati login token
+            navigation.openProfileFromLogin()
+        }
+    }
     override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
     }
 

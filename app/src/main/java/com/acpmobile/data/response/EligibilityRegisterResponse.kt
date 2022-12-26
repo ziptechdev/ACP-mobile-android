@@ -1,9 +1,9 @@
 package com.acpmobile.data.response
 
-import java.util.*
+import com.acpmobile.data.model.EligibleUser
 
-class EligibilityRegisterResponse (
+class EligibilityRegisterResponse(
     val statusCode: Int,
     val message: String,
-    val data: Objects? = null
+    val data: EligibleUser
 )

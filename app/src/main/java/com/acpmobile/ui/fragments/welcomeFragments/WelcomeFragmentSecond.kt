@@ -41,9 +41,6 @@ class WelcomeFragmentSecond : Fragment() {
                 ContextCompat.getColor(it, R.color.white)
         }
 
-        //TODO Remove this
-        Log.i("aaabyy", "  " + helper.getString("aa", " "))
-
         binding.btnWelcomeSecondAccept.setOnClickListener {
             navigation.openCheckEligibilityOrCreateAccount()
         }
