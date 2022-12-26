@@ -1,15 +1,11 @@
 package com.acpmobile.data.service
-
-import com.acpmobile.data.request.EmailVerificationRequest
-import com.acpmobile.data.request.KYCRequest
-import com.acpmobile.data.request.NationalVerifierRequest
-import com.acpmobile.data.response.EmailVerificationResponse
-import com.acpmobile.data.response.KYCResponse
-import com.acpmobile.data.response.NationalVerifierResponse
+import com.acpmobile.data.request.*
+import com.acpmobile.data.response.*
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.Headers
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface ApiService {
 
@@ -24,5 +20,14 @@ interface ApiService {
     @Headers("Content-Type:application/json")
     @POST("users/verify-email")
     suspend fun verifyEmail(@Body request: EmailVerificationRequest): Response<EmailVerificationResponse>
+
+    @Headers("Content-Type:application/json")
+    @POST("users/eligibility-register/{eligibilityCheckId}")
+    suspend fun eligibilityRegister(@Path("eligibilityCheckId") eligibilityRegisterID: String,
+                                    @Body request: EligibilityRegisterRequest): Response<EligibilityRegisterResponse>
+
+    @Headers("Content-Type:application/json")
+    @POST("users/login")
+    suspend fun userLogin(@Body request: LoginRequest): Response<LoginResponse>
 
 }

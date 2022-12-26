@@ -1,11 +1,7 @@
 package com.acpmobile.data.repo
 
-import com.acpmobile.data.request.EmailVerificationRequest
-import com.acpmobile.data.request.KYCRequest
-import com.acpmobile.data.request.NationalVerifierRequest
-import com.acpmobile.data.response.EmailVerificationResponse
-import com.acpmobile.data.response.KYCResponse
-import com.acpmobile.data.response.NationalVerifierResponse
+import com.acpmobile.data.request.*
+import com.acpmobile.data.response.*
 import com.acpmobile.data.service.ApiService
 import retrofit2.Response
 import javax.inject.Inject
@@ -22,5 +18,13 @@ class MainRepository @Inject constructor(private val apiService: ApiService) {
 
     suspend fun verifyEmail(request: EmailVerificationRequest): Response<EmailVerificationResponse> {
         return apiService.verifyEmail(request)
+    }
+
+    suspend fun eligibilityRegisterRequest(eligibilityRegisterID: String, request: EligibilityRegisterRequest):Response<EligibilityRegisterResponse>{
+        return apiService.eligibilityRegister(eligibilityRegisterID, request)
+    }
+
+    suspend fun userLoginRequest(request: LoginRequest): Response<LoginResponse>{
+        return apiService.userLogin(request)
     }
 }
