@@ -118,6 +118,8 @@ class RegistrationScanIDFragment : Fragment() {
         if (resultCode == Activity.RESULT_OK){
             // Set image captured to image view
             binding.ivPlaceholder.setImageURI(imageUri)
+            navigation.openTakeSelfieFragment()
+
         }
         else {
             // Failed to take picture
