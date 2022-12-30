@@ -241,5 +241,7 @@ name, company name, address, email address, and telephone number.</string>
     <string name="label_required_field">Required field</string>
     <string name="label_passwords_must_be_same">Passwords must be same!</string>
     <string name="error_message" >"Something went wrong"</string>
-
+    <string name="take_a_picture" >"TAKE A PICTURE"</string>
+    <string name="failed_to_take_picture" >"Failed to take camera picture"</string>
+    <string name="camera_permission_denied" >"Camera permission was denied. Unable to take a picture"</string>
 </resources>
