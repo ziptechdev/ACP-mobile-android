@@ -85,7 +85,7 @@ class Navigation @Inject constructor(){
     }
 
     fun openRegisterNewAccountComplete(){
-        activity?.navController?.navigate(R.id.action_fragmentRegisterNewAccount_to_fragmentRegistrationCompleteEligibility)
+        activity?.navController?.navigate(R.id.fragmentRegistrationCompleteEligibility)
     }
 
     fun openLogin(){

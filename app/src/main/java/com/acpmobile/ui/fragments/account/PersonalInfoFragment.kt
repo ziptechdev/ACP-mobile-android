@@ -182,7 +182,7 @@ class PersonalInfoFragment : Fragment(), TextWatcher {
 
         viewModel.verificationCodeLiveData.observe(viewLifecycleOwner) { verificationModel ->
             Log.i("VERIFICATIONRESPONSE", verificationModel.verificationCode.toString())
-            val blankFragment = ConfirmEmailBottomSheetDialog().newInstance(verificationModel.verificationCode)
+            val blankFragment = ConfirmEmailBottomSheetDialog().newInstance(verificationModel.verificationCode, null, null)
             blankFragment.show(childFragmentManager, blankFragment.getTag())
         }
     }

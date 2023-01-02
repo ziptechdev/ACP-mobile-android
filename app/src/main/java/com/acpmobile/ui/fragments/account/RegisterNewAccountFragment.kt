@@ -3,6 +3,7 @@ package com.acpmobile.ui.fragments.account
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import com.acpmobile.R
 import com.acpmobile.data.request.EligibilityRegisterRequest
+import com.acpmobile.data.request.EmailVerificationRequest
 import com.acpmobile.databinding.FragmentRegisterNewAccountBinding
 import com.acpmobile.ui.activity.MainActivity
 import com.acpmobile.ui.fragments.account.viewmodels.EligibilityRegisterViewModel
@@ -27,7 +29,8 @@ class RegisterNewAccountFragment : Fragment(), TextWatcher {
     private var _binding: FragmentRegisterNewAccountBinding? = null
     private val binding get() = _binding!!
     private val viewModel: EligibilityRegisterViewModel by viewModels()
-
+    private var eligibilityID :String? = null
+    private var eligibilityRegisterRequest = EligibilityRegisterRequest(null, null)
 
     @Inject
     lateinit var navigation: Navigation
@@ -88,10 +91,10 @@ class RegisterNewAccountFragment : Fragment(), TextWatcher {
 
             if (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty())
                 if (password == confirmPassword) {
-                    //TODO "PROVJERITI DA LI SE OVAKO KORISTI GET STRING HELPER"
-                    val eligibilityID = helper.getString(Constants.ELIGIBILITY_CHECK_ID, " ")
-                    val eligibilityRegisterRequest = EligibilityRegisterRequest(email, password)
-                    viewModel.eligibilityRegister(eligibilityID, eligibilityRegisterRequest)
+                    eligibilityID = helper.getString(Constants.ELIGIBILITY_CHECK_ID, " ")
+                    eligibilityRegisterRequest = EligibilityRegisterRequest(email, password)
+                    viewModel.verifyEmail(EmailVerificationRequest(email))
+//                    viewModel.eligibilityRegister(eligibilityID, eligibilityRegisterRequest)
                 }
         }
         observeViewModel()
@@ -99,8 +102,10 @@ class RegisterNewAccountFragment : Fragment(), TextWatcher {
     }
 
     private fun observeViewModel() {
+
         viewModel.loading.observe(viewLifecycleOwner) { isLoading ->
-            //TODO Uraditi nesto dok se ceka na izvrsenje
+            binding.pbRegisterNewAccount.visibility =
+                if (isLoading) View.VISIBLE else View.GONE
         }
 
         viewModel.eligibleRegisterError.observe(viewLifecycleOwner) { isError ->
@@ -112,10 +117,11 @@ class RegisterNewAccountFragment : Fragment(), TextWatcher {
                 ).show()
         }
 
-        viewModel.eligibleUser.observe(viewLifecycleOwner) { eligibleUser ->
-            //TODO Uraditi nesto sa eligibleUser podacima
-            navigation.openRegisterNewAccountComplete()
+        viewModel.verificationCodeLiveData.observe(viewLifecycleOwner) { verificationModel ->
+            val blankFragment = ConfirmEmailBottomSheetDialog().newInstance(verificationModel.verificationCode, eligibilityID, eligibilityRegisterRequest)
+            blankFragment.show(childFragmentManager, blankFragment.getTag())
         }
+
     }
 
     override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {

@@ -8,11 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.viewModels
 import com.acpmobile.R
+import com.acpmobile.data.request.EligibilityRegisterRequest
 import com.acpmobile.databinding.ConfirmEmailBottomSheetDialogBinding
 import com.acpmobile.databinding.FragmentPersonalInfoBinding
 import com.acpmobile.ui.activity.MainActivity
+import com.acpmobile.ui.fragments.account.viewmodels.EligibilityRegisterViewModel
+import com.acpmobile.utils.Constants
 import com.acpmobile.utils.Navigation
+import com.acpmobile.utils.SharedPreferencesHelper
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -22,17 +27,24 @@ class ConfirmEmailBottomSheetDialog : BottomSheetDialogFragment() {
 
     private var _binding: ConfirmEmailBottomSheetDialogBinding? = null
     private val binding get() = _binding!!
-    val VERIFICATION_CODE = "verificationCode"
-    var verificationCode: Int? = null
+    private val VERIFICATION_CODE = "verificationCode"
+    private val ID = "id"
+    private val REQUEST = "request"
+    private var verificationCode: Int? = null
+    private var eligibilityID: String? = null
+    private var request: EligibilityRegisterRequest? = null
+    private val viewModel: EligibilityRegisterViewModel by viewModels()
 
     @Inject
     lateinit var navigation: Navigation
 
     override fun getTheme() = R.style.NoBackgroundDialogTheme
 
-    fun newInstance(verificationCode: Int): ConfirmEmailBottomSheetDialog {
+    fun newInstance(verificationCode: Int, eligibilityID : String?, eligibilityRequest : EligibilityRegisterRequest?): ConfirmEmailBottomSheetDialog {
         val args = Bundle()
         args.putInt(VERIFICATION_CODE, verificationCode)
+        args.putString(ID, eligibilityID)
+        args.putSerializable(REQUEST, eligibilityRequest)
         val fragment = ConfirmEmailBottomSheetDialog()
         fragment.arguments = args
         return fragment
@@ -51,6 +63,14 @@ class ConfirmEmailBottomSheetDialog : BottomSheetDialogFragment() {
             verificationCode = it
         }
 
+        arguments?.getString(ID).let {
+            eligibilityID = it
+        }
+
+        arguments?.getSerializable(REQUEST).let {
+            request = it as EligibilityRegisterRequest
+        }
+
         binding.clContainer.setBackgroundResource(R.drawable.confirm_email_shape)
 
         binding.btnConfirm.setOnClickListener {
@@ -64,9 +84,12 @@ class ConfirmEmailBottomSheetDialog : BottomSheetDialogFragment() {
                 && code4.isNotEmpty() && code5.isNotEmpty()
             ) {
                 val code = (code1 + code2 + code3 + code4 + code5).toInt()
-                if (verificationCode == code) {
+                if (verificationCode == code && eligibilityID != null && request != null) {
+                    viewModel.eligibilityRegister(eligibilityID!!, request!!)
+                }
+                else if(verificationCode == code){
                     navigation.openIdentityProof()
-                } else {
+                } else{
                     Toast.makeText(context, "Code doesn't match", Toast.LENGTH_SHORT).show()
                 }
 
@@ -266,6 +289,8 @@ class ConfirmEmailBottomSheetDialog : BottomSheetDialogFragment() {
             removeNumber()
         }
 
+        observeViewModel()
+
         return view
     }
 
@@ -319,6 +344,28 @@ class ConfirmEmailBottomSheetDialog : BottomSheetDialogFragment() {
             return
         }
     }
+
+    private fun observeViewModel() {
+        viewModel.loading.observe(viewLifecycleOwner) { isLoading ->
+            binding.pbRegisterNewAccount.visibility =
+                if (isLoading) View.VISIBLE else View.GONE
+        }
+
+        viewModel.eligibleRegisterError.observe(viewLifecycleOwner) { isError ->
+            if (isError)
+                Toast.makeText(
+                    context,
+                    context?.getString(R.string.error_message),
+                    Toast.LENGTH_SHORT
+                ).show()
+        }
+
+        viewModel.eligibleUser.observe(viewLifecycleOwner) { eligibleUser ->
+            //TODO Uraditi nesto sa eligibleUser podacima
+            navigation.openRegisterNewAccountComplete()
+        }
+    }
+
 
     companion object {
         const val TAG = "ModalBottomSheet"
