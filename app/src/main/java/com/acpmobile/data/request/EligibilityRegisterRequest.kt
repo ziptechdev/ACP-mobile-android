@@ -4,5 +4,6 @@ import java.io.Serializable
 
 data class EligibilityRegisterRequest(
     val username: String?,
-    val password: String?
+    val password: String?,
+    val confirmedPassword: String?
     ) : Serializable
