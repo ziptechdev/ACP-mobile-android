@@ -2,10 +2,7 @@ package com.acpmobile.data.service
 import com.acpmobile.data.request.*
 import com.acpmobile.data.response.*
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.Headers
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface ApiService {
 
@@ -29,5 +26,9 @@ interface ApiService {
     @Headers("Content-Type:application/json")
     @POST("users/login")
     suspend fun userLogin(@Body request: LoginRequest): Response<LoginResponse>
+
+    @Headers("Content-Type:application/json")
+    @POST("users/logout")
+    suspend fun userLogout(@Header("Authorization") token: String ): Response<LogoutResponse>
 
 }

@@ -15,7 +15,9 @@ import com.acpmobile.data.request.LoginRequest
 import com.acpmobile.databinding.FragmentLoginBinding
 import com.acpmobile.ui.activity.MainActivity
 import com.acpmobile.ui.fragments.profile.viewmodels.LoginViewModel
-    import com.acpmobile.utils.Navigation
+import com.acpmobile.utils.Constants
+import com.acpmobile.utils.Navigation
+import com.acpmobile.utils.SharedPreferencesHelper
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -27,6 +29,9 @@ class LoginFragment : Fragment(), TextWatcher {
 
     @Inject
     lateinit var navigation: Navigation
+
+    @Inject
+    lateinit var helper: SharedPreferencesHelper
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -100,7 +105,7 @@ class LoginFragment : Fragment(), TextWatcher {
         }
 
         viewModel.loginUser.observe(viewLifecycleOwner) { loginUser ->
-            //TODO Sacuvati login token
+            helper.setString(Constants.TOKEN, loginUser.token!!)
             navigation.openProfileFromLogin()
         }
     }

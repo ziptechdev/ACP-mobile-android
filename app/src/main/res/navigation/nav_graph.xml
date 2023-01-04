@@ -259,6 +259,9 @@
         <action
             android:id="@+id/action_fragmentProfile_to_fragmentSecurity"
             app:destination="@id/fragmentSecurity" />
+        <action
+            android:id="@+id/action_fragmentProfile_to_fragmentLogin"
+            app:destination="@id/fragmentLogin" />
     </fragment>
 
     <fragment

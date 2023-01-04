@@ -108,7 +108,6 @@ with the help of the Free Privacy Policy Generator.</string>
     <string name="btn_complete">Complete</string>
     <string name="label_verification_complete">Verification complete!</string>
     <string name="btn_done">Done</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="mywallet_total_balance">Total balance</string>
     <string name="btn_new_card">New Card</string>
@@ -244,4 +243,5 @@ name, company name, address, email address, and telephone number.</string>
     <string name="take_a_picture" >"TAKE A PICTURE"</string>
     <string name="failed_to_take_picture" >"Failed to take camera picture"</string>
     <string name="camera_permission_denied" >"Camera permission was denied. Unable to take a picture"</string>
+    <string name="btn_logout">Sign Out</string>
 </resources>
