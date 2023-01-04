@@ -16,11 +16,25 @@ class NationalVerifierViewModel @Inject constructor(
     private val mainRepository: MainRepository,
 ) : ViewModel(), Serializable {
 
-    var response: MutableLiveData<NationalVerifierResponse> = MutableLiveData()
+    var response = MutableLiveData<NationalVerifierResponse>()
+    val error = MutableLiveData<Boolean>()
+    val loading = MutableLiveData<Boolean>()
 
     fun nationalVerifier(request: NationalVerifierRequest) {
         viewModelScope.launch {
-            response.value = mainRepository.nationalVerifierRequest(request).body()
+            loading.value = true
+            val res = mainRepository.nationalVerifierRequest(request)
+            if (res.isSuccessful) {
+                res.body().let {
+                    response.value = it
+                }
+                error.value = false
+                loading.value = false
+            } else {
+                error.value = true
+                loading.value = false
+            }
+
         }
     }
 }

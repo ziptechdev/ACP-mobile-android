@@ -1,6 +1,6 @@
 package com.acpmobile.data.model
 
-class EligibleUser(
+data class EligibleUser(
     val id: Int?,
     val username: String?,
     val firstName: String?,

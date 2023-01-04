@@ -1,6 +1,6 @@
 package com.acpmobile.data.request
 
-class LoginRequest(
+data class LoginRequest(
     val username: String?,
     val password: String?
 )
