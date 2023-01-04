@@ -27,4 +27,7 @@ class MainRepository @Inject constructor(private val apiService: ApiService) {
     suspend fun userLoginRequest(request: LoginRequest): Response<LoginResponse>{
         return apiService.userLogin(request)
     }
+    suspend fun userLogoutRequest(token: String): Response<LogoutResponse> {
+        return apiService.userLogout(token)
+    }
 }

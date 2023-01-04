@@ -155,6 +155,9 @@ class Navigation @Inject constructor(){
     fun openRequestCardFromMyWallet(){
         activity?.navController?.navigate(R.id.fragmentRequestDebitCard)
     }
+    fun openLoginFromLogout(){
+        activity?.navController?.navigate(R.id.action_fragmentProfile_to_fragmentLogin)
+    }
 
     fun back(){
         activity?.navController?.popBackStack()
