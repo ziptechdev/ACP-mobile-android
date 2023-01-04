@@ -9,7 +9,7 @@ class Navigation @Inject constructor(){
     var activity : MainActivity? = null
 
     fun openWelcomeSecondFragment(){
-        activity?.navController?.navigate(R.id.action_welcomeFirstFragment_to_welcomeSecondFragment)
+        activity?.navController?.navigate(R.id.scanIdFragment)
     }
 
     fun openCheckEligibilityOrCreateAccount(){
