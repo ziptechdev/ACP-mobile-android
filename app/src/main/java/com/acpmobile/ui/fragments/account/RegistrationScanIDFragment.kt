@@ -2,6 +2,7 @@ package com.acpmobile.ui.fragments.account
 
 import android.Manifest
 import android.app.Activity
+import android.content.ActivityNotFoundException
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
@@ -11,6 +12,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,19 +20,21 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.checkSelfPermission
-import androidx.core.net.toFile
+import androidx.core.content.FileProvider
 import androidx.fragment.app.viewModels
+import com.acpmobile.BuildConfig
 import com.acpmobile.R
 import com.acpmobile.data.request.UserVerificationRequest
-import com.acpmobile.databinding.FragmentIdentityProofBinding
-import com.acpmobile.databinding.FragmentPersonalInfoBinding
-import com.acpmobile.databinding.FragmentRegisterNewAccountBinding
 import com.acpmobile.databinding.FragmentScanIdBinding
 import com.acpmobile.ui.activity.MainActivity
-import com.acpmobile.ui.fragments.account.viewmodels.UserVerificationViewModel
-import com.acpmobile.ui.fragments.account.viewmodels.KYCViewModel
+import com.acpmobile.ui.fragments.account.viewmodels.VerificationViewModel
 import com.acpmobile.utils.Navigation
 import dagger.hilt.android.AndroidEntryPoint
+import id.zelory.compressor.Compressor
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import java.io.File
 import java.io.FileOutputStream
 import javax.inject.Inject
@@ -45,8 +49,12 @@ class RegistrationScanIDFragment : Fragment() {
     private val IMAGE_CAPTURE_CODE = 1001
     private var imageUri: Uri? = null
     private var imageUriBack: Uri? = null
-    private val viewModel: UserVerificationViewModel by viewModels()
+    private val viewModel: VerificationViewModel by viewModels()
     private var attachment: File? = null
+    private var attachment1: File? = null
+    private var attachment2: File? = null
+
+    private var requestCode : Int = 0
 
     @Inject
     lateinit var navigation: Navigation
@@ -71,7 +79,7 @@ class RegistrationScanIDFragment : Fragment() {
             val permissionGranted = requestCameraPermission(false)
             if (permissionGranted) {
                 // Open the camera interface
-                openCameraInterface(false)
+                getCamera()
             }
         }
 
@@ -79,16 +87,36 @@ class RegistrationScanIDFragment : Fragment() {
 //            navigation.openTakeSelfieFragment()
 //            requestCameraPermission()
 
-            // Request permission
-            val permissionGranted = requestCameraPermission(true)
-            if (permissionGranted) {
-                // Open the camera interface
-                openCameraInterface(true)
+            val request= UserVerificationRequest()
+//            val compressedImageFile = GlobalScope.launch {
+//                compres(attachment!!, requireContext())
+//            }
+
+            var value : File? = null
+            runBlocking {
+                val jobA = async { compress(attachment!!, requireContext()) }
+                runBlocking {
+                    value = jobA.await()
+                }
             }
+
+            viewModel.userVerification(request, attachment, attachment, attachment)
+
+            // Request permission
+//            val permissionGranted = requestCameraPermission(true)
+//            if (permissionGranted) {
+//                // Open the camera interface
+//                openCameraInterface(true)
+//            }
         }
+
+
         return view
     }
 
+    private suspend fun compress(file : File, context: Context) : File{
+        return Compressor.compress(context, file)
+    }
     private fun requestCameraPermission(isBack : Boolean): Boolean {
         var permissionGranted = false
 // If system os is Marshmallow or Above, we need to request runtime permission
@@ -119,7 +147,7 @@ class RegistrationScanIDFragment : Fragment() {
         if (requestCode === CAMERA_PERMISSION_CODE) {
             if (grantResults.size === 1 && grantResults[0] ==    PackageManager.PERMISSION_GRANTED){
                 // Permission was granted
-                openCameraInterface(false)
+                getCamera()
             }
             else{
                 // Permission was denied
@@ -130,12 +158,26 @@ class RegistrationScanIDFragment : Fragment() {
         if (requestCode === CAMERA_PERMISSION_CODE_BACK) {
             if (grantResults.size === 1 && grantResults[0] ==    PackageManager.PERMISSION_GRANTED){
                 // Permission was granted
-                openCameraInterface(true)
+                getCamera()
             }
             else{
                 // Permission was denied
                 Toast.makeText(context, context?.resources?.getString(R.string.camera_permission_denied), Toast.LENGTH_LONG).show()
             }
+        }
+    }
+
+    private fun getCamera() {
+        val makePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        File(requireContext().cacheDir.path).mkdirs()
+        makePictureIntent.putExtra(
+            MediaStore.EXTRA_OUTPUT, FileProvider.getUriForFile(requireContext(),
+                BuildConfig.APPLICATION_ID + ".provider",
+                File(requireContext().cacheDir.path + "/" + "photo" + ".jpg")
+            ));
+        try {
+            startActivityForResult(makePictureIntent, CAMERA_PERMISSION_CODE)
+        } catch (e: ActivityNotFoundException) {
         }
     }
 
@@ -167,9 +209,19 @@ class RegistrationScanIDFragment : Fragment() {
             // Set image captured to image view
 //            attachment = getFileFromURI(imageUri, requireContext(), "photo")
 
-        val file = imageUri?.toFile()
+//            attachment = getFileFromURI(data?.data!!, requireContext(), File(data.data?.path.toString()).name)
+
+
+
             val request= UserVerificationRequest()
-            viewModel.userVerification(request, file, file, file)
+
+            attachment = File(requireContext().cacheDir.path + "/" + "photo" + ".jpg")
+            attachment1 = File(requireContext().cacheDir.path + "/" + "photo1" + ".jpg")
+            attachment2 = File(requireContext().cacheDir.path + "/" + "photo2" + ".jpg")
+
+//            if(fileNew != null) {
+//                viewModel.userVerification(request, fileNew, fileNew, fileNew)
+//            }
             binding.ivPlaceholder.setImageURI(imageUri)
 //            navigation.openTakeSelfieFragment()
 
@@ -200,5 +252,19 @@ class RegistrationScanIDFragment : Fragment() {
         val fos = FileOutputStream(file)
         fos.write(uri.let { context.contentResolver.openInputStream(it!!)!!.readBytes()})
         return file
+    }
+    fun getRealPathFromURI(uri: Uri): String? {
+        val result: String?
+        val cursor: Cursor = context?.contentResolver?.query(uri, null, null, null, null)!!
+        if (cursor == null) {
+            result = uri.path
+            cursor.close()
+            return result
+        }
+        cursor.moveToFirst()
+        val idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA)
+        result = cursor.getString(idx)
+        cursor.close()
+        return result
     }
 }

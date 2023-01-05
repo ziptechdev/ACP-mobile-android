@@ -33,7 +33,12 @@ interface ApiService {
     @Multipart
     @POST("jumio/resident-identity-verification")
     suspend fun userVerification(
-        @PartMap() data : HashMap<String, RequestBody>,
+        @Part("username") username: RequestBody,
+        @Part("userIp") userIp: RequestBody,
+        @Part("consentOptained") consentOptained: RequestBody,
+        @Part("consentOptainedAt") consentOptainedAt: RequestBody,
+        @Part("userState") userState: RequestBody,
+
         @Part file :MultipartBody.Part,
         @Part file2 :MultipartBody.Part,
         @Part file3 :MultipartBody.Part

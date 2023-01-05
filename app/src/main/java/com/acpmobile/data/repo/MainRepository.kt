@@ -49,6 +49,7 @@ class MainRepository @Inject constructor(private val apiService: ApiService) {
         val requestBodyUserIp= createPartFromString(user.userIp)
         val requestBodyConsentOptained = createPartFromString(user.consentOptained)
         val requestBodyConsentOptainedAt = createPartFromString(user.consentOptainedAt)
+        val requestState = createPartFromString(user.userState)
 
         var attachmentBody : MultipartBody.Part? = null
 
@@ -59,9 +60,12 @@ class MainRepository @Inject constructor(private val apiService: ApiService) {
         map["userIp"] = requestBodyUserIp!!
         map["consentOptained"] = requestBodyConsentOptained!!
         map["consentOptainedAt"] = requestBodyConsentOptainedAt!!
+        map["userState"] = requestState!!
 
 //        val request = RequestBody.create(MultipartBody.FORM, user)
-        return apiService.userVerification(map, user.documentIdFront!!, user.documentIdBack!!, user.selfie!!)
+        return apiService.userVerification(requestBodyUserName, requestBodyUserIp, requestBodyConsentOptained, requestBodyConsentOptainedAt,
+            requestState,
+            user.documentIdFront!!, user.documentIdBack!!, user.selfie!!)
 
     }
 
