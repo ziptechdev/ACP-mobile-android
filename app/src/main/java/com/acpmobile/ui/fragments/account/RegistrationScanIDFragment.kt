@@ -54,7 +54,7 @@ class RegistrationScanIDFragment : Fragment() {
     private var attachment1: File? = null
     private var attachment2: File? = null
 
-    private var requestCode : Int = 0
+    private var requestCode: Int = 0
 
     @Inject
     lateinit var navigation: Navigation
@@ -67,7 +67,12 @@ class RegistrationScanIDFragment : Fragment() {
         val view = binding.root
         navigation.activity = activity as MainActivity
 
-        binding.containerViewPersonalIdentityBankInfo.tvIdentityProof.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+        binding.containerViewPersonalIdentityBankInfo.tvIdentityProof.setTextColor(
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.black
+            )
+        )
         binding.containerViewPersonalIdentityBankInfo.tvIdentityProof.setBackgroundResource(R.drawable.round_element_6)
         binding.containerCircleBar.ivCircle2.setBackgroundResource(R.drawable.circle_element_blue)
 
@@ -87,20 +92,17 @@ class RegistrationScanIDFragment : Fragment() {
 //            navigation.openTakeSelfieFragment()
 //            requestCameraPermission()
 
-            val request= UserVerificationRequest()
-//            val compressedImageFile = GlobalScope.launch {
-//                compres(attachment!!, requireContext())
-//            }
+            val request = UserVerificationRequest()
 
-            var value : File? = null
+            var compressedAtachment1: File? = null
             runBlocking {
                 val jobA = async { compress(attachment!!, requireContext()) }
                 runBlocking {
-                    value = jobA.await()
+                    compressedAtachment1 = jobA.await()
                 }
             }
 
-            viewModel.userVerification(request, attachment, attachment, attachment)
+            viewModel.userVerification(request, compressedAtachment1, attachment, attachment)
 
             // Request permission
 //            val permissionGranted = requestCameraPermission(true)
@@ -114,55 +116,67 @@ class RegistrationScanIDFragment : Fragment() {
         return view
     }
 
-    private suspend fun compress(file : File, context: Context) : File{
+    private suspend fun compress(file: File, context: Context): File {
         return Compressor.compress(context, file)
     }
-    private fun requestCameraPermission(isBack : Boolean): Boolean {
+
+    private fun requestCameraPermission(isBack: Boolean): Boolean {
         var permissionGranted = false
 // If system os is Marshmallow or Above, we need to request runtime permission
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-            val cameraPermissionNotGranted = checkSelfPermission(activity as Context, Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED
-            if (cameraPermissionNotGranted){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            val cameraPermissionNotGranted = checkSelfPermission(
+                activity as Context,
+                Manifest.permission.CAMERA
+            ) == PackageManager.PERMISSION_DENIED
+            if (cameraPermissionNotGranted) {
                 val permission = arrayOf(Manifest.permission.CAMERA)
                 // Display permission dialog
-                if(isBack) {
+                if (isBack) {
                     requestPermissions(permission, CAMERA_PERMISSION_CODE_BACK)
-                }else{
+                } else {
                     requestPermissions(permission, CAMERA_PERMISSION_CODE)
                 }
-            }
-            else{
+            } else {
                 // Permission already granted
                 permissionGranted = true
             }
-        }
-        else{
+        } else {
             // Android version earlier than M -&gt; no need to request permission
             permissionGranted = true
         }
         return permissionGranted
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         if (requestCode === CAMERA_PERMISSION_CODE) {
-            if (grantResults.size === 1 && grantResults[0] ==    PackageManager.PERMISSION_GRANTED){
+            if (grantResults.size === 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Permission was granted
                 getCamera()
-            }
-            else{
+            } else {
                 // Permission was denied
-                Toast.makeText(context, context?.resources?.getString(R.string.camera_permission_denied), Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    context,
+                    context?.resources?.getString(R.string.camera_permission_denied),
+                    Toast.LENGTH_LONG
+                ).show()
             }
         }
 
         if (requestCode === CAMERA_PERMISSION_CODE_BACK) {
-            if (grantResults.size === 1 && grantResults[0] ==    PackageManager.PERMISSION_GRANTED){
+            if (grantResults.size === 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Permission was granted
                 getCamera()
-            }
-            else{
+            } else {
                 // Permission was denied
-                Toast.makeText(context, context?.resources?.getString(R.string.camera_permission_denied), Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    context,
+                    context?.resources?.getString(R.string.camera_permission_denied),
+                    Toast.LENGTH_LONG
+                ).show()
             }
         }
     }
@@ -171,31 +185,42 @@ class RegistrationScanIDFragment : Fragment() {
         val makePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         File(requireContext().cacheDir.path).mkdirs()
         makePictureIntent.putExtra(
-            MediaStore.EXTRA_OUTPUT, FileProvider.getUriForFile(requireContext(),
+            MediaStore.EXTRA_OUTPUT, FileProvider.getUriForFile(
+                requireContext(),
                 BuildConfig.APPLICATION_ID + ".provider",
                 File(requireContext().cacheDir.path + "/" + "photo" + ".jpg")
-            ));
+            )
+        );
         try {
             startActivityForResult(makePictureIntent, CAMERA_PERMISSION_CODE)
         } catch (e: ActivityNotFoundException) {
         }
     }
 
-    private fun openCameraInterface(isBack : Boolean) {
+    private fun openCameraInterface(isBack: Boolean) {
         val values = ContentValues()
-        values.put(MediaStore.Images.Media.TITLE, context?.resources?.getString(R.string.take_a_picture))
+        values.put(
+            MediaStore.Images.Media.TITLE,
+            context?.resources?.getString(R.string.take_a_picture)
+        )
 //        values.put(MediaStore.Images.Media.DESCRIPTION, R.string.take_picture_description)
-        if(isBack){
-            imageUriBack = activity?.contentResolver?.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
-        }else{
-            imageUri = activity?.contentResolver?.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+        if (isBack) {
+            imageUriBack = activity?.contentResolver?.insert(
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                values
+            )
+        } else {
+            imageUri = activity?.contentResolver?.insert(
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                values
+            )
         }
 // Create camera intent
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
 
-        if(isBack){
+        if (isBack) {
             intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUriBack)
-        }else{
+        } else {
             intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
         }
 // Launch intent
@@ -205,15 +230,14 @@ class RegistrationScanIDFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 // Callback from camera intent
-        if (resultCode == Activity.RESULT_OK){
+        if (resultCode == Activity.RESULT_OK) {
             // Set image captured to image view
 //            attachment = getFileFromURI(imageUri, requireContext(), "photo")
 
 //            attachment = getFileFromURI(data?.data!!, requireContext(), File(data.data?.path.toString()).name)
 
 
-
-            val request= UserVerificationRequest()
+            val request = UserVerificationRequest()
 
             attachment = File(requireContext().cacheDir.path + "/" + "photo" + ".jpg")
             attachment1 = File(requireContext().cacheDir.path + "/" + "photo1" + ".jpg")
@@ -225,10 +249,13 @@ class RegistrationScanIDFragment : Fragment() {
             binding.ivPlaceholder.setImageURI(imageUri)
 //            navigation.openTakeSelfieFragment()
 
-        }
-        else {
+        } else {
             // Failed to take picture
-            Toast.makeText(context, context?.resources?.getString(R.string.failed_to_take_picture),  Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                context,
+                context?.resources?.getString(R.string.failed_to_take_picture),
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 
@@ -243,16 +270,17 @@ class RegistrationScanIDFragment : Fragment() {
         return s
     }
 
-    fun getFileFromURI(uri: Uri?, context: Context,  name: String?): File{
+    fun getFileFromURI(uri: Uri?, context: Context, name: String?): File {
         var fileName = ""
 
-            fileName = "$name.jpg"
+        fileName = "$name.jpg"
 
         val file = File(context.cacheDir.absolutePath + File.separator + fileName)
         val fos = FileOutputStream(file)
-        fos.write(uri.let { context.contentResolver.openInputStream(it!!)!!.readBytes()})
+        fos.write(uri.let { context.contentResolver.openInputStream(it!!)!!.readBytes() })
         return file
     }
+
     fun getRealPathFromURI(uri: Uri): String? {
         val result: String?
         val cursor: Cursor = context?.contentResolver?.query(uri, null, null, null, null)!!
