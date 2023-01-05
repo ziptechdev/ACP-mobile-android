@@ -40,11 +40,6 @@ class MainRepository @Inject constructor(private val apiService: ApiService) {
     suspend fun userVerification(
         user: UserVerificationRequest
     ): Response<UserVerificationResponse> {
-//        val moshi: Moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
-//        val adapter: com.squareup.moshi.JsonAdapter<UserVerificationRequest> = moshi.adapter(UserVerificationRequest::class.java)
-//        val body = adapter.toJson(user)
-
-        val mediaType = "multipart/form-data; charset=utf-8".toMediaType()
         val requestBodyUserName = createPartFromString(user.username)
         val requestBodyUserIp= createPartFromString(user.userIp)
         val requestBodyConsentOptained = createPartFromString(user.consentOptained)
