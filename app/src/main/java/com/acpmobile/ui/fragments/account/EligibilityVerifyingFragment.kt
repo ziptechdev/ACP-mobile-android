@@ -2,12 +2,13 @@ package com.acpmobile.ui.fragments.account
 
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
+import com.acpmobile.R
 import com.acpmobile.databinding.FragmentEligibilityVerifyingBinding
 import com.acpmobile.ui.activity.MainActivity
 import com.acpmobile.ui.fragments.account.viewmodels.NationalVerifierViewModel
@@ -48,10 +49,18 @@ class EligibilityVerifyingFragment : Fragment() {
         viewModel.nationalVerifier(navigation.activity?.nationalVerifierRequest!!)
 
         viewModel.response.observe(viewLifecycleOwner){
-            helper.setString(Constants.ELIGIBILITY_CHECK_ID, it.eligibilityCheckId)
+            helper.setString(Constants.ELIGIBILITY_CHECK_ID, it.data.eligibilityCheckId)
             navigation.activity?.nationalVerifierRequest = null
         }
 
+        viewModel.error.observe(viewLifecycleOwner) { isError ->
+            if (isError)
+                Toast.makeText(
+                    context,
+                    context?.getString(R.string.error_message),
+                    Toast.LENGTH_SHORT
+                ).show()
+        }
         var i = 0
 
         binding.progressBar.progress = i
