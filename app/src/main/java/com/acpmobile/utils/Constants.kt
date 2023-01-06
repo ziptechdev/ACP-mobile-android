@@ -9,6 +9,7 @@ class Constants {
         const val ACCOUNT_ID = "accountID"
         const val WORKFLOW_EXECUTION_ID = "workflowExecutionID"
         const val TOKEN = "USER_TOKEN"
+        const val USER_DATA = "USER_DATA"
 
 
     }

@@ -33,6 +33,8 @@ class LoginFragment : Fragment(), TextWatcher {
     @Inject
     lateinit var helper: SharedPreferencesHelper
 
+    lateinit var mActivity: MainActivity
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,7 +43,7 @@ class LoginFragment : Fragment(), TextWatcher {
             FragmentLoginBinding.inflate(inflater, container, false)
         navigation.activity = activity as MainActivity
 
-        val mActivity = activity as MainActivity
+        mActivity = activity as MainActivity
         mActivity.setToolbarTitle(getString(R.string.label_login))
         mActivity.showToolbar(true)
 
@@ -81,8 +83,7 @@ class LoginFragment : Fragment(), TextWatcher {
                 binding.etPassword.error = null
             }
 
-            if (email.isNotEmpty() && password.isNotEmpty())
-            {
+            if (email.isNotEmpty() && password.isNotEmpty()) {
                 val loginRequest = LoginRequest(email, password)
                 viewModel.userLogin(loginRequest)
             }
@@ -90,6 +91,7 @@ class LoginFragment : Fragment(), TextWatcher {
         observeViewModel()
         return binding.root
     }
+
     private fun observeViewModel() {
         viewModel.loading.observe(viewLifecycleOwner) { isLoading ->
             //TODO Uraditi nesto dok se ceka na izvrsenje
@@ -105,14 +107,19 @@ class LoginFragment : Fragment(), TextWatcher {
         }
 
         viewModel.loginUser.observe(viewLifecycleOwner) { loginUser ->
-            loginUser.token?.let {
-                it.access?.let {
-                    helper.setString(Constants.TOKEN, it)
+            loginUser?.let { loginUser ->
+                helper.setUserData(loginUser)
+                mActivity.userData = loginUser
+                loginUser.token?.let { it ->
+                    it.access?.let {
+                        helper.setString(Constants.TOKEN, it)
+                    }
                 }
             }
             navigation.openProfileFromLogin()
         }
     }
+
     override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
     }
 

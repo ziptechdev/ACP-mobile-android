@@ -31,6 +31,11 @@ class ProfileAfterRegistrationFragment : Fragment() {
         navigation.activity = activity as MainActivity
         val mActivity = activity as MainActivity
 
+
+        mActivity.userData?.let {
+            binding.userDetails.tvUserName.text = "${it.firstName} ${it.lastName}"
+        }
+
         mActivity.setToolbarTitle(getString(R.string.label_home))
 
         context?.let {
@@ -38,9 +43,11 @@ class ProfileAfterRegistrationFragment : Fragment() {
                 ContextCompat.getColor(it, R.color.white)
         }
 
+        mActivity.showToolbar(true)
+
         mActivity.hideActionsToolbar(
-            isBackVisible = true,
-            isLeftTitleVisible = true,
+            isBackVisible = false,
+            isLeftTitleVisible = false,
             isTitleVisible = true,
             isCloseVisible = true
         )

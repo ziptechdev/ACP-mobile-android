@@ -205,18 +205,65 @@ with the help of the Free Privacy Policy Generator.</string>
         <item>12/December</item>
     </string-array>
     <string-array name="US_states">
-        <item>AL</item><item>AK</item><item>AS</item><item>AZ</item><item>AR</item>
-        <item>CA</item><item>CO</item><item>CT</item><item>DE</item><item>DC</item>
-        <item>FM</item><item>FL</item><item>GA</item><item>GU</item><item>HI</item>
-        <item>ID</item><item>IL</item><item>IN</item><item>IA</item><item>KS</item>
-        <item>KY</item><item>LA</item><item>ME</item><item>MH</item><item>MD</item>
-        <item>MA</item><item>MI</item><item>MN</item><item>MS</item><item>MO</item>
-        <item>MT</item><item>NE</item><item>NV</item><item>NH</item><item>NJ</item>
-        <item>NM</item><item>NY</item><item>NC</item><item>ND</item><item>MP</item>
-        <item>OH</item><item>OK</item><item>OR</item><item>PW</item><item>PA</item>
-        <item>PR</item><item>RI</item><item>SC</item><item>SD</item><item>TN</item>
-        <item>TX</item><item>UT</item><item>VT</item><item>VI</item><item>VA</item>
-        <item>WA</item><item>WV</item><item>WI</item><item>WY</item>
+        <item>AL</item>
+        <item>AK</item>
+        <item>AS</item>
+        <item>AZ</item>
+        <item>AR</item>
+        <item>CA</item>
+        <item>CO</item>
+        <item>CT</item>
+        <item>DE</item>
+        <item>DC</item>
+        <item>FM</item>
+        <item>FL</item>
+        <item>GA</item>
+        <item>GU</item>
+        <item>HI</item>
+        <item>ID</item>
+        <item>IL</item>
+        <item>IN</item>
+        <item>IA</item>
+        <item>KS</item>
+        <item>KY</item>
+        <item>LA</item>
+        <item>ME</item>
+        <item>MH</item>
+        <item>MD</item>
+        <item>MA</item>
+        <item>MI</item>
+        <item>MN</item>
+        <item>MS</item>
+        <item>MO</item>
+        <item>MT</item>
+        <item>NE</item>
+        <item>NV</item>
+        <item>NH</item>
+        <item>NJ</item>
+        <item>NM</item>
+        <item>NY</item>
+        <item>NC</item>
+        <item>ND</item>
+        <item>MP</item>
+        <item>OH</item>
+        <item>OK</item>
+        <item>OR</item>
+        <item>PW</item>
+        <item>PA</item>
+        <item>PR</item>
+        <item>RI</item>
+        <item>SC</item>
+        <item>SD</item>
+        <item>TN</item>
+        <item>TX</item>
+        <item>UT</item>
+        <item>VT</item>
+        <item>VI</item>
+        <item>VA</item>
+        <item>WA</item>
+        <item>WV</item>
+        <item>WI</item>
+        <item>WY</item>
     </string-array>
 
     <string name="privacy_and_policy">Privacy and Policy</string>
@@ -239,9 +286,9 @@ name, company name, address, email address, and telephone number.</string>
 
     <string name="label_required_field">Required field</string>
     <string name="label_passwords_must_be_same">Passwords must be same!</string>
-    <string name="error_message" >"Something went wrong"</string>
-    <string name="take_a_picture" >"TAKE A PICTURE"</string>
-    <string name="failed_to_take_picture" >"Failed to take camera picture"</string>
-    <string name="camera_permission_denied" >"Camera permission was denied. Unable to take a picture"</string>
+    <string name="error_message">"Something went wrong"</string>
+    <string name="take_a_picture">"TAKE A PICTURE"</string>
+    <string name="failed_to_take_picture">"Failed to take camera picture"</string>
+    <string name="camera_permission_denied">"Camera permission was denied. Unable to take a picture"</string>
     <string name="btn_logout">Sign Out</string>
 </resources>

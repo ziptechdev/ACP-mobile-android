@@ -20,7 +20,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <include
-                android:id="@+id/include"
+                android:id="@+id/user_details"
                 layout="@layout/user_details_layout" />
         </androidx.cardview.widget.CardView>
 

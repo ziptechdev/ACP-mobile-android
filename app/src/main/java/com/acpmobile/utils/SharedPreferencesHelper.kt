@@ -1,7 +1,11 @@
 package com.acpmobile.utils
 
 import android.content.SharedPreferences
+import com.acpmobile.data.model.LoginUser
+import com.google.gson.Gson
+import java.util.*
 import javax.inject.Inject
+
 
 class SharedPreferencesHelper @Inject constructor(private val preferences: SharedPreferences) {
 
@@ -35,7 +39,7 @@ class SharedPreferencesHelper @Inject constructor(private val preferences: Share
         return preferences.getInt(key, defaultValue)
     }
 
-    fun setList(key: String, list: List<String>){
+    fun setList(key: String, list: List<String>) {
         val editor = preferences.edit()
         val set: MutableSet<String> = HashSet()
         set.addAll(list)
@@ -45,5 +49,19 @@ class SharedPreferencesHelper @Inject constructor(private val preferences: Share
 
     fun getList(key: String, defaultValue: Set<String>): MutableSet<String>? {
         return preferences.getStringSet(key, defaultValue)
+    }
+
+    fun setUserData(userData: LoginUser) {
+        val editor = preferences.edit()
+        val gson = Gson()
+        val json = gson.toJson(userData)
+        editor.putString(Constants.USER_DATA, json)
+        editor.apply()
+    }
+
+    fun getUserData(): LoginUser? {
+        val gson = Gson()
+        val json: String? = preferences.getString(Constants.USER_DATA, "")
+        return if (json.isNullOrEmpty()) null else gson.fromJson(json, LoginUser::class.java)
     }
 }

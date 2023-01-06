@@ -1,17 +1,21 @@
 package com.acpmobile.ui.activity
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate.*
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.acpmobile.R
+import com.acpmobile.data.model.LoginUser
 import com.acpmobile.data.request.KYCRequest
 import com.acpmobile.data.request.NationalVerifierRequest
 import com.acpmobile.data.request.UserVerificationRequest
 import com.acpmobile.databinding.ActivityMainBinding
+import com.acpmobile.utils.Constants
 import com.acpmobile.utils.Navigation
+import com.acpmobile.utils.SharedPreferencesHelper
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -25,6 +29,10 @@ class MainActivity : AppCompatActivity() {
     var nationalVerifierRequest: NationalVerifierRequest? = null
     var kycRequest: KYCRequest? = null
     var userVerificationRequest: UserVerificationRequest? = null
+    var userData: LoginUser? = null
+
+    @Inject
+    lateinit var helper: SharedPreferencesHelper
 
     @Inject
     lateinit var navigation: Navigation
@@ -48,11 +56,10 @@ class MainActivity : AppCompatActivity() {
         binding.toolbar.ivRight.setOnClickListener { finish() }
         binding.toolbarLight.ivRight.setOnClickListener { finish() }
 
-
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             if (destination.id == R.id.fragmentProfileMain || destination.id == R.id.fragmentWallet ||
                 destination.id == R.id.fragmentProfile || destination.id == R.id.fragmentRequestDebitCard
-                || destination.id == R.id.fragmentRequestDebitCardEdit  || destination.id == R.id.fragmentMyWalletCards
+                || destination.id == R.id.fragmentRequestDebitCardEdit || destination.id == R.id.fragmentMyWalletCards
             ) {
                 binding.bottomNavigationViewMain.visibility = View.VISIBLE
 
@@ -61,12 +68,13 @@ class MainActivity : AppCompatActivity() {
 
             }
 
-            if(destination.id == R.id.fragmentProfileMain || destination.id == R.id.fragmentWallet ||
+            if (destination.id == R.id.fragmentProfileMain || destination.id == R.id.fragmentWallet ||
                 destination.id == R.id.fragmentProfile || destination.id == R.id.fragmentPersonalInformation || destination.id == R.id.fragmentSecurity
-                || destination.id == R.id.fragmentRequestDebitCard  || destination.id == R.id.fragmentRequestDebitCardEdit  || destination.id == R.id.fragmentMyWalletCards){
+                || destination.id == R.id.fragmentRequestDebitCard || destination.id == R.id.fragmentRequestDebitCardEdit || destination.id == R.id.fragmentMyWalletCards
+            ) {
                 binding.toolbarProfile.root.visibility = View.VISIBLE
                 hideToolbar()
-            }else{
+            } else {
                 binding.toolbarProfile.root.visibility = View.INVISIBLE
                 showToolbar(true)
             }
@@ -94,6 +102,21 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+        val inflater = navHostFragment.navController.navInflater
+        val graph = inflater.inflate(R.navigation.nav_graph)
+
+        userData = helper.getUserData()
+
+        if (helper.getString(Constants.TOKEN, "").isEmpty()) {
+            graph.setStartDestination(R.id.welcomeFirstFragment)
+//            graph.setStartDestination(R.id.fragmentLogin)
+        } else {
+            graph.setStartDestination(R.id.fragmentProfileMain)
+        }
+
+        val navController = navHostFragment.navController
+        navController.setGraph(graph, intent.extras)
     }
 
 
