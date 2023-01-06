@@ -23,6 +23,7 @@ class EligibilityRegisterViewModel @Inject constructor(
 
     val eligibleUser = MutableLiveData<EligibleUser>()
     val eligibleRegisterError = MutableLiveData<Boolean>()
+    val verificationCodeError = MutableLiveData<Boolean>()
     val loading = MutableLiveData<Boolean>()
     val verificationCodeLiveData = MutableLiveData<Verification>()
 
@@ -35,10 +36,10 @@ class EligibilityRegisterViewModel @Inject constructor(
                 result.body().let {
                     verificationCodeLiveData.value = it?.data
                 }
-                eligibleRegisterError.value = false
+                verificationCodeError.value = false
                 loading.value = false
             } else {
-                eligibleRegisterError.value = true
+                verificationCodeError.value = true
                 loading.value = false
             }
 

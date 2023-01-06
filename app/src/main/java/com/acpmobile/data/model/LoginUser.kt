@@ -1,6 +1,6 @@
 package com.acpmobile.data.model
 
-class LoginUser(
+data class LoginUser(
     val id: Int?,
     val username: String?,
     val firstName: String?,

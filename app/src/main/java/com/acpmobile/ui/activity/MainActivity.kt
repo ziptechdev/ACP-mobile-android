@@ -3,6 +3,7 @@ package com.acpmobile.ui.activity
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate.*
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.acpmobile.R
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setDefaultNightMode(MODE_NIGHT_NO)
         // Hide status bar
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

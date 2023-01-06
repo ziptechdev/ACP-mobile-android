@@ -3,7 +3,6 @@ package com.acpmobile.ui.fragments.account
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -29,8 +28,7 @@ class RegisterNewAccountFragment : Fragment(), TextWatcher {
     private var _binding: FragmentRegisterNewAccountBinding? = null
     private val binding get() = _binding!!
     private val viewModel: EligibilityRegisterViewModel by viewModels()
-    private var eligibilityID :String? = null
-    private var eligibilityRegisterRequest = EligibilityRegisterRequest(null, null)
+    private var eligibilityRegisterRequest = EligibilityRegisterRequest(null, null, null)
 
     @Inject
     lateinit var navigation: Navigation
@@ -91,10 +89,8 @@ class RegisterNewAccountFragment : Fragment(), TextWatcher {
 
             if (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty())
                 if (password == confirmPassword) {
-                    eligibilityID = helper.getString(Constants.ELIGIBILITY_CHECK_ID, " ")
-                    eligibilityRegisterRequest = EligibilityRegisterRequest(email, password)
+                    eligibilityRegisterRequest = EligibilityRegisterRequest(email, password, confirmPassword)
                     viewModel.verifyEmail(EmailVerificationRequest(email))
-//                    viewModel.eligibilityRegister(eligibilityID, eligibilityRegisterRequest)
                 }
         }
         observeViewModel()
@@ -108,7 +104,7 @@ class RegisterNewAccountFragment : Fragment(), TextWatcher {
                 if (isLoading) View.VISIBLE else View.GONE
         }
 
-        viewModel.eligibleRegisterError.observe(viewLifecycleOwner) { isError ->
+        viewModel.verificationCodeError.observe(viewLifecycleOwner) { isError ->
             if (isError)
                 Toast.makeText(
                     context,
@@ -118,7 +114,7 @@ class RegisterNewAccountFragment : Fragment(), TextWatcher {
         }
 
         viewModel.verificationCodeLiveData.observe(viewLifecycleOwner) { verificationModel ->
-            val blankFragment = ConfirmEmailBottomSheetDialog().newInstance(verificationModel.verificationCode, eligibilityID, eligibilityRegisterRequest)
+            val blankFragment = ConfirmEmailBottomSheetDialog().newInstance(verificationModel.verificationCode,helper.getString(Constants.ELIGIBILITY_CHECK_ID, "") ,eligibilityRegisterRequest)
             blankFragment.show(childFragmentManager, blankFragment.getTag())
         }
 
