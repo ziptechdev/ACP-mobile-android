@@ -24,7 +24,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ACPMobile.Regular">
         <activity
-            android:name=".StarterActivity"
+            android:name=".ui.activity.StarterActivity"
             android:exported="false" />
 
         <provider
