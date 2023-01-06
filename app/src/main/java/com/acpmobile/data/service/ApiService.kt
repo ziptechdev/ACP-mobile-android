@@ -29,6 +29,7 @@ interface ApiService {
     @POST("users/login")
     suspend fun userLogin(@Body request: LoginRequest): Response<LoginResponse>
 
+
     @Multipart
     @POST("jumio/resident-identity-verification")
     suspend fun userVerification(
@@ -42,4 +43,10 @@ interface ApiService {
         @Part file2 :MultipartBody.Part,
         @Part file3 :MultipartBody.Part
     ): Response<UserVerificationResponse>
+
+    @Headers("Content-Type:application/json")
+    @POST("users/logout")
+    suspend fun userLogout(@Header("Authorization") token: String ): Response<LogoutResponse>
+
+
 }

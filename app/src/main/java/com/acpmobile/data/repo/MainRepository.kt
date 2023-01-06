@@ -37,6 +37,7 @@ class MainRepository @Inject constructor(private val apiService: ApiService) {
         return apiService.userLogin(request)
     }
 
+
     suspend fun userVerification(
         user: UserVerificationRequest
     ): Response<UserVerificationResponse> {
@@ -66,5 +67,9 @@ class MainRepository @Inject constructor(private val apiService: ApiService) {
 
     fun createPartFromString(string: String?): RequestBody? {
         return RequestBody.create("text/plain".toMediaTypeOrNull(), string!!)
+    }
+    suspend fun userLogoutRequest(token: String): Response<LogoutResponse> {
+        return apiService.userLogout(token)
+
     }
 }
