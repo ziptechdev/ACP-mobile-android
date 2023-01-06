@@ -5,7 +5,7 @@ class Constants {
 
         const val BASE_URL = "https://acp-mobile-backend.herokuapp.com/api/v1/"
         const val ELIGIBILITY_CHECK_ID = "eligibilityCheckId"
-        val accountID = String()
-        val workflowExecutionID = String()
+        const val accountID = "accountID"
+        const val workflowExecutionID = "workflowExecutionID"
     }
 }
