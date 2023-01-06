@@ -21,8 +21,8 @@ class MainRepository @Inject constructor(private val apiService: ApiService) {
         return apiService.nationalVerifier(request)
     }
 
-    suspend fun kycRequest(request: KYCRequest): Response<KYCResponse> {
-        return apiService.kycRegister(request)
+    suspend fun kycRequest(accountID: String, workflowExecutionID : String, request: KYCRequest): Response<KYCResponse> {
+        return apiService.kycRegister(accountID, workflowExecutionID, request)
     }
 
     suspend fun verifyEmail(request: EmailVerificationRequest): Response<EmailVerificationResponse> {

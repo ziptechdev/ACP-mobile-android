@@ -26,7 +26,9 @@ import com.acpmobile.databinding.FragmentScanIdBinding
 import com.acpmobile.databinding.FragmentTakeSelfieBinding
 import com.acpmobile.ui.activity.MainActivity
 import com.acpmobile.ui.fragments.account.viewmodels.VerificationViewModel
+import com.acpmobile.utils.Constants
 import com.acpmobile.utils.Navigation
+import com.acpmobile.utils.SharedPreferencesHelper
 import dagger.hilt.android.AndroidEntryPoint
 import id.zelory.compressor.Compressor
 import kotlinx.coroutines.async
@@ -48,6 +50,9 @@ class RegistrationTakeSelfieFragment : Fragment() {
 
     @Inject
     lateinit var navigation: Navigation
+
+    @Inject
+    lateinit var helper: SharedPreferencesHelper
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -188,9 +193,11 @@ class RegistrationTakeSelfieFragment : Fragment() {
                 ).show()
         }
 
-        viewModel.verifySuccess.observe(viewLifecycleOwner) {
+        viewModel.verifySuccess.observe(viewLifecycleOwner) { response ->
             val mActivity = activity as MainActivity
             mActivity.userVerificationRequest = null
+            helper.setString(Constants.accountID, response.account.id!!)
+            helper.setString(Constants.workflowExecutionID, response.workflowExecution.id!!)
             navigation.openSuccessIdentityProof()
         }
     }

@@ -68,7 +68,9 @@ class ConfirmEmailBottomSheetDialog : BottomSheetDialogFragment() {
         }
 
         arguments?.getSerializable(REQUEST).let {
-            request = it as EligibilityRegisterRequest
+            if(it != null)
+                request = it as EligibilityRegisterRequest
+
         }
 
         binding.clContainer.setBackgroundResource(R.drawable.confirm_email_shape)

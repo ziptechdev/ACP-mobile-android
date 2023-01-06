@@ -12,10 +12,9 @@ interface ApiService {
     @POST("national-verifier/eligibility-check")
     suspend fun nationalVerifier(@Body request: NationalVerifierRequest): Response<NationalVerifierResponse>
 
-    //TODO Change this api, add new parameters
     @Headers("Content-Type:application/json")
-    @POST("users/kyc-register")
-    suspend fun kycRegister(@Body request: KYCRequest): Response<KYCResponse>
+    @POST("users/kyc-register/account-id/{accountId}/workflow-execution-id/{workflowExecutionId}")
+    suspend fun kycRegister(@Path("accountId") accountID: String, @Path("workflowExecutionId") workflowExecutionID: String, @Body request: KYCRequest): Response<KYCResponse>
 
     @Headers("Content-Type:application/json")
     @POST("users/verify-email")

@@ -1,5 +1,6 @@
 package com.acpmobile.ui.fragments.account.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -23,10 +24,10 @@ class KYCViewModel @Inject constructor(
     val loading = MutableLiveData<Boolean>()
     val userLiveData = MutableLiveData<User>()
 
-    fun kycRegister(request: KYCRequest) {
+    fun kycRegister(accountID: String, workflowExecutionID : String, request: KYCRequest) {
         viewModelScope.launch {
             loading.value = true
-            val result = mainRepository.kycRequest(request)
+            val result = mainRepository.kycRequest(accountID, workflowExecutionID, request)
             if (result.isSuccessful) {
                 result.body().let {
                     userLiveData.value = it?.data
@@ -34,6 +35,7 @@ class KYCViewModel @Inject constructor(
                 error.value = false
                 loading.value = false
             } else {
+                Log.e("Moja Aplikacija" , "code JE ${result.code()}  a error je ${result.message()} /n")
                 error.value = true
                 loading.value = false
             }
