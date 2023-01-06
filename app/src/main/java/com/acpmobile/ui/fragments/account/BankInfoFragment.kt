@@ -124,14 +124,12 @@ class BankInfoFragment : Fragment(), TextWatcher {
             if (bankName.isNotEmpty() && bankNumber.isNotEmpty() && accountHolderName.isNotEmpty()
                 && accountNumber.isNotEmpty() && expirationDate.isNotEmpty()
             ) {
-                val bankAccount = BankAccount(
-                    bankName,
-                    bankNumber,
-                    accountHolderName,
-                    accountNumber,
-                    expirationDate
-                )
-                mActivity.kycRequest?.bankAccount = bankAccount
+                mActivity.kycRequest?.bankName = bankName
+                mActivity.kycRequest?.bankNumber = bankNumber
+                mActivity.kycRequest?.accountHolderName = accountHolderName
+                mActivity.kycRequest?.accountNumber = accountNumber
+                mActivity.kycRequest?.expirationDate = expirationDate
+
                 viewModel.kycRegister(helper.getString(Constants.accountID, ""),
                     helper.getString(Constants.workflowExecutionID, ""), navigation.activity?.kycRequest!!)
             }

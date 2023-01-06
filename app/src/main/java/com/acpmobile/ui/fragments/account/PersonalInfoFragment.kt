@@ -154,10 +154,16 @@ class PersonalInfoFragment : Fragment(), TextWatcher {
             ) {
 
                 mActivity.userVerificationRequest = UserVerificationRequest()
-                mActivity.userVerificationRequest?.username = email
-                val user =
-                    User(null, name, lastName, email, password, confirmPassword, phoneNumber, ssn)
-                mActivity.kycRequest?.user = user
+                mActivity.userVerificationRequest!!.username = email
+
+                mActivity.kycRequest?.firstName = name
+                mActivity.kycRequest?.lastName = lastName
+                mActivity.kycRequest?.username = email
+                mActivity.kycRequest?.password = password
+                mActivity.kycRequest?.confirmedPassword = confirmPassword
+                mActivity.kycRequest?.phoneNumber = phoneNumber
+                mActivity.kycRequest?.socialSecurityNumber = ssn
+
                 binding.pbRequestVerificationCode.visibility = View.VISIBLE
                 viewModel.verifyEmail(EmailVerificationRequest(email))
 
