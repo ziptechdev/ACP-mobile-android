@@ -12,7 +12,6 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,23 +20,19 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.core.content.FileProvider
-import androidx.fragment.app.viewModels
 import com.acpmobile.BuildConfig
 import com.acpmobile.R
-import com.acpmobile.data.request.UserVerificationRequest
 import com.acpmobile.databinding.FragmentScanIdBinding
 import com.acpmobile.ui.activity.MainActivity
-import com.acpmobile.ui.fragments.account.viewmodels.VerificationViewModel
 import com.acpmobile.utils.Navigation
 import dagger.hilt.android.AndroidEntryPoint
 import id.zelory.compressor.Compressor
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import java.io.File
 import java.io.FileOutputStream
 import javax.inject.Inject
+import android.graphics.BitmapFactory
+import kotlinx.coroutines.async
+import kotlinx.coroutines.runBlocking
 
 @AndroidEntryPoint
 class RegistrationScanIDFragment : Fragment() {
@@ -49,12 +44,10 @@ class RegistrationScanIDFragment : Fragment() {
     private val IMAGE_CAPTURE_CODE = 1001
     private var imageUri: Uri? = null
     private var imageUriBack: Uri? = null
-    private val viewModel: VerificationViewModel by viewModels()
-    private var attachment: File? = null
-    private var attachment1: File? = null
-    private var attachment2: File? = null
-
-    private var requestCode: Int = 0
+    private var attachmentFront: File? = null
+    private var attachmentBack: File? = null
+    private var compressedBack: File? = null
+    private var compressedFront: File? = null
 
     @Inject
     lateinit var navigation: Navigation
@@ -76,33 +69,43 @@ class RegistrationScanIDFragment : Fragment() {
         binding.containerViewPersonalIdentityBankInfo.tvIdentityProof.setBackgroundResource(R.drawable.round_element_6)
         binding.containerCircleBar.ivCircle2.setBackgroundResource(R.drawable.circle_element_blue)
 
-        binding.btnScanFront.setOnClickListener {
-//            navigation.openTakeSelfieFragment()
-//            requestCameraPermission()
+        binding.btnNext.setOnClickListener {
+            attachmentBack = null
+            attachmentFront = null
 
+            val bundle = Bundle()
+            bundle.putSerializable("back", compressedBack)
+            bundle.putSerializable("front", compressedFront)
+
+            navigation.openTakeSelfieFragment(bundle)
+        }
+
+        binding.btnScanFront.setOnClickListener {
             // Request permission
             val permissionGranted = requestCameraPermission(false)
             if (permissionGranted) {
                 // Open the camera interface
-                getCamera()
+                getCamera(false)
             }
         }
 
         binding.btnScanBack.setOnClickListener {
-//            navigation.openTakeSelfieFragment()
-//            requestCameraPermission()
-
-            val request = UserVerificationRequest()
-
-            var compressedAtachment1: File? = null
-            runBlocking {
-                val jobA = async { compress(attachment!!, requireContext()) }
-                runBlocking {
-                    compressedAtachment1 = jobA.await()
-                }
+            // Request permission
+            val permissionGranted = requestCameraPermission(false)
+            if (permissionGranted) {
+                // Open the camera interface
+                getCamera(true)
             }
 
-            viewModel.userVerification(request, compressedAtachment1, attachment, attachment)
+//            var compressedAtachment1: File? = null
+//            runBlocking {
+//                val jobA = async { compress(attachment!!, requireContext()) }
+//                runBlocking {
+//                    compressedAtachment1 = jobA.await()
+//                }
+//            }
+//
+//            viewModel.userVerification(request, compressedAtachment1, attachment, attachment)
 
             // Request permission
 //            val permissionGranted = requestCameraPermission(true)
@@ -155,7 +158,7 @@ class RegistrationScanIDFragment : Fragment() {
         if (requestCode === CAMERA_PERMISSION_CODE) {
             if (grantResults.size === 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Permission was granted
-                getCamera()
+                getCamera(false)
             } else {
                 // Permission was denied
                 Toast.makeText(
@@ -169,7 +172,7 @@ class RegistrationScanIDFragment : Fragment() {
         if (requestCode === CAMERA_PERMISSION_CODE_BACK) {
             if (grantResults.size === 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Permission was granted
-                getCamera()
+                getCamera(true)
             } else {
                 // Permission was denied
                 Toast.makeText(
@@ -181,21 +184,85 @@ class RegistrationScanIDFragment : Fragment() {
         }
     }
 
-    private fun getCamera() {
+    private fun getCamera(isBackCamera: Boolean) {
         val makePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         File(requireContext().cacheDir.path).mkdirs()
         makePictureIntent.putExtra(
             MediaStore.EXTRA_OUTPUT, FileProvider.getUriForFile(
                 requireContext(),
                 BuildConfig.APPLICATION_ID + ".provider",
-                File(requireContext().cacheDir.path + "/" + "photo" + ".jpg")
+                if (isBackCamera) {
+                    File(requireContext().cacheDir.path + "/" + "photoBack" + ".jpg")
+                } else {
+                    File(requireContext().cacheDir.path + "/" + "photoFront" + ".jpg")
+                }
             )
-        );
+        )
         try {
-            startActivityForResult(makePictureIntent, CAMERA_PERMISSION_CODE)
+            if (isBackCamera) {
+                startActivityForResult(makePictureIntent, CAMERA_PERMISSION_CODE_BACK)
+            } else {
+                startActivityForResult(makePictureIntent, CAMERA_PERMISSION_CODE)
+            }
         } catch (e: ActivityNotFoundException) {
         }
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+// Callback from camera intent
+        if (resultCode == Activity.RESULT_OK) {
+            // Set image captured to image view
+
+//            when (requestCode) {
+//                CAMERA_PERMISSION_CODE_BACK -> attachmentBack =
+//                    File(requireContext().cacheDir.path + "/" + "photoBack" + ".jpg")
+//                CAMERA_PERMISSION_CODE -> attachmentFront =
+//                     File(requireContext().cacheDir.path + "/" + "photoFront" + ".jpg")
+//            }
+
+
+            if (requestCode == CAMERA_PERMISSION_CODE_BACK) {
+                attachmentBack = File(requireContext().cacheDir.path + "/" + "photoBack" + ".jpg")
+                val bitmap = BitmapFactory.decodeFile(attachmentBack!!.absolutePath)
+                binding.ivImage.setImageBitmap(bitmap)
+            }
+
+            if (requestCode == CAMERA_PERMISSION_CODE) {
+                attachmentFront = File(requireContext().cacheDir.path + "/" + "photoFront" + ".jpg")
+                val bitmap = BitmapFactory.decodeFile(attachmentFront!!.absolutePath)
+                binding.ivImage.setImageBitmap(bitmap)
+            }
+
+            if (attachmentBack != null && attachmentFront != null) {
+
+
+                runBlocking {
+                    val back = async { compress(attachmentBack!!, requireContext()) }
+                    val front = async { compress(attachmentFront!!, requireContext()) }
+
+                    runBlocking {
+                        compressedBack = back.await()
+                        compressedFront = front.await()
+
+                    }
+                }
+
+                binding.btnScanBack.visibility = View.GONE
+                binding.btnScanFront.visibility = View.GONE
+                binding.btnNext.visibility = View.VISIBLE
+            }
+
+        } else {
+            // Failed to take picture
+            Toast.makeText(
+                context,
+                context?.resources?.getString(R.string.failed_to_take_picture),
+                Toast.LENGTH_LONG
+            ).show()
+        }
+    }
+
 
     private fun openCameraInterface(isBack: Boolean) {
         val values = ContentValues()
@@ -225,38 +292,6 @@ class RegistrationScanIDFragment : Fragment() {
         }
 // Launch intent
         startActivityForResult(intent, IMAGE_CAPTURE_CODE)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-// Callback from camera intent
-        if (resultCode == Activity.RESULT_OK) {
-            // Set image captured to image view
-//            attachment = getFileFromURI(imageUri, requireContext(), "photo")
-
-//            attachment = getFileFromURI(data?.data!!, requireContext(), File(data.data?.path.toString()).name)
-
-
-            val request = UserVerificationRequest()
-
-            attachment = File(requireContext().cacheDir.path + "/" + "photo" + ".jpg")
-            attachment1 = File(requireContext().cacheDir.path + "/" + "photo1" + ".jpg")
-            attachment2 = File(requireContext().cacheDir.path + "/" + "photo2" + ".jpg")
-
-//            if(fileNew != null) {
-//                viewModel.userVerification(request, fileNew, fileNew, fileNew)
-//            }
-            binding.ivPlaceholder.setImageURI(imageUri)
-//            navigation.openTakeSelfieFragment()
-
-        } else {
-            // Failed to take picture
-            Toast.makeText(
-                context,
-                context?.resources?.getString(R.string.failed_to_take_picture),
-                Toast.LENGTH_LONG
-            ).show()
-        }
     }
 
     fun getPath(uri: Uri): String? {

@@ -7,7 +7,7 @@ data class UserVerificationRequest(
     var documentIdFront: MultipartBody.Part? = null,
     var documentIdBack: MultipartBody.Part? = null,
     var selfie: MultipartBody.Part? = null,
-    var username: String? = "milantukic198923@gmail.com",
+    var username: String? = null,
     var userIp: String? = "192.168.0.1",
     var userState: String? = "IL",
     var consentOptained: String? =  "yes",
