@@ -15,11 +15,13 @@ import com.acpmobile.R
 import com.acpmobile.data.request.EmailVerificationRequest
 import com.acpmobile.data.request.KYCRequest
 import com.acpmobile.data.model.User
+import com.acpmobile.data.request.UserVerificationRequest
 import com.acpmobile.databinding.FragmentPersonalInfoBinding
 import com.acpmobile.ui.activity.MainActivity
 import com.acpmobile.ui.fragments.account.viewmodels.KYCViewModel
 import com.acpmobile.utils.Navigation
 import dagger.hilt.android.AndroidEntryPoint
+import java.time.LocalDateTime
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -150,9 +152,18 @@ class PersonalInfoFragment : Fragment(), TextWatcher {
             if (name.isNotEmpty() && lastName.isNotEmpty() && email.isNotEmpty() && phoneNumber.isNotEmpty()
                 && password.isNotEmpty() && confirmPassword.isNotEmpty() && ssn.isNotEmpty()
             ) {
-                val user =
-                    User(null, name, lastName, email, password, confirmPassword, phoneNumber, ssn)
-                mActivity.kycRequest?.user = user
+
+                mActivity.userVerificationRequest = UserVerificationRequest()
+                mActivity.userVerificationRequest!!.username = email
+
+                mActivity.kycRequest?.firstName = name
+                mActivity.kycRequest?.lastName = lastName
+                mActivity.kycRequest?.username = email
+                mActivity.kycRequest?.password = password
+                mActivity.kycRequest?.confirmedPassword = confirmPassword
+                mActivity.kycRequest?.phoneNumber = phoneNumber
+                mActivity.kycRequest?.socialSecurityNumber = ssn
+
                 binding.pbRequestVerificationCode.visibility = View.VISIBLE
                 viewModel.verifyEmail(EmailVerificationRequest(email))
 

@@ -1,5 +1,6 @@
 package com.acpmobile.utils
 
+import android.os.Bundle
 import com.acpmobile.R
 import com.acpmobile.ui.activity.MainActivity
 import javax.inject.Inject
@@ -56,8 +57,8 @@ class Navigation @Inject constructor(){
         activity?.navController?.navigate(R.id.action_identityProofFragment_to_scanIdFragment)
     }
 
-    fun openTakeSelfieFragment(){
-        activity?.navController?.navigate(R.id.action_scanIdFragment_to_TakeSelfieFragment)
+    fun openTakeSelfieFragment(bundle : Bundle){
+        activity?.navController?.navigate(R.id.action_scanIdFragment_to_TakeSelfieFragment, bundle)
     }
 
     fun openSuccessIdentityProof(){

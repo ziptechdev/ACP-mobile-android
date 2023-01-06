@@ -19,6 +19,8 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.acpmobile.data.model.BankAccount
 import com.acpmobile.ui.fragments.account.viewmodels.KYCViewModel
+import com.acpmobile.utils.Constants
+import com.acpmobile.utils.SharedPreferencesHelper
 
 @AndroidEntryPoint
 class BankInfoFragment : Fragment(), TextWatcher {
@@ -29,6 +31,9 @@ class BankInfoFragment : Fragment(), TextWatcher {
 
     @Inject
     lateinit var navigation: Navigation
+
+    @Inject
+    lateinit var helper: SharedPreferencesHelper
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -119,15 +124,14 @@ class BankInfoFragment : Fragment(), TextWatcher {
             if (bankName.isNotEmpty() && bankNumber.isNotEmpty() && accountHolderName.isNotEmpty()
                 && accountNumber.isNotEmpty() && expirationDate.isNotEmpty()
             ) {
-                val bankAccount = BankAccount(
-                    bankName,
-                    bankNumber,
-                    accountHolderName,
-                    accountNumber,
-                    expirationDate
-                )
-                mActivity.kycRequest?.bankAccount = bankAccount
-                viewModel.kycRegister(navigation.activity?.kycRequest!!)
+                mActivity.kycRequest?.bankName = bankName
+                mActivity.kycRequest?.bankNumber = bankNumber
+                mActivity.kycRequest?.accountHolderName = accountHolderName
+                mActivity.kycRequest?.accountNumber = accountNumber
+                mActivity.kycRequest?.expirationDate = expirationDate
+
+                viewModel.kycRegister(helper.getString(Constants.accountID, ""),
+                    helper.getString(Constants.workflowExecutionID, ""), navigation.activity?.kycRequest!!)
             }
         }
 

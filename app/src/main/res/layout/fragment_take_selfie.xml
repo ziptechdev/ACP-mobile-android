@@ -49,6 +49,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_user_placeholder" />
+
+                <ImageView
+                    android:id="@+id/ivImage"
+                    android:layout_width="match_parent"
+                    android:scaleType="centerCrop"
+                    android:layout_height="match_parent" />
             </com.google.android.material.card.MaterialCardView>
 
             <ImageView
@@ -140,20 +146,20 @@
                 app:layout_constraintStart_toStartOf="@+id/materialCardView"
                 app:layout_constraintTop_toBottomOf="@+id/tvSubtitle" />
 
+
+
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnScanBack"
-                style="@style/ButtonBlueStroke"
+                android:id="@+id/btnNext"
+                style="@style/ButtonBlue"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:layout_marginBottom="60dp"
-                android:text="@string/btn_upload_photo"
-                app:layout_constraintBottom_toTopOf="@+id/containerCircleBar"
+                android:visibility="gone"
+                android:text="@string/btn_next"
                 app:layout_constraintEnd_toEndOf="@+id/materialCardView"
                 app:layout_constraintStart_toStartOf="@+id/materialCardView"
-                app:layout_constraintTop_toBottomOf="@+id/btnOpenCamera"
-                app:layout_constraintVertical_bias="0.0" />
-
+                app:layout_constraintTop_toBottomOf="@+id/tvSubtitle"  />
             <include
                 android:id="@+id/containerCircleBar"
                 layout="@layout/container_view_circles"
@@ -163,6 +169,18 @@
                 app:layout_constraintBottom_toTopOf="@id/tvTermsAndPrivacyPolicy"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
+
+            <ProgressBar
+                android:visibility="gone"
+                android:id="@+id/pbTakeASelfie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="@color/grayDark"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
