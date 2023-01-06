@@ -69,7 +69,7 @@ class MainRepository @Inject constructor(private val apiService: ApiService) {
         return RequestBody.create("text/plain".toMediaTypeOrNull(), string!!)
     }
     suspend fun userLogoutRequest(token: String): Response<LogoutResponse> {
-        return apiService.userLogout(token)
+        return apiService.userLogout("Bearer $token")
 
     }
 }

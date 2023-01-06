@@ -44,9 +44,8 @@ interface ApiService {
         @Part file3 :MultipartBody.Part
     ): Response<UserVerificationResponse>
 
-    @Headers("Content-Type:application/json")
     @POST("users/logout")
-    suspend fun userLogout(@Header("Authorization") token: String ): Response<LogoutResponse>
+    suspend fun userLogout(@Header("Authorization") token: String): Response<LogoutResponse>
 
 
 }

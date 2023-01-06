@@ -7,5 +7,5 @@ data class LoginUser(
     val middleName: String?,
     val lastName: String?,
     val phoneNumber: String?,
-    val token: String?
+    val token: UserToken?
 )

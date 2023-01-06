@@ -3,12 +3,10 @@ package com.acpmobile.ui.fragments.account
 import android.Manifest
 import android.app.Activity
 import android.content.ActivityNotFoundException
-import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
@@ -22,7 +20,6 @@ import androidx.core.content.FileProvider
 import androidx.fragment.app.viewModels
 import com.acpmobile.BuildConfig
 import com.acpmobile.R
-import com.acpmobile.databinding.FragmentScanIdBinding
 import com.acpmobile.databinding.FragmentTakeSelfieBinding
 import com.acpmobile.ui.activity.MainActivity
 import com.acpmobile.ui.fragments.account.viewmodels.VerificationViewModel
@@ -196,8 +193,8 @@ class RegistrationTakeSelfieFragment : Fragment() {
         viewModel.verifySuccess.observe(viewLifecycleOwner) { response ->
             val mActivity = activity as MainActivity
             mActivity.userVerificationRequest = null
-            helper.setString(Constants.accountID, response.account.id!!)
-            helper.setString(Constants.workflowExecutionID, response.workflowExecution.id!!)
+            helper.setString(Constants.ACCOUNT_ID, response.account.id!!)
+            helper.setString(Constants.WORKFLOW_EXECUTION_ID, response.workflowExecution.id!!)
             navigation.openSuccessIdentityProof()
         }
     }

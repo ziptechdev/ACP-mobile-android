@@ -105,7 +105,11 @@ class LoginFragment : Fragment(), TextWatcher {
         }
 
         viewModel.loginUser.observe(viewLifecycleOwner) { loginUser ->
-            helper.setString(Constants.TOKEN, loginUser.token!!)
+            loginUser.token?.let {
+                it.access?.let {
+                    helper.setString(Constants.TOKEN, it)
+                }
+            }
             navigation.openProfileFromLogin()
         }
     }

@@ -17,7 +17,6 @@ import android.text.TextWatcher
 import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import com.acpmobile.data.model.BankAccount
 import com.acpmobile.ui.fragments.account.viewmodels.KYCViewModel
 import com.acpmobile.utils.Constants
 import com.acpmobile.utils.SharedPreferencesHelper
@@ -130,8 +129,8 @@ class BankInfoFragment : Fragment(), TextWatcher {
                 mActivity.kycRequest?.accountNumber = accountNumber
                 mActivity.kycRequest?.expirationDate = expirationDate
 
-                viewModel.kycRegister(helper.getString(Constants.accountID, ""),
-                    helper.getString(Constants.workflowExecutionID, ""), navigation.activity?.kycRequest!!)
+                viewModel.kycRegister(helper.getString(Constants.ACCOUNT_ID, ""),
+                    helper.getString(Constants.WORKFLOW_EXECUTION_ID, ""), navigation.activity?.kycRequest!!)
             }
         }
 
